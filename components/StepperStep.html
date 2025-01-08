@@ -12,163 +12,56 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: StepperStep</h1>
-    
-    <p>Component that represents a single step that is a part of the stepper component.</p>
-    
-    <p><strong>Selector:</strong> <code>bb-stepper-step-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>ariaLabel</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Represents step's area-label
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>data</code></td>
-              <td><code>any</code></td>
-              <td>
-                
-                Represents step's data
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>isActive</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Marks step as active
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>isChecked</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Marks step as checked
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>isCurrent</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Marks step as current
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>label</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Represents step's label
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>stateLabel</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Represents step's state label
-              </td>
-              <td>-</td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
+    <pre><code>{
+  "module": "StepperStepModule",
+  "selector": "bb-stepper-step-ui",
+  "description": "Component that represents a single step that is a part of the stepper component.",
+  "inputs": {
+    "ariaLabel": {
+      "type": "string",
+      "description": "Represents step's area-label"
+    },
+    "data": {
+      "type": "any",
+      "description": "Represents step's data"
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "Marks step as active",
+      "default": "false"
+    },
+    "isChecked": {
+      "type": "boolean",
+      "description": "Marks step as checked",
+      "default": "false"
+    },
+    "isCurrent": {
+      "type": "boolean",
+      "description": "Marks step as current",
+      "default": "false"
+    },
+    "label": {
+      "type": "string",
+      "description": "Represents step's label"
+    },
+    "stateLabel": {
+      "type": "string",
+      "description": "Represents step's state label"
+    }
+  }
+}</code></pre>
 </body>
 </html>

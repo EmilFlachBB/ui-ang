@@ -12,158 +12,56 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Directive: ValidationErrors</h1>
-    
-    
-    
-    
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>errorComponent</code></td>
-              <td><code>Type<ValidationErrorComponentModel></code></td>
-              <td>
-                
-                Custom component for error message. Use only if you need to set custom component for specific control. To specify custom component for all form errors use BB_DYNAMIC_ERROR_TMPL InjectionToken.
-              </td>
-              <td><code>this.errorTmpl</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>errorLabels</code></td>
-              <td><code>PlainObject<string></code></td>
-              <td>
-                
-                Custom error labels object. Use only if you need to set custom error labels for specific control. To specify custom error labels for entire form use BB_VALIDATION_ERRORS InjectionToken.
-              </td>
-              <td><code>{}</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>inputSelector</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Selector to indicate the control in which aria-describedby should be set.
-              </td>
-              <td><code>'.form-control'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>label</code></td>
-              <td><code>string | null</code></td>
-              <td>
-                
-                Input label
-              </td>
-              <td><code>null</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>showError</code></td>
-              <td><code>() => boolean</code></td>
-              <td>
-                
-                Custom function to specify when errors should be shown. By default will be shown when control is invalid.
-              </td>
-              <td><code>this.showErrorDefault</code></td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
-      <section class="doc-section">
-        <h2>Methods</h2>
-        
-      <div class="method ">
-        <h3>
-          <code>onElBlur(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      </section>
-    
+    <pre><code>{
+  "module": "ValidationErrorsModule",
+  "directive": "bbFormControl",
+  "inputs": {
+    "errorComponent": {
+      "type": "Type<ValidationErrorComponentModel>",
+      "description": "Custom component for error message. Use only if you need to set custom component for specific control. To specify custom component for all form errors use BB_DYNAMIC_ERROR_TMPL InjectionToken.",
+      "default": "this.errorTmpl"
+    },
+    "errorLabels": {
+      "type": "PlainObject<string>",
+      "description": "Custom error labels object. Use only if you need to set custom error labels for specific control. To specify custom error labels for entire form use BB_VALIDATION_ERRORS InjectionToken.",
+      "default": "{}"
+    },
+    "inputSelector": {
+      "type": "string",
+      "description": "Selector to indicate the control in which aria-describedby should be set.",
+      "default": "'.form-control'"
+    },
+    "label": {
+      "type": "string | null",
+      "description": "Input label",
+      "default": "null"
+    },
+    "showError": {
+      "type": "() => boolean",
+      "description": "Custom function to specify when errors should be shown. By default will be shown when control is invalid.",
+      "default": "this.showErrorDefault"
+    }
+  },
+  "methods": {
+    "onElBlur": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
 </body>
 </html>

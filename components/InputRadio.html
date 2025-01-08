@@ -12,233 +12,81 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: InputRadio</h1>
-    
-    <p>### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - role  - aria-activedescendant  - aria-describedby  - aria-expanded  - aria-invalid  - aria-label  - aria-labelledby  - aria-owns Component that represents a single radio that is part of the radio group component.</p>
-    
-    <p><strong>Selector:</strong> <code>bb-input-radio-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>aria-activedescendant</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                The ID of the currently active descendant element when the radio button is part of a group.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-describedby</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                The 'aria-describedby' attribute for the radio button
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-expanded</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                Whether the radio button is expanded (true) or collapsed (false).
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-invalid</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                Whether the radio button is invalid (true) or valid (false).
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-label</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                Accessible label when control does not need to render label tag.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-labelledby</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                The 'aria-labelledby' attribute for the radio button
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-owns</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                The IDs of the elements that are controlled by the radio button.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether the radio button is disabled (true) or enabled (false).
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>id</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                A unique identifier for the radio element.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>label</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                The label of the radio item
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>labelTemplate</code></td>
-              <td><code>TemplateRef<any> | undefined</code></td>
-              <td>
-                
-                Custom label template.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>labelTemplateContext</code></td>
-              <td><code>any | undefined</code></td>
-              <td>
-                
-                Label template context.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>role</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                undefined
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>value</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                The value of the native radio element.
-              </td>
-              <td>-</td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
+    <pre><code>{
+  "module": "InputRadioModule",
+  "selector": "bb-input-radio-ui",
+  "description": "### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - role  - aria-activedescendant  - aria-describedby  - aria-expanded  - aria-invalid  - aria-label  - aria-labelledby  - aria-owns Component that represents a single radio that is part of the radio group component.",
+  "inputs": {
+    "aria-activedescendant": {
+      "type": "string | undefined",
+      "description": "The ID of the currently active descendant element when the radio button is part of a group."
+    },
+    "aria-describedby": {
+      "type": "string | undefined",
+      "description": "The 'aria-describedby' attribute for the radio button"
+    },
+    "aria-expanded": {
+      "type": "string | undefined",
+      "description": "Whether the radio button is expanded (true) or collapsed (false)."
+    },
+    "aria-invalid": {
+      "type": "string | undefined",
+      "description": "Whether the radio button is invalid (true) or valid (false)."
+    },
+    "aria-label": {
+      "type": "string | undefined",
+      "description": "Accessible label when control does not need to render label tag."
+    },
+    "aria-labelledby": {
+      "type": "string | undefined",
+      "description": "The 'aria-labelledby' attribute for the radio button"
+    },
+    "aria-owns": {
+      "type": "string | undefined",
+      "description": "The IDs of the elements that are controlled by the radio button."
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Whether the radio button is disabled (true) or enabled (false).",
+      "default": "false"
+    },
+    "id": {
+      "type": "string | undefined",
+      "description": "A unique identifier for the radio element."
+    },
+    "label": {
+      "type": "string | undefined",
+      "description": "The label of the radio item"
+    },
+    "labelTemplate": {
+      "type": "TemplateRef<any> | undefined",
+      "description": "Custom label template."
+    },
+    "labelTemplateContext": {
+      "type": "any | undefined",
+      "description": "Label template context."
+    },
+    "role": {
+      "type": "string | undefined"
+    },
+    "value": {
+      "type": "string | undefined",
+      "description": "The value of the native radio element."
+    }
+  }
+}</code></pre>
 </body>
 </html>

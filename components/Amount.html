@@ -12,203 +12,73 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: Amount</h1>
-    
-    <p>Component to enable the amount to be represented in the currency format. ### Locale token `LOCALE_ID` enables you to globally set the same locale for all instances of `AmountComponent` in your project. Refer to https://angular.io/api/core/LOCALE_ID for more information. ### Global configuration token `AMOUNT_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `AmountComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not be able to overwrite it. The following properties can be overwritten using the token:  - `abbreviate`  - `currency`  - `decimalPlaces`  - `mapCurrency`  - `trailingZeroes`  - `currencyFormat`  - `signPosition` The following is an example of how to use the token: ```typescript import { AMOUNT_CONFIG_TOKEN } from '@backbase/ui-ang/amount'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const amountConfig = {   abbreviate: true } platformBrowserDynamic().bootstrapModule(AppModule, {   providers: [{ provide: AMOUNT_CONFIG_TOKEN, useValue: amountConfig }] }); ``` The amount component doesn't provide any specific properties for accessibility. But handles accessibility internally.</p>
-    
-    <p><strong>Selector:</strong> <code>bb-amount-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>abbreviate</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether abbreviation should be applied. Default value false. This attribute can be overwritten via the global configuration token.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>amount</code></td>
-              <td><code>string | number</code></td>
-              <td>
-                
-                Receive amount in number or string format and converts into a floating-point number. Does not support comma separated numbers unless used with DecimalPipe. Locale is infer from LOCALE_ID and does not support any locales that is different from the app's LOCALE_ID.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>currency</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Determines currency type. If nothing provided, wouldn't be displayed. This attribute can be overwritten via the global configuration token.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>currencyFormat</code></td>
-              <td><code>CurrencyFormat</code></td>
-              <td>
-                
-                Whether to display wide or narrow currency format. Default value 'wide'.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>decimalPlaces</code></td>
-              <td><code>number | undefined</code></td>
-              <td>
-                
-                Overrides amount of decimals places to display. Default value undefined, which will use currency default amount of decimals. This attribute can be overwritten via the global configuration token.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>hideCurrencySymbol</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                If &quot;true&quot; currency will be hidden Can be used to display amounts without currency but still format them according to the currency (for example number of decimal points and groups symbol is based on a currency) Default value false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>mapCurrency</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether currency local should be transformed to symbol. Default value from injection token (if provided), else true. This attribute can be overwritten via the global configuration token.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>showPercent</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether percent symbol should be shown. Default value false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>showPlusSign</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                If &quot;true&quot; and amount is positive adds plus sign at the beginning. Default value false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>signPosition</code></td>
-              <td><code>Required<></code></td>
-              <td>
-                
-                Position of the sign, whether it is before or after the currency symbol. Only applies to negative numbers. &quot;left&quot; renders the sign before the currency. &quot;right&quot; renders the sign after the currency. Default to &quot;left&quot;. This attribute can be overwritten via the global configuration token.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>trailingZeroes</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether to display trailing zeroes. Default value true. This attribute can be overwritten via the global configuration token.
-              </td>
-              <td>-</td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
+    <pre><code>{
+  "module": "AmountModule",
+  "selector": "bb-amount-ui",
+  "description": "Component to enable the amount to be represented in the currency format. ### Locale token `LOCALE_ID` enables you to globally set the same locale for all instances of `AmountComponent` in your project. Refer to https://angular.io/api/core/LOCALE_ID for more information. ### Global configuration token `AMOUNT_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `AmountComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not be able to overwrite it. The following properties can be overwritten using the token:  - `abbreviate`  - `currency`  - `decimalPlaces`  - `mapCurrency`  - `trailingZeroes`  - `currencyFormat`  - `signPosition` The following is an example of how to use the token: ```typescript import { AMOUNT_CONFIG_TOKEN } from '@backbase/ui-ang/amount'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const amountConfig = {   abbreviate: true } platformBrowserDynamic().bootstrapModule(AppModule, {   providers: [{ provide: AMOUNT_CONFIG_TOKEN, useValue: amountConfig }] }); ``` The amount component doesn't provide any specific properties for accessibility. But handles accessibility internally.",
+  "inputs": {
+    "abbreviate": {
+      "type": "boolean",
+      "description": "Whether abbreviation should be applied. Default value false. This attribute can be overwritten via the global configuration token."
+    },
+    "amount": {
+      "type": "string | number",
+      "description": "Receive amount in number or string format and converts into a floating-point number. Does not support comma separated numbers unless used with DecimalPipe. Locale is infer from LOCALE_ID and does not support any locales that is different from the app's LOCALE_ID."
+    },
+    "currency": {
+      "type": "string",
+      "description": "Determines currency type. If nothing provided, wouldn't be displayed. This attribute can be overwritten via the global configuration token."
+    },
+    "currencyFormat": {
+      "type": "CurrencyFormat",
+      "options": "wide | narrow",
+      "description": "Whether to display wide or narrow currency format. Default value 'wide'."
+    },
+    "decimalPlaces": {
+      "type": "number | undefined",
+      "description": "Overrides amount of decimals places to display. Default value undefined, which will use currency default amount of decimals. This attribute can be overwritten via the global configuration token."
+    },
+    "hideCurrencySymbol": {
+      "type": "boolean",
+      "description": "If &quot;true&quot; currency will be hidden Can be used to display amounts without currency but still format them according to the currency (for example number of decimal points and groups symbol is based on a currency) Default value false.",
+      "default": "false"
+    },
+    "mapCurrency": {
+      "type": "boolean",
+      "description": "Whether currency local should be transformed to symbol. Default value from injection token (if provided), else true. This attribute can be overwritten via the global configuration token."
+    },
+    "showPercent": {
+      "type": "boolean",
+      "description": "Whether percent symbol should be shown. Default value false.",
+      "default": "false"
+    },
+    "showPlusSign": {
+      "type": "boolean",
+      "description": "If &quot;true&quot; and amount is positive adds plus sign at the beginning. Default value false.",
+      "default": "false"
+    },
+    "signPosition": {
+      "type": "Required<>",
+      "description": "Position of the sign, whether it is before or after the currency symbol. Only applies to negative numbers. &quot;left&quot; renders the sign before the currency. &quot;right&quot; renders the sign after the currency. Default to &quot;left&quot;. This attribute can be overwritten via the global configuration token."
+    },
+    "trailingZeroes": {
+      "type": "boolean",
+      "description": "Whether to display trailing zeroes. Default value true. This attribute can be overwritten via the global configuration token."
+    }
+  }
+}</code></pre>
 </body>
 </html>

@@ -12,145 +12,54 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Directive: Tooltip</h1>
-    
-    <p>Directive that displays a tooltip. ### Global configuration token `TOOLTIP_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `TooltipComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not be able to overwrite it. The following properties can be overwritten using the token:  - `triggers` #### Usage notes The following is an example of how to use the token: ```typescript import { TOOLTIP_CONFIG_TOKEN } from '@backbase/ui-ang/tooltip-directive'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const tooltipConfig = {   triggers: 'click',   closeDelay: 400 }; platformBrowserDynamic().bootstrapModule(AppModule, {   providers: [{ provide: TOOLTIP_CONFIG_TOKEN, useValue: tooltipConfig }] }); ```</p>
-    
-    
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>bbTooltip</code></td>
-              <td><code>string | TemplateRef | null | undefined</code></td>
-              <td>
-                
-                Content to be displayed as tooltip. If falsy, the tooltip won't open. Accepts a string or TemplateRef.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>triggers</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Specifies the events that should trigger the tooltip (space separated strings). Defaults to 'click'. This component extends NgbTooltip. All available properties of NgbTooltip can be used with this component as well. More information about it and more examples can be found in NgBootstrap documentation. This attribute can be overwritten via the global configuration token.
-              </td>
-              <td><code>'click'</code></td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
-      <section class="doc-section">
-        <h2>Methods</h2>
-        
-      <div class="method ">
-        <h3>
-          <code>close(): void</code>
-          
-        </h3>
-        <p>Event handler to set aria-expanded on closing the tooltip</p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>open(context: any): void</code>
-          
-        </h3>
-        <p>Event handler to set aria-expanded on opening the tooltip</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>context</code> (<code>any</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      </section>
-    
+    <pre><code>{
+  "module": "TooltipModule",
+  "directive": "bbTooltip",
+  "description": "Directive that displays a tooltip. ### Global configuration token `TOOLTIP_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `TooltipComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not be able to overwrite it. The following properties can be overwritten using the token:  - `triggers` #### Usage notes The following is an example of how to use the token: ```typescript import { TOOLTIP_CONFIG_TOKEN } from '@backbase/ui-ang/tooltip-directive'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const tooltipConfig = {   triggers: 'click',   closeDelay: 400 }; platformBrowserDynamic().bootstrapModule(AppModule, {   providers: [{ provide: TOOLTIP_CONFIG_TOKEN, useValue: tooltipConfig }] }); ```",
+  "inputs": {
+    "bbTooltip": {
+      "type": "string | TemplateRef | null | undefined",
+      "description": "Content to be displayed as tooltip. If falsy, the tooltip won't open. Accepts a string or TemplateRef."
+    },
+    "triggers": {
+      "type": "string",
+      "description": "Specifies the events that should trigger the tooltip (space separated strings). Defaults to 'click'. This component extends NgbTooltip. All available properties of NgbTooltip can be used with this component as well. More information about it and more examples can be found in NgBootstrap documentation. This attribute can be overwritten via the global configuration token.",
+      "default": "'click'"
+    }
+  },
+  "methods": {
+    "close": {
+      "description": "Event handler to set aria-expanded on closing the tooltip",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "open": {
+      "description": "Event handler to set aria-expanded on opening the tooltip",
+      "params": [
+        {
+          "name": "context",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
 </body>
 </html>

@@ -12,262 +12,105 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: Heading</h1>
-    
-    <p>Component that displays a header with navigation ### Displaying navigation options based on entitlements Heading component could render the navigation items based on entitlements. To enable this feature PERMISSIONS_STRATEGY token from `@backbase/ui-ang/heading` should be privided. F.e. ``` import { PermissionsStrategy } from '@backbase/foundation-ang/web-sdk'; //... providers: [ { provide: PERMISSIONS_STRATEGY, useClass: PermissionsStrategy } ] //.... ```</p>
-    <p class="badge">Deprecated</p>
-    <p><strong>Selector:</strong> <code>bb-heading-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>buttonColor</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Color of the button. Default primary
-              </td>
-              <td><code>'primary'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>buttonIcon</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Button icon. Will be used if useFirstLinkAsDefault = false;
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>buttonLabel</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Button label. Will be used if useFirstLinkAsDefault = false;
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>buttonSize</code></td>
-              <td><code>"sm" | "md"</code></td>
-              <td>
-                
-                Size of the button. Allowed values are sm or md. Default md
-              </td>
-              <td><code>'md'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>customClassName</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Custom class name
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>heading</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Heading
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>headingClasses</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Heading Classes
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>headingType</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Heading type (h1-h6)
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>navigationItems</code></td>
-              <td><code>HeadingNavigationItem<any>[]</code></td>
-              <td>
-                
-                An array of objects representing the navigation menu items.
-              </td>
-              <td><code>[]</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>position</code></td>
-              <td><code>Placement | PlacementArray</code></td>
-              <td>
-                
-                The position of the dropdown, position will be picked in order of feasibility
-              </td>
-              <td><code>['bottom-end', 'bottom-start', 'top-end', 'top-start']</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>showNavigation</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Determines whether or not to show the navigation section.
-              </td>
-              <td><code>true</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>useFirstLinkAsDefault</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Determines whether or not to use the first link as the default target.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Outputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Output</th>
-            <th>Type</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>navigationAction</code></td>
-              <td><code>EventEmitter</code></td>
-              <td>
-                
-                Event on item click
-              </td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Methods</h2>
-        
-      <div class="method ">
-        <h3>
-          <code>onClick(value: any): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>value</code> (<code>any</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      </section>
-    
+    <pre><code>{
+  "module": "HeadingModule",
+  "selector": "bb-heading-ui",
+  "description": "Component that displays a header with navigation ### Displaying navigation options based on entitlements Heading component could render the navigation items based on entitlements. To enable this feature PERMISSIONS_STRATEGY token from `@backbase/ui-ang/heading` should be privided. F.e. ``` import { PermissionsStrategy } from '@backbase/foundation-ang/web-sdk'; //... providers: [ { provide: PERMISSIONS_STRATEGY, useClass: PermissionsStrategy } ] //.... ```",
+  "deprecated": true,
+  "deprecationMessage": "Component is deprecated as of ui-ang v11. It will be removed in ui-ang v13. Please use PageHeaderComponent to replace your primary header and native HTML h2-h5 to replace smaller headers.",
+  "inputs": {
+    "buttonColor": {
+      "type": "string",
+      "description": "Color of the button. Default primary",
+      "default": "'primary'"
+    },
+    "buttonIcon": {
+      "type": "string",
+      "description": "Button icon. Will be used if useFirstLinkAsDefault = false;"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "description": "Button label. Will be used if useFirstLinkAsDefault = false;"
+    },
+    "buttonSize": {
+      "type": "\"sm\" | \"md\"",
+      "description": "Size of the button. Allowed values are sm or md. Default md",
+      "default": "'md'"
+    },
+    "customClassName": {
+      "type": "string",
+      "description": "Custom class name",
+      "default": "''"
+    },
+    "heading": {
+      "type": "string",
+      "description": "Heading",
+      "default": "''"
+    },
+    "headingClasses": {
+      "type": "string",
+      "description": "Heading Classes",
+      "default": "''"
+    },
+    "headingType": {
+      "type": "string",
+      "description": "Heading type (h1-h6)",
+      "default": "''"
+    },
+    "navigationItems": {
+      "type": "HeadingNavigationItem<any>[]",
+      "options": "HeadingNavigationButtonItem<T> | HeadingNavigationSeparatorItem",
+      "description": "An array of objects representing the navigation menu items.",
+      "default": "[]"
+    },
+    "position": {
+      "type": "Placement | PlacementArray",
+      "description": "The position of the dropdown, position will be picked in order of feasibility",
+      "default": "['bottom-end', 'bottom-start', 'top-end', 'top-start']"
+    },
+    "showNavigation": {
+      "type": "boolean",
+      "description": "Determines whether or not to show the navigation section.",
+      "default": "true"
+    },
+    "useFirstLinkAsDefault": {
+      "type": "boolean",
+      "description": "Determines whether or not to use the first link as the default target.",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "navigationAction": {
+      "type": "EventEmitter",
+      "description": "Event on item click"
+    }
+  },
+  "methods": {
+    "onClick": {
+      "params": [
+        {
+          "name": "value",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
 </body>
 </html>

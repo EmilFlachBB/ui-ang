@@ -12,1041 +12,540 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: InputDatepicker</h1>
-    
-    <p>Component that displays a datepicker ### Custom internationalization It is possible to provide a custom internalization. To do this, a `DATEPICKER_I18` token from `@backbase/ui-ang/input-datepicker` should be provided on the module level. The token should implement the [NgbDatepickerI18n](https://ng-bootstrap.github.io/#/components/datepicker/api#NgbDatepickerI18n) interface. ### Setting and reading the date *Note* Datepicker uses the date *with the timezone* inside its model. And hence to make it work properly in all cases there are some recommendations for setting and reading the date to and from the datepicker. #### Setting the date When setting the date to the datepicker the date must be provided in the format that assumes zero hours and zero minutes in the local timezone. Here are some examples of what the date setting should looks like: ```typescript this.minDate = new Date(2021, 11, 15, 0, 0).toISOString(); ``` or ```typescript this.minDate = new Date('2021-12-15T00:00').toISOString(); ``` Note that ```typescript new Date('2021-12-15').toISOString(); ``` generates a date in GMT0 format and that is not correct for the datepicker input date. #### Reading the date When a date is selected via UI (the datepicker's popup window or browser's input field) its display date is transformed to the ISO string date with the assumption that it’s zero hours and zero minutes in the current time zone. Which leads to the different ISO string values for different time zones for the same date. F.e. "Dec 15 2021" is going to be transformed to "2021-12-14T23:00:00.000Z" for the "GMT+0100 (Central European Standard Time)" time zone and to "2021-12-15T03:00:00.000Z" for "GMT-0300 (West Greenland Standard Time)" time zone. As you can see the _day_ value is different in ISO string based on the timezone. It’s going to be either 14 or 15 in the example above. The recommendation here is to convert the ISO string, that the datepicker returns, into the Date object and read its day value. Here is an example: ```typescript private formatDate(stringDate: string): string {   const date = new Date(stringDate);   if (stringDate && !isNaN(date.valueOf())) {     return `${date.getFullYear()}-${this.appendLeadingZeroes(date.getMonth() + 1)}-${this.appendLeadingZeroes(date.getDate())}`;   }   return ''; } private appendLeadingZeroes(value: number): string {   return value > 9 ? value.toString() : `0${value}`; } ``` ### Setting the mask When setting the mask, the following rules/expectations apply: - mask can be set to boolean true/false, or to some string pattern like 00/00/0000 - when mask is set, if overrideDateFormat is not set in the template, it's set inside the component to be dateFormat Rules when mask is set to true in the template: - when mask is set to true, it will be reset to an overrideDateFormat-compliant-string-pattern that's created in the component - if overrideDateFormat is not mask compliant (e.g., has one digit for days or months), overrideDateFormat is adjusted first Rules when mask is set to some string pattern in the template: - string patterns are made of a subset of allowed ngx-mask characters 0's and S's only - see https://www.npmjs.com/package/ngx-mask - In the above, 0 is used to be a placeholder for digits, and S for letters - Typical date separators such as these in [ / , sp - ] are allowed in the created/provided mask pattern - If created/provided mask pattern is not compliant with overrideDateFormat, component is invalidated and mask is set to be undefined Examples when mask is set to true in the template (e.g., [mask]="true") - if overrideDateFormat = 'dd/MM/yyyy' or 'MM/dd/yyyy', created mask will be '00/00/0000' - if overrideDateFormat = 'MMM dd, yy', created mask will be 'SSS 00, 00' - if dateFormat = 'M/d/yy', then overrideDateFormat is corrected to 'MM/dd/yy' and created mask will be '00/00/00' Examples when mask is set to some string pattern (e.g., [mask]="'00/00/00'") - in this setting, overrideDateFormat is not adjusted, only validation occurs here - if overrideDateFormat = 'yyyy-MMM-00' and template-set mask = '0000-SSS-00', mask is validated and accepted - if overrideDateFormat = 'yyyy-MMM-00' and template-set mask = '0000-000-00', mask is rejected (because there are no three-digit months), set to undefined, and element is errored ### Global configuration token `INPUT_DATEPICKER_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `InputDatepickerComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not able to overwrite it. The following properties can be overwritten using the token: - `autocomplete` - `displayMonths` - `firstDayOfWeek` - `overrideDateFormat` - `placeholder` - `rangeSelection` #### Usage notes The following is an example of how to use the token: ```typescript import { INPUT_DATEPICKER_CONFIG_TOKEN } from '@backbase/ui-ang/input-datepicker'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const inputDatepickerConfig = {   firstDayOfWeek: 1 } platformBrowserDynamic().bootstrapModule(AppModule, {   providers: [{ provide: INPUT_DATEPICKER_CONFIG_TOKEN, useValue: inputDatepickerConfig }] }); ``` ### Accessibility The component provides options to pass needed accessibility attributes. You need to take care of properties that are required in your case: - `role` describes the role of the element in programs like screen readers - `aria-activedescendant` identifies the currently active element - `aria-describedby` identifies the element that describes the component - `aria-expanded` is set on an element to indicate if the datepicker is expanded or collapsed - `aria-invalid` state indicates the entered value does not conform to the format expected - `aria-label` defines a string value that labels the component - `aria-labelledby` identifies the element that labels the component - `aria-owns` identifies an element in order to define a visual, functional, or contextual relationship</p>
-    
-    <p><strong>Selector:</strong> <code>bb-input-datepicker-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>ariaLabel</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                A label for the datepicker that will be used to provide an accessible description of the component.
-              </td>
-              <td><code>'Datepicker'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>ariaLabelForButton</code></td>
-              <td><code>any</code></td>
-              <td>
-                
-                Accessible label for Datepicker button.
-              </td>
-              <td><code>$localize`:@@bb-input-datepicker-ui.datepicker-button.aria-label:Toggle Date popup`</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>ariaLabelToDate</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Accessible label for the second input when the datepicker has a ranged split input.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>autocomplete</code></td>
-              <td><code>undefined</code></td>
-              <td>
-                
-                The autocomplete value of enclosed input control. This attribute can be overwritten via the global configuration token
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>btnColor</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Color of the button. Defaults to tertiary
-              </td>
-              <td><code>'tertiary'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>clickOpen</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Indicates if the datepicker is opened when clicking input. Defaults to false
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>container</code></td>
-              <td><code>undefined</code></td>
-              <td>
-                
-                The container element that the datepicker should be attached to.
-              </td>
-              <td><code>null</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>datepickerDescribedby</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Accessible description for datepicker date selection popup.
-              </td>
-              <td><code>this.defaultDatepickerDescribedby</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>displayMonths</code></td>
-              <td><code>number</code></td>
-              <td>
-                
-                Indicates how many month will be shown in the picker This attribute can be overwritten via the global configuration token
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>firstDayOfWeek</code></td>
-              <td><code>undefined</code></td>
-              <td>
-                
-                The first day of the week By default, the calendar uses ISO 8601 and the weekdays are is 1=Mon ... 7=Sun This attribute can be overwritten via the global configuration token.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>focusOpen</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Indicates if the datepicker is opened when focusing input. Defaults to false
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>footerTemplate</code></td>
-              <td><code>ElementRef</code></td>
-              <td>
-                
-                The reference to the custom template for the datepicker footer.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>icon</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Icon that is displayed in the button. Defaults to calendar
-              </td>
-              <td><code>'calendar-today'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>iconColor</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The color of the icon to be displayed.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>iconSize</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The size of the icon to be displayed. Defaults to md
-              </td>
-              <td><code>'md'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>labelTo</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The label for the second input when the datepicker has a ranged split input. Defaults to an empty string.
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>markDisabled</code></td>
-              <td><code>Function</code></td>
-              <td>
-                
-                Callback to mark a given date as disabled.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>mask</code></td>
-              <td><code>undefined</code></td>
-              <td>
-                
-                Mask configuration (optional). The default value is false Mask can be:  1- enabled: when set from template to boolean true to create mask, or false (default is false if left unset).  2- validated: when set from template to some string date pattern such as 00/00/0000 or SSS 00, 0000. This attribute can be overwritten via the global configuration token
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>maxDate</code></td>
-              <td><code>NgbDateStruct | string | undefined</code></td>
-              <td>
-                
-                Max date for the navigation. If not provided, 'year' select box will display 10 years after current month.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>minDate</code></td>
-              <td><code>NgbDateStruct | string | undefined</code></td>
-              <td>
-                
-                Min date for the navigation. If not provided, 'year' select box will display 10 years before current month
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>navigation</code></td>
-              <td><code>"select" | "arrows" | "none"</code></td>
-              <td>
-                
-                Navigation pattern through dates. Default to arrows
-              </td>
-              <td><code>'arrows'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>overrideDateFormat</code></td>
-              <td><code>undefined</code></td>
-              <td>
-                
-                Override date format (optional). Supported formats are yyyy/MM/dd, MM/dd/yyyy, MMMM dd, yyyy. Note, other formats might work inconsistent in different browsers. This attribute can be overwritten via the global configuration token
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>placeholder</code></td>
-              <td><code>undefined</code></td>
-              <td>
-                
-                The placeholder for the datepicker input. Default is Locale Date Format; This attribute can be overwritten via the global configuration token
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>placement</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                Placement of a popup window
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>rangeSelection</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Indicates whether the datepicker should allow selecting a date range with a single input. The default value is false. This attribute can be overwritten via the global configuration token.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>rangeSelectionSplit</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Indicates if the datepicker should a date range with split input. One for the from date and one for the to date. Defaults to false
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>startDate</code></td>
-              <td><code>NgDateStructNullable</code></td>
-              <td>
-                
-                The date to open calendar with.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-activedescendant</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                It identifies the currently active element when focus is on a composite widget, combobox, textbox, group, or application.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-autocomplete</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                It indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-controls</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                When an interactive or input control has an impact on another element in a document or application, the aria-control indicates which element or elements the user interface widget controls.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-describedby</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-expanded</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or not its child elements are displayed or hidden.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-invalid</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The aria-invalid state indicates the entered value is not in a format expected by the application.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-label</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Accessible label when control does not need to render label tag.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-labelledby</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The aria-labelledby property enables authors to reference other elements on the page to define an accessible name. This is useful when using elements that don't have native support for associating elements to provide an accessible name.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-owns</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The aria-owns attribute identifies an element (or elements) in order to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>autofocus</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether the text input should be auto-focused when shown.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether the component is mutable or clickable. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>id</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The id for the input. Defaults to unique string. Used to map the label to the input.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>inputClassName</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Class names that must be included on the &lt;input&gt; form control
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>label</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The label for the input. Defaults to an empty string.
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>readonly</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether the input is read only. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>required</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether the input is required. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>role</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                Customize the ARIA role for the HTML input/select/textarea element inside this component. This can be used to improve accessibility for components, for example by configuring [role]=&quot;'combobox'&quot; for a component that provides an autocomplete list. Values that are valid for the native HTML form elements are allowed.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>size</code></td>
-              <td><code>number | string</code></td>
-              <td>
-                
-                Configure the minimum width to fit the specified number of characters that should fit for HTML &lt;input&gt;
-              </td>
-              <td>-</td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Outputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Output</th>
-            <th>Type</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>focusedDate</code></td>
-              <td><code>EventEmitter</code></td>
-              <td>
-                
-                Event that is emitted when a date is focused. The event payload is a DateSelectionModel.
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>blur</code></td>
-              <td><code>EventEmitter</code></td>
-              <td>
-                
-                An event emitter for on blur actions.
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>focus</code></td>
-              <td><code>EventEmitter</code></td>
-              <td>
-                
-                An event emitter for on focus actions.
-              </td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Methods</h2>
-        
-      <div class="method ">
-        <h3>
-          <code>autoMask(element: HTMLInputElement): void</code>
-          
-        </h3>
-        <p>if mask for element is set, transform (constrain) input pattern accordingly</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>element</code> (<code>HTMLInputElement</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>bindDocumentEvents(): void</code>
-          
-        </h3>
-        <p>Binds event on the global document when the datepicker is not opened</p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>createOrValidateMask(): void</code>
-          
-        </h3>
-        <p>createOrValidateMask  1- sets overrideDateFormat to be dateFormat in case it's undefined  2- if mask property is boolean and value is true, then createMask()  3- else, validateMask()</p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>handleDocumentEvent(event: KeyboardEvent | MouseEvent): void</code>
-          
-        </h3>
-        <p>Document Event handler</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>event</code> (<code>KeyboardEvent | MouseEvent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onBlur($event: FocusEvent): void</code>
-          
-        </h3>
-        <p>Event handler for blur on the host control.</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>$event</code> (<code>FocusEvent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onClosed(): void</code>
-          
-        </h3>
-        <p>Event handler for closing `from` or single date picker.</p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onClosedTo(): void</code>
-          
-        </h3>
-        <p>Event handler for closing picker for `to` date.</p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onControlBlur($event: FocusEvent): void</code>
-          
-        </h3>
-        <p>Event handler blur on internal inputs and buttons</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>$event</code> (<code>FocusEvent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onDayHover(event: literal type): void</code>
-          
-        </h3>
-        <p>Handling day-hover from day-template on range selection.</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>event</code> (<code>literal type</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onInputChange(element: HTMLInputElement): void</code>
-          
-        </h3>
-        <p>Input change handler for single date</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>element</code> (<code>HTMLInputElement</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onInputChangeRange(element: HTMLInputElement): void</code>
-          
-        </h3>
-        <p>Update datepicker value on input value change for same input date range selection</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>element</code> (<code>HTMLInputElement</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onInputChangeSplitRange(element: HTMLInputElement): void</code>
-          
-        </h3>
-        <p>Update datepicker value on input value change for split input date range selection, from date</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>element</code> (<code>HTMLInputElement</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onInputChangeSplitRangeTo(element: HTMLInputElement): void</code>
-          
-        </h3>
-        <p>Update datepicker value on input value change for split input date range selection, to date.</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>element</code> (<code>HTMLInputElement</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onInputFocus(open: boolean): void</code>
-          
-        </h3>
-        <p>Event handler for the native input.</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>open</code> (<code>boolean</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onInputFocusTo(open: boolean): void</code>
-          
-        </h3>
-        <p>Event handler for the native input</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>open</code> (<code>boolean</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onPickerTogglerClick(event: Event): void</code>
-          
-        </h3>
-        <p>Event handler for the picker toggle button to</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>event</code> (<code>Event</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onPickerTogglerClickTo(event: Event): void</code>
-          
-        </h3>
-        <p>Event handler for the picker toggle button to (split range selection)</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>event</code> (<code>Event</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onRangeDateSelect(date: NgbDate): void</code>
-          
-        </h3>
-        <p>Event handler for date setting from picker when single input range selection</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>date</code> (<code>NgbDate</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onRangeDateSelectSplit(date: NgbDate): void</code>
-          
-        </h3>
-        <p>Event handler for date setting from picker for `from` date when split input range selection</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>date</code> (<code>NgbDate</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onRangeDateSelectSplitTo(date: NgbDate): void</code>
-          
-        </h3>
-        <p>Event handler for date setting from picker for `to` date when split input range selection</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>date</code> (<code>NgbDate</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>setDisabledState(isDisabled: boolean): void</code>
-          
-        </h3>
-        <p>Set disable state for the host control</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>isDisabled</code> (<code>boolean</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>toggleCalendarAriaLabel(isDateTo: boolean): string</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>isDateTo</code> (<code>boolean</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>writeValue(model: DateRangeModel | string | null): void</code>
-          
-        </h3>
-        <p>Implements the value update for the control</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>model</code> (<code>DateRangeModel | string | null</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>getSizeByKeyword(arg: any): number | undefined</code>
-          
-        </h3>
-        <p>Returns the `input` `size` value for a keyword, such as "xxl". Subclasses can choose to implement a custom mapping, which will be used to configure `size`.</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>arg</code> (<code>any</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onFocus($event: FocusEvent): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>$event</code> (<code>FocusEvent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onValueChange(newValue: Object | string): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>newValue</code> (<code>Object | string</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>registerOnChange(fn: function): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>fn</code> (<code>function</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>registerOnTouched(fn: function): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>fn</code> (<code>function</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      </section>
-    
+    <pre><code>{
+  "module": "InputDatepickerModule",
+  "selector": "bb-input-datepicker-ui",
+  "description": "Component that displays a datepicker ### Custom internationalization It is possible to provide a custom internalization. To do this, a `DATEPICKER_I18` token from `@backbase/ui-ang/input-datepicker` should be provided on the module level. The token should implement the [NgbDatepickerI18n](https://ng-bootstrap.github.io/#/components/datepicker/api#NgbDatepickerI18n) interface. ### Setting and reading the date *Note* Datepicker uses the date *with the timezone* inside its model. And hence to make it work properly in all cases there are some recommendations for setting and reading the date to and from the datepicker. #### Setting the date When setting the date to the datepicker the date must be provided in the format that assumes zero hours and zero minutes in the local timezone. Here are some examples of what the date setting should looks like: ```typescript this.minDate = new Date(2021, 11, 15, 0, 0).toISOString(); ``` or ```typescript this.minDate = new Date('2021-12-15T00:00').toISOString(); ``` Note that ```typescript new Date('2021-12-15').toISOString(); ``` generates a date in GMT0 format and that is not correct for the datepicker input date. #### Reading the date When a date is selected via UI (the datepicker's popup window or browser's input field) its display date is transformed to the ISO string date with the assumption that it’s zero hours and zero minutes in the current time zone. Which leads to the different ISO string values for different time zones for the same date. F.e. \"Dec 15 2021\" is going to be transformed to \"2021-12-14T23:00:00.000Z\" for the \"GMT+0100 (Central European Standard Time)\" time zone and to \"2021-12-15T03:00:00.000Z\" for \"GMT-0300 (West Greenland Standard Time)\" time zone. As you can see the _day_ value is different in ISO string based on the timezone. It’s going to be either 14 or 15 in the example above. The recommendation here is to convert the ISO string, that the datepicker returns, into the Date object and read its day value. Here is an example: ```typescript private formatDate(stringDate: string): string {   const date = new Date(stringDate);   if (stringDate && !isNaN(date.valueOf())) {     return `${date.getFullYear()}-${this.appendLeadingZeroes(date.getMonth() + 1)}-${this.appendLeadingZeroes(date.getDate())}`;   }   return ''; } private appendLeadingZeroes(value: number): string {   return value > 9 ? value.toString() : `0${value}`; } ``` ### Setting the mask When setting the mask, the following rules/expectations apply: - mask can be set to boolean true/false, or to some string pattern like 00/00/0000 - when mask is set, if overrideDateFormat is not set in the template, it's set inside the component to be dateFormat Rules when mask is set to true in the template: - when mask is set to true, it will be reset to an overrideDateFormat-compliant-string-pattern that's created in the component - if overrideDateFormat is not mask compliant (e.g., has one digit for days or months), overrideDateFormat is adjusted first Rules when mask is set to some string pattern in the template: - string patterns are made of a subset of allowed ngx-mask characters 0's and S's only - see https://www.npmjs.com/package/ngx-mask - In the above, 0 is used to be a placeholder for digits, and S for letters - Typical date separators such as these in [ / , sp - ] are allowed in the created/provided mask pattern - If created/provided mask pattern is not compliant with overrideDateFormat, component is invalidated and mask is set to be undefined Examples when mask is set to true in the template (e.g., [mask]=\"true\") - if overrideDateFormat = 'dd/MM/yyyy' or 'MM/dd/yyyy', created mask will be '00/00/0000' - if overrideDateFormat = 'MMM dd, yy', created mask will be 'SSS 00, 00' - if dateFormat = 'M/d/yy', then overrideDateFormat is corrected to 'MM/dd/yy' and created mask will be '00/00/00' Examples when mask is set to some string pattern (e.g., [mask]=\"'00/00/00'\") - in this setting, overrideDateFormat is not adjusted, only validation occurs here - if overrideDateFormat = 'yyyy-MMM-00' and template-set mask = '0000-SSS-00', mask is validated and accepted - if overrideDateFormat = 'yyyy-MMM-00' and template-set mask = '0000-000-00', mask is rejected (because there are no three-digit months), set to undefined, and element is errored ### Global configuration token `INPUT_DATEPICKER_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `InputDatepickerComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not able to overwrite it. The following properties can be overwritten using the token: - `autocomplete` - `displayMonths` - `firstDayOfWeek` - `overrideDateFormat` - `placeholder` - `rangeSelection` #### Usage notes The following is an example of how to use the token: ```typescript import { INPUT_DATEPICKER_CONFIG_TOKEN } from '@backbase/ui-ang/input-datepicker'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const inputDatepickerConfig = {   firstDayOfWeek: 1 } platformBrowserDynamic().bootstrapModule(AppModule, {   providers: [{ provide: INPUT_DATEPICKER_CONFIG_TOKEN, useValue: inputDatepickerConfig }] }); ``` ### Accessibility The component provides options to pass needed accessibility attributes. You need to take care of properties that are required in your case: - `role` describes the role of the element in programs like screen readers - `aria-activedescendant` identifies the currently active element - `aria-describedby` identifies the element that describes the component - `aria-expanded` is set on an element to indicate if the datepicker is expanded or collapsed - `aria-invalid` state indicates the entered value does not conform to the format expected - `aria-label` defines a string value that labels the component - `aria-labelledby` identifies the element that labels the component - `aria-owns` identifies an element in order to define a visual, functional, or contextual relationship",
+  "inputs": {
+    "ariaLabel": {
+      "type": "string",
+      "description": "A label for the datepicker that will be used to provide an accessible description of the component.",
+      "default": "'Datepicker'"
+    },
+    "ariaLabelForButton": {
+      "type": "any",
+      "description": "Accessible label for Datepicker button.",
+      "default": "$localize`:@@bb-input-datepicker-ui.datepicker-button.aria-label:Toggle Date popup`"
+    },
+    "ariaLabelToDate": {
+      "type": "string",
+      "description": "Accessible label for the second input when the datepicker has a ranged split input."
+    },
+    "autocomplete": {
+      "description": "The autocomplete value of enclosed input control. This attribute can be overwritten via the global configuration token"
+    },
+    "btnColor": {
+      "type": "string",
+      "description": "Color of the button. Defaults to tertiary",
+      "default": "'tertiary'"
+    },
+    "clickOpen": {
+      "type": "boolean",
+      "description": "Indicates if the datepicker is opened when clicking input. Defaults to false",
+      "default": "false"
+    },
+    "container": {
+      "description": "The container element that the datepicker should be attached to.",
+      "default": "null"
+    },
+    "datepickerDescribedby": {
+      "type": "string",
+      "description": "Accessible description for datepicker date selection popup.",
+      "default": "this.defaultDatepickerDescribedby"
+    },
+    "displayMonths": {
+      "type": "number",
+      "description": "Indicates how many month will be shown in the picker This attribute can be overwritten via the global configuration token"
+    },
+    "firstDayOfWeek": {
+      "description": "The first day of the week By default, the calendar uses ISO 8601 and the weekdays are is 1=Mon ... 7=Sun This attribute can be overwritten via the global configuration token."
+    },
+    "focusOpen": {
+      "type": "boolean",
+      "description": "Indicates if the datepicker is opened when focusing input. Defaults to false",
+      "default": "false"
+    },
+    "footerTemplate": {
+      "type": "ElementRef",
+      "description": "The reference to the custom template for the datepicker footer."
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon that is displayed in the button. Defaults to calendar",
+      "default": "'calendar-today'"
+    },
+    "iconColor": {
+      "type": "string",
+      "description": "The color of the icon to be displayed."
+    },
+    "iconSize": {
+      "type": "string",
+      "description": "The size of the icon to be displayed. Defaults to md",
+      "default": "'md'"
+    },
+    "labelTo": {
+      "type": "string",
+      "description": "The label for the second input when the datepicker has a ranged split input. Defaults to an empty string.",
+      "default": "''"
+    },
+    "markDisabled": {
+      "type": "Function",
+      "description": "Callback to mark a given date as disabled."
+    },
+    "mask": {
+      "description": "Mask configuration (optional). The default value is false Mask can be:  1- enabled: when set from template to boolean true to create mask, or false (default is false if left unset).  2- validated: when set from template to some string date pattern such as 00/00/0000 or SSS 00, 0000. This attribute can be overwritten via the global configuration token"
+    },
+    "maxDate": {
+      "type": "NgbDateStruct | string | undefined",
+      "description": "Max date for the navigation. If not provided, 'year' select box will display 10 years after current month."
+    },
+    "minDate": {
+      "type": "NgbDateStruct | string | undefined",
+      "description": "Min date for the navigation. If not provided, 'year' select box will display 10 years before current month"
+    },
+    "navigation": {
+      "type": "\"select\" | \"arrows\" | \"none\"",
+      "description": "Navigation pattern through dates. Default to arrows",
+      "default": "'arrows'"
+    },
+    "overrideDateFormat": {
+      "description": "Override date format (optional). Supported formats are yyyy/MM/dd, MM/dd/yyyy, MMMM dd, yyyy. Note, other formats might work inconsistent in different browsers. This attribute can be overwritten via the global configuration token"
+    },
+    "placeholder": {
+      "description": "The placeholder for the datepicker input. Default is Locale Date Format; This attribute can be overwritten via the global configuration token"
+    },
+    "placement": {
+      "type": "string | undefined",
+      "description": "Placement of a popup window"
+    },
+    "rangeSelection": {
+      "type": "boolean",
+      "description": "Indicates whether the datepicker should allow selecting a date range with a single input. The default value is false. This attribute can be overwritten via the global configuration token."
+    },
+    "rangeSelectionSplit": {
+      "type": "boolean",
+      "description": "Indicates if the datepicker should a date range with split input. One for the from date and one for the to date. Defaults to false",
+      "default": "false"
+    },
+    "startDate": {
+      "type": "NgDateStructNullable",
+      "options": "NgbDateStruct | null",
+      "description": "The date to open calendar with."
+    },
+    "aria-activedescendant": {
+      "type": "string",
+      "description": "It identifies the currently active element when focus is on a composite widget, combobox, textbox, group, or application."
+    },
+    "aria-autocomplete": {
+      "type": "string",
+      "description": "It indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox."
+    },
+    "aria-controls": {
+      "type": "string",
+      "description": "When an interactive or input control has an impact on another element in a document or application, the aria-control indicates which element or elements the user interface widget controls."
+    },
+    "aria-describedby": {
+      "type": "string",
+      "description": "Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them."
+    },
+    "aria-expanded": {
+      "type": "string",
+      "description": "The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or not its child elements are displayed or hidden."
+    },
+    "aria-invalid": {
+      "type": "string",
+      "description": "The aria-invalid state indicates the entered value is not in a format expected by the application."
+    },
+    "aria-label": {
+      "type": "string",
+      "description": "Accessible label when control does not need to render label tag."
+    },
+    "aria-labelledby": {
+      "type": "string",
+      "description": "The aria-labelledby property enables authors to reference other elements on the page to define an accessible name. This is useful when using elements that don't have native support for associating elements to provide an accessible name."
+    },
+    "aria-owns": {
+      "type": "string",
+      "description": "The aria-owns attribute identifies an element (or elements) in order to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship."
+    },
+    "autofocus": {
+      "type": "boolean",
+      "description": "Whether the text input should be auto-focused when shown.",
+      "default": "false"
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Whether the component is mutable or clickable. Defaults to false.",
+      "default": "false"
+    },
+    "id": {
+      "type": "string",
+      "description": "The id for the input. Defaults to unique string. Used to map the label to the input."
+    },
+    "inputClassName": {
+      "type": "string",
+      "description": "Class names that must be included on the &lt;input&gt; form control"
+    },
+    "label": {
+      "type": "string",
+      "description": "The label for the input. Defaults to an empty string.",
+      "default": "''"
+    },
+    "readonly": {
+      "type": "boolean",
+      "description": "Whether the input is read only. Defaults to false.",
+      "default": "false"
+    },
+    "required": {
+      "type": "boolean",
+      "description": "Whether the input is required. Defaults to false.",
+      "default": "false"
+    },
+    "role": {
+      "type": "string | undefined",
+      "description": "Customize the ARIA role for the HTML input/select/textarea element inside this component. This can be used to improve accessibility for components, for example by configuring [role]=&quot;'combobox'&quot; for a component that provides an autocomplete list. Values that are valid for the native HTML form elements are allowed."
+    },
+    "size": {
+      "type": "number | string",
+      "description": "Configure the minimum width to fit the specified number of characters that should fit for HTML &lt;input&gt;"
+    }
+  },
+  "outputs": {
+    "focusedDate": {
+      "type": "EventEmitter",
+      "description": "Event that is emitted when a date is focused. The event payload is a DateSelectionModel."
+    },
+    "blur": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on blur actions."
+    },
+    "focus": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on focus actions."
+    }
+  },
+  "methods": {
+    "autoMask": {
+      "description": "if mask for element is set, transform (constrain) input pattern accordingly",
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "bindDocumentEvents": {
+      "description": "Binds event on the global document when the datepicker is not opened",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "createOrValidateMask": {
+      "description": "createOrValidateMask  1- sets overrideDateFormat to be dateFormat in case it's undefined  2- if mask property is boolean and value is true, then createMask()  3- else, validateMask()",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "handleDocumentEvent": {
+      "description": "Document Event handler",
+      "params": [
+        {
+          "name": "event",
+          "type": "KeyboardEvent | MouseEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onBlur": {
+      "description": "Event handler for blur on the host control.",
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClosed": {
+      "description": "Event handler for closing `from` or single date picker.",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClosedTo": {
+      "description": "Event handler for closing picker for `to` date.",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onControlBlur": {
+      "description": "Event handler blur on internal inputs and buttons",
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onDayHover": {
+      "description": "Handling day-hover from day-template on range selection.",
+      "params": [
+        {
+          "name": "event",
+          "type": "literal type"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputChange": {
+      "description": "Input change handler for single date",
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputChangeRange": {
+      "description": "Update datepicker value on input value change for same input date range selection",
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputChangeSplitRange": {
+      "description": "Update datepicker value on input value change for split input date range selection, from date",
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputChangeSplitRangeTo": {
+      "description": "Update datepicker value on input value change for split input date range selection, to date.",
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputFocus": {
+      "description": "Event handler for the native input.",
+      "params": [
+        {
+          "name": "open",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputFocusTo": {
+      "description": "Event handler for the native input",
+      "params": [
+        {
+          "name": "open",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onPickerTogglerClick": {
+      "description": "Event handler for the picker toggle button to",
+      "params": [
+        {
+          "name": "event",
+          "type": "Event"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onPickerTogglerClickTo": {
+      "description": "Event handler for the picker toggle button to (split range selection)",
+      "params": [
+        {
+          "name": "event",
+          "type": "Event"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onRangeDateSelect": {
+      "description": "Event handler for date setting from picker when single input range selection",
+      "params": [
+        {
+          "name": "date",
+          "type": "NgbDate"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onRangeDateSelectSplit": {
+      "description": "Event handler for date setting from picker for `from` date when split input range selection",
+      "params": [
+        {
+          "name": "date",
+          "type": "NgbDate"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onRangeDateSelectSplitTo": {
+      "description": "Event handler for date setting from picker for `to` date when split input range selection",
+      "params": [
+        {
+          "name": "date",
+          "type": "NgbDate"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "setDisabledState": {
+      "description": "Set disable state for the host control",
+      "params": [
+        {
+          "name": "isDisabled",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "toggleCalendarAriaLabel": {
+      "params": [
+        {
+          "name": "isDateTo",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "string"
+      }
+    },
+    "writeValue": {
+      "description": "Implements the value update for the control",
+      "params": [
+        {
+          "name": "model",
+          "type": "DateRangeModel | string | null"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "getSizeByKeyword": {
+      "description": "Returns the `input` `size` value for a keyword, such as \"xxl\". Subclasses can choose to implement a custom mapping, which will be used to configure `size`.",
+      "params": [
+        {
+          "name": "arg",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "number | undefined"
+      }
+    },
+    "onFocus": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onValueChange": {
+      "params": [
+        {
+          "name": "newValue",
+          "type": "Object | string"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnChange": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnTouched": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
 </body>
 </html>

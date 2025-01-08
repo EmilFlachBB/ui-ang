@@ -12,173 +12,61 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: PaymentCard</h1>
-    
-    <p>A component that displays card of any vendor that can be used as a form of payment.</p>
-    
-    <p><strong>Selector:</strong> <code>bb-payment-card-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>displayEmblem</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Display Backbase logo on the card.
-              </td>
-              <td><code>true</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>displayOverlay</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Display card overlay in the card. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>imageSrc</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Configuration to pass a link or (base64, svg) image to be used as the background image of the card. Defaults to undefined.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>overlayIcon</code></td>
-              <td><code>"access-time" | "lock" | "not-interested" | "remove-circle-outline" | "warning"</code></td>
-              <td>
-                
-                Overlay icon to be displayed on the card. Possible values: 'access-time', 'lock', 'not-interested', 'remove-circle-outline', 'warning'. Defaults to undefined.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>overlayText</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Overlay status to be displayed on the card. Defaults to undefined.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>paymentCard</code></td>
-              <td><code>PaymentCard</code></td>
-              <td>
-                
-                Payment card data.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>paymentCardNumberFormat</code></td>
-              <td><code>PaymentCardNumberFormat</code></td>
-              <td>
-                
-                Configuration of how the card number should be formatted. Defaults to the following format: Example :{ length: 16, maskRange: [0, 12], segments: 4, }
-              </td>
-              <td><code>DefaultPaymentCardNumberFormat</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>size</code></td>
-              <td><code>"sm" | "md"</code></td>
-              <td>
-                
-                Defines the size of the card. Small cards show no content. Defaults to 'md'.
-              </td>
-              <td><code>PaymentCardSizes.MD</code></td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
+    <pre><code>{
+  "module": "PaymentCardModule",
+  "selector": "bb-payment-card-ui",
+  "description": "A component that displays card of any vendor that can be used as a form of payment.",
+  "inputs": {
+    "displayEmblem": {
+      "type": "boolean",
+      "description": "Display Backbase logo on the card.",
+      "default": "true"
+    },
+    "displayOverlay": {
+      "type": "boolean",
+      "description": "Display card overlay in the card. Defaults to false.",
+      "default": "false"
+    },
+    "imageSrc": {
+      "type": "string",
+      "description": "Configuration to pass a link or (base64, svg) image to be used as the background image of the card. Defaults to undefined."
+    },
+    "overlayIcon": {
+      "type": "\"access-time\" | \"lock\" | \"not-interested\" | \"remove-circle-outline\" | \"warning\"",
+      "description": "Overlay icon to be displayed on the card. Possible values: 'access-time', 'lock', 'not-interested', 'remove-circle-outline', 'warning'. Defaults to undefined."
+    },
+    "overlayText": {
+      "type": "string",
+      "description": "Overlay status to be displayed on the card. Defaults to undefined."
+    },
+    "paymentCard": {
+      "type": "PaymentCard",
+      "description": "Payment card data."
+    },
+    "paymentCardNumberFormat": {
+      "type": "PaymentCardNumberFormat",
+      "description": "Configuration of how the card number should be formatted. Defaults to the following format: Example :{ length: 16, maskRange: [0, 12], segments: 4, }",
+      "default": "DefaultPaymentCardNumberFormat"
+    },
+    "size": {
+      "type": "\"sm\" | \"md\"",
+      "description": "Defines the size of the card. Small cards show no content. Defaults to 'md'.",
+      "default": "PaymentCardSizes.MD"
+    }
+  }
+}</code></pre>
 </body>
 </html>

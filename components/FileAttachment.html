@@ -12,259 +12,104 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: FileAttachment</h1>
-    
-    <p>### Accessibility Current component provide option to pass needed accessibility attributes:  - id  - aria-label  - aria-describedby Component displays file attachment.</p>
-    
-    <p><strong>Selector:</strong> <code>bb-file-attachment-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>aria-describedby</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Set aria-describedby  with an element id that contains a detailed decription of the widget.
-              </td>
-              <td><code>'file-attachment-card-body'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-label</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Accessible label for delete button when control does not need to render label tag.
-              </td>
-              <td><code>'Delete file'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>block</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                The flag to indicate whether the file-attachment should fill the container that it is in. Defaults to 'false'.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>deletable</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Show delete button flag. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Disabled state flag. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>fileContent</code></td>
-              <td><code>Observable<ArrayBuffer> | undefined</code></td>
-              <td>
-                
-                Set file content (required if disabled property is not set to true).
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>id</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The id for attachment card.
-              </td>
-              <td><code>'file-attachment-card-body_' + getDynamicId()</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>loading</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Loading indicator flag. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>name</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                Set file name (required).
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>size</code></td>
-              <td><code>number | string | undefined</code></td>
-              <td>
-                
-                Set file size (required). Accepts number or string.
-              </td>
-              <td>-</td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Outputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Output</th>
-            <th>Type</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>delete</code></td>
-              <td><code>EventEmitter</code></td>
-              <td>
-                
-                Event emitted on delete button click.
-              </td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Methods</h2>
-        
-      <div class="method ">
-        <h3>
-          <code>onDelete(event: MouseEvent): void</code>
-          
-        </h3>
-        <p>Delete attachment event emitter.</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>event</code> (<code>MouseEvent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onDownload($event: Event): void</code>
-          
-        </h3>
-        <p>Download attachment method.</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>$event</code> (<code>Event</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      </section>
-    
+    <pre><code>{
+  "module": "FileAttachmentModule",
+  "selector": "bb-file-attachment-ui",
+  "description": "### Accessibility Current component provide option to pass needed accessibility attributes:  - id  - aria-label  - aria-describedby Component displays file attachment.",
+  "inputs": {
+    "aria-describedby": {
+      "type": "string",
+      "description": "Set aria-describedby  with an element id that contains a detailed decription of the widget.",
+      "default": "'file-attachment-card-body'"
+    },
+    "aria-label": {
+      "type": "string",
+      "description": "Accessible label for delete button when control does not need to render label tag.",
+      "default": "'Delete file'"
+    },
+    "block": {
+      "type": "boolean",
+      "description": "The flag to indicate whether the file-attachment should fill the container that it is in. Defaults to 'false'.",
+      "default": "false"
+    },
+    "deletable": {
+      "type": "boolean",
+      "description": "Show delete button flag. Defaults to false.",
+      "default": "false"
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Disabled state flag. Defaults to false.",
+      "default": "false"
+    },
+    "fileContent": {
+      "type": "Observable<ArrayBuffer> | undefined",
+      "description": "Set file content (required if disabled property is not set to true)."
+    },
+    "id": {
+      "type": "string",
+      "description": "The id for attachment card.",
+      "default": "'file-attachment-card-body_' + getDynamicId()"
+    },
+    "loading": {
+      "type": "boolean",
+      "description": "Loading indicator flag. Defaults to false.",
+      "default": "false"
+    },
+    "name": {
+      "type": "string | undefined",
+      "description": "Set file name (required)."
+    },
+    "size": {
+      "type": "number | string | undefined",
+      "description": "Set file size (required). Accepts number or string."
+    }
+  },
+  "outputs": {
+    "delete": {
+      "type": "EventEmitter",
+      "description": "Event emitted on delete button click."
+    }
+  },
+  "methods": {
+    "onDelete": {
+      "description": "Delete attachment event emitter.",
+      "params": [
+        {
+          "name": "event",
+          "type": "MouseEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onDownload": {
+      "description": "Download attachment method.",
+      "params": [
+        {
+          "name": "$event",
+          "type": "Event"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
 </body>
 </html>

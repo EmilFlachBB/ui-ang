@@ -12,143 +12,50 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: Avatar</h1>
-    
-    <p>Component that displays an avatar. ### Global configuration token `AVATAR_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `AvatarComponent` in your project. The following properties can be overwritten using the token: - `initialsFn` #### Usage notes The following is an example of how to use the token: ``` import { AVATAR_CONFIG_TOKEN } from '@backbase/ui-ang/avatar'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const avatarConfig = { initialsFn: (text) => `${text[0]}${text[1]}` } platformBrowserDynamic().bootstrapModule(AppModule, { providers: [{ provide: AVATAR_CONFIG_TOKEN, useValue: avatarConfig }] }); ```</p>
-    
-    <p><strong>Selector:</strong> <code>bb-avatar-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>image</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The image  of the avatar. Defaults to empty string.
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>imgAlt</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The imgAlt for provide alt in img of the avatar. Defaults to empty string.
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>initials</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Initials to be displayed. If not provided, initials will be derived from the name input. Supports on up to two characters.
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>name</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The name  of the avatar. Defaults to empty string.
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>size</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Size of the avatar. Possible values sm | md | lg | xl. Defaults to empty string.
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
+    <pre><code>{
+  "module": "AvatarModule",
+  "selector": "bb-avatar-ui",
+  "description": "Component that displays an avatar. ### Global configuration token `AVATAR_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `AvatarComponent` in your project. The following properties can be overwritten using the token: - `initialsFn` #### Usage notes The following is an example of how to use the token: ``` import { AVATAR_CONFIG_TOKEN } from '@backbase/ui-ang/avatar'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const avatarConfig = { initialsFn: (text) => `${text[0]}${text[1]}` } platformBrowserDynamic().bootstrapModule(AppModule, { providers: [{ provide: AVATAR_CONFIG_TOKEN, useValue: avatarConfig }] }); ```",
+  "inputs": {
+    "image": {
+      "type": "string",
+      "description": "The image  of the avatar. Defaults to empty string.",
+      "default": "''"
+    },
+    "imgAlt": {
+      "type": "string",
+      "description": "The imgAlt for provide alt in img of the avatar. Defaults to empty string.",
+      "default": "''"
+    },
+    "initials": {
+      "type": "string",
+      "description": "Initials to be displayed. If not provided, initials will be derived from the name input. Supports on up to two characters.",
+      "default": "''"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name  of the avatar. Defaults to empty string.",
+      "default": "''"
+    },
+    "size": {
+      "type": "string",
+      "description": "Size of the avatar. Possible values sm | md | lg | xl. Defaults to empty string.",
+      "default": "''"
+    }
+  }
+}</code></pre>
 </body>
 </html>

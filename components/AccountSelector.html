@@ -12,768 +12,354 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: AccountSelector</h1>
-    
-    <p>Component that provides a select, multiselect and auto complete feature. ### Custom templates AccountSelectorComponent allows providing optional custom templates for the different parts of its view. Below is an example of what a component with all custom templates migh look like: ```typescript                         ``` By default `items` input property has the type `any` to allow any types of items when providing custom item template. If a custom template for items is not provided then `items` internally matches the type `AccountSelectorDefaultItem[]`, which could be imported from `@backbase/ui-ang/account-selector` ### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - aria-describedby will be linked to the account selector component, dropdown list and search box  - aria-invalid will be linked to the search box</p>
-    
-    <p><strong>Selector:</strong> <code>bb-account-selector-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>accountSelectorInstructions</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Instructions for the account selector component. Use this to provide guidance on how to select multiple accounts from a dropdown list. To select or deselect all items use the left and right arrow keys.
-              </td>
-              <td><code>`
-  Account selector component.
-  It allows to select multiple accounts by selecting from a dropdown list.
-  To select or deselect all items use left and right buttons.`</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-describedby</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-invalid</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The aria-invalid state indicates the entered value is not in a format expected by the application.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>clearable</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Allow to clear selected value.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>closeOnSelect</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether to close the menu when a value is selected
-              </td>
-              <td><code>true</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>compareItemsWith</code></td>
-              <td><code>function</code></td>
-              <td>
-                
-                Compare the option values with the selected values. The first argument is a value from an option. The second is a value from the selection(model). A boolean should be returned.
-              </td>
-              <td><code>(a, b) => a === b</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Disabled attr for ng-select
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>disableScrollEnd</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                If true then scrollEnd event should NOT be emitted
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>dropdownPosition</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Dropdown Position (bottom | top | auto)
-              </td>
-              <td><code>'bottom'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>filterItems</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Filter items.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>groupByFn</code></td>
-              <td><code>GroupByFunction</code></td>
-              <td>
-                
-                Allow to group items by key or function expression
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>groupValueFn</code></td>
-              <td><code>(_: string, children: {}) => { name: string; total: any; }</code></td>
-              <td>
-                
-                Function expression to provide group value
-              </td>
-              <td><code>(_: string, children: any[]) => ({
-    name: _,
-    total: children.length,
-  })</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>highlight</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Turn on or turn off bbHighlight directive in child product items
-              </td>
-              <td><code>true</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>internalFiltering</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Enables NgSelect internal filtering functionality
-              </td>
-              <td><code>true</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>items</code></td>
-              <td><code>AccountSelectorItem | AccountSelectorItem[]</code></td>
-              <td>
-                
-                AccountSelectorItems array
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>loading</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Loading state from the outside (async items loading)
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>markFirst</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Marks first item as focused when opening/filtering.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>minTermLength</code></td>
-              <td><code>number</code></td>
-              <td>
-                
-                Minimum term length to start a search. Should be used with typeahead
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>multiple</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Allows to select multiple items
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>notFoundText</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Not found text for ng-select
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>placeholder</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Placeholder text
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>productNumberFormat</code></td>
-              <td><code>PaymentCardNumberFormat</code></td>
-              <td>
-                
-                Configuration of how the product number should be formatted (you can hide or show specific numbers).
-              </td>
-              <td><code>DefaultPaymentCardNumberFormat</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>required</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Enable required validation for ng-select
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>searchable</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Allow to search for value. Default from ng-select is true.
-              </td>
-              <td><code>true</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>searchFunc</code></td>
-              <td><code>Function</code></td>
-              <td>
-                
-                Allow to apply custom search function
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>selectedItems</code></td>
-              <td><code>AccountSelectorItem | AccountSelectorItem[]</code></td>
-              <td>
-                
-                Selected items
-              </td>
-              <td><code>[]</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>showAvailableBalance</code></td>
-              <td><code>BalanceDetailsView</code></td>
-              <td>
-                
-                Property, that determines how balance details should be rendered. Options for this property is described by BalanceDetailsView model: BalanceDetailsView.Booked - only booked balance data is rendered, OOTB behavior; BalanceDetailsView.Available - only available balance data is rendered; BalanceDetailsView.Ordinary - available balance data is rendered as primary with label Available, booked balance as secondary with label Balance; BalanceDetailsView.Reverse  - booked balance data is rendered as primary with label Balance, available balance as secondary with label Available. Default value undefined is the same behavior as BalanceDetailsView.Booked
-              </td>
-              <td><code>undefined</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>showBankBranchCode</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Will show the bank branch code. Defaults to false
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>showCurrencySymbol</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Will show currency Symbol in amount. Default value true
-              </td>
-              <td><code>true</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>showError</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Show the error border around account selector. By default, error message will be visible on invalid and touch state. If user wants to show it on submit or some other scenario, then by passing the value for showError, error borders can be triggered.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>size</code></td>
-              <td><code>AccountSelectorSize</code></td>
-              <td>
-                
-                Set account selector view size
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>typeahead</code></td>
-              <td><code>Subject<string></code></td>
-              <td>
-                
-                Custom autocomplete or advanced filter.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>typeToSearchText</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Set custom text when using Typeahead
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>virtualScroll</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Enables virtual scrolling mechanism
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Outputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Output</th>
-            <th>Type</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>blur</code></td>
-              <td><code>EventEmitter<void></code></td>
-              <td>
-                
-                Emit event when account selector is blurred
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>change</code></td>
-              <td><code>EventEmitter<object | []></code></td>
-              <td>
-                
-                Emitter when item is added to selected items or removed from selected items. When Multiple is true: Output is Items[] When Multuple is false: Output is Item
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>clearSearch</code></td>
-              <td><code>EventEmitter<void></code></td>
-              <td>
-                
-                Emitter when clear search
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>filterChange</code></td>
-              <td><code>EventEmitter<string></code></td>
-              <td>
-                
-                Emitter when filter value is changed
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>focus</code></td>
-              <td><code>EventEmitter<void></code></td>
-              <td>
-                
-                Emit event when account selector is focused
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>remove</code></td>
-              <td><code>EventEmitter<any></code></td>
-              <td>
-                
-                Emitter when item is removed
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>scroll</code></td>
-              <td><code>EventEmitter<literal type></code></td>
-              <td>
-                
-                Emitter when scroll is triggered (will emmit scroll events if virtualScroll is enabled)
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>scrollToEnd</code></td>
-              <td><code>EventEmitter<void></code></td>
-              <td>
-                
-                Emitter when scrollToEnd is triggered
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>search</code></td>
-              <td><code>EventEmitter<string></code></td>
-              <td>
-                
-                Emitter when search is performed. Outputs search term
-              </td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Methods</h2>
-        
-      <div class="method ">
-        <h3>
-          <code>focusEditableElement(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onArrowLeft(): void</code>
-          
-        </h3>
-        <p>Listens for the 'keydown.arrowLeft' event and focuses on the selectAllButton if the ngSelect is open. This method is used to handle the left arrow key press event and focuses on the selectAllButton if the ngSelect dropdown is open.</p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onArrowRight(): void</code>
-          
-        </h3>
-        <p>Listens for the 'keydown.arrowRight' event and focuses on the unselectAllButton if the ngSelect is open. This method is used to handle the right arrow key press event and focuses on the unselectAllButton if the ngSelect dropdown is open.</p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onArrowUpOrDown(): void</code>
-          
-        </h3>
-        <p>Listens to keydown events for the arrowUp and arrowDown keys. Performs certain actions if either selectAllFocused or unselectAllFocused conditions are met. Blurs the corresponding buttons and focuses on various elements.</p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onBlur(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onChange(event: Event | any): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>event</code> (<code>Event | any</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onClear(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onClose(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onEnterKey(): void</code>
-          
-        </h3>
-        <p>Listens for the 'keydown.enter' event and performs actions based on the active element. This method is used to handle the enter key press event and performs actions based on the active element. If the active element is the selectAllButton, it calls the selectAll() method. If the active element is the unselectAllButton, it calls the unselectAll() method.</p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onFilterChange(query: string | undefined): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>query</code> (<code>string | undefined</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onFocus(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onOpen(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onRemove(event: any): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>event</code> (<code>any</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onScroll(position: literal type): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>position</code> (<code>literal type</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onScrollToEnd(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onSearch(event: string | SearchPayload): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>event</code> (<code>string | SearchPayload</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>resetAccountSelectorModel(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>selectAll(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>unselectAll(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      </section>
-    
+    <pre><code>{
+  "module": "AccountSelectorModule",
+  "selector": "bb-account-selector-ui",
+  "description": "Component that provides a select, multiselect and auto complete feature. ### Custom templates AccountSelectorComponent allows providing optional custom templates for the different parts of its view. Below is an example of what a component with all custom templates migh look like: ```typescript                         ``` By default `items` input property has the type `any` to allow any types of items when providing custom item template. If a custom template for items is not provided then `items` internally matches the type `AccountSelectorDefaultItem[]`, which could be imported from `@backbase/ui-ang/account-selector` ### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - aria-describedby will be linked to the account selector component, dropdown list and search box  - aria-invalid will be linked to the search box",
+  "inputs": {
+    "accountSelectorInstructions": {
+      "type": "string",
+      "description": "Instructions for the account selector component. Use this to provide guidance on how to select multiple accounts from a dropdown list. To select or deselect all items use the left and right arrow keys.",
+      "default": "`\n  Account selector component.\n  It allows to select multiple accounts by selecting from a dropdown list.\n  To select or deselect all items use left and right buttons.`"
+    },
+    "aria-describedby": {
+      "type": "string",
+      "description": "Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them."
+    },
+    "aria-invalid": {
+      "type": "string",
+      "description": "The aria-invalid state indicates the entered value is not in a format expected by the application."
+    },
+    "clearable": {
+      "type": "boolean",
+      "description": "Allow to clear selected value.",
+      "default": "false"
+    },
+    "closeOnSelect": {
+      "type": "boolean",
+      "description": "Whether to close the menu when a value is selected",
+      "default": "true"
+    },
+    "compareItemsWith": {
+      "type": "function",
+      "description": "Compare the option values with the selected values. The first argument is a value from an option. The second is a value from the selection(model). A boolean should be returned.",
+      "default": "(a, b) => a === b"
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Disabled attr for ng-select"
+    },
+    "disableScrollEnd": {
+      "type": "boolean",
+      "description": "If true then scrollEnd event should NOT be emitted",
+      "default": "false"
+    },
+    "dropdownPosition": {
+      "type": "string",
+      "description": "Dropdown Position (bottom | top | auto)",
+      "default": "'bottom'"
+    },
+    "filterItems": {
+      "type": "boolean",
+      "description": "Filter items.",
+      "default": "false"
+    },
+    "groupByFn": {
+      "type": "GroupByFunction",
+      "options": "function",
+      "description": "Allow to group items by key or function expression"
+    },
+    "groupValueFn": {
+      "type": "(_: string, children: {}) => { name: string; total: any; }",
+      "description": "Function expression to provide group value",
+      "default": "(_: string, children: any[]) => ({\n    name: _,\n    total: children.length,\n  })"
+    },
+    "highlight": {
+      "type": "boolean",
+      "description": "Turn on or turn off bbHighlight directive in child product items",
+      "default": "true"
+    },
+    "internalFiltering": {
+      "type": "boolean",
+      "description": "Enables NgSelect internal filtering functionality",
+      "default": "true"
+    },
+    "items": {
+      "type": "AccountSelectorItem | AccountSelectorItem[]",
+      "description": "AccountSelectorItems array"
+    },
+    "loading": {
+      "type": "boolean",
+      "description": "Loading state from the outside (async items loading)",
+      "default": "false"
+    },
+    "markFirst": {
+      "type": "boolean",
+      "description": "Marks first item as focused when opening/filtering.",
+      "default": "false"
+    },
+    "minTermLength": {
+      "type": "number",
+      "description": "Minimum term length to start a search. Should be used with typeahead"
+    },
+    "multiple": {
+      "type": "boolean",
+      "description": "Allows to select multiple items",
+      "default": "false"
+    },
+    "notFoundText": {
+      "type": "string",
+      "description": "Not found text for ng-select"
+    },
+    "placeholder": {
+      "type": "string",
+      "description": "Placeholder text",
+      "default": "''"
+    },
+    "productNumberFormat": {
+      "type": "PaymentCardNumberFormat",
+      "description": "Configuration of how the product number should be formatted (you can hide or show specific numbers).",
+      "default": "DefaultPaymentCardNumberFormat"
+    },
+    "required": {
+      "type": "boolean",
+      "description": "Enable required validation for ng-select",
+      "default": "false"
+    },
+    "searchable": {
+      "type": "boolean",
+      "description": "Allow to search for value. Default from ng-select is true.",
+      "default": "true"
+    },
+    "searchFunc": {
+      "type": "Function",
+      "description": "Allow to apply custom search function"
+    },
+    "selectedItems": {
+      "type": "AccountSelectorItem | AccountSelectorItem[]",
+      "description": "Selected items",
+      "default": "[]"
+    },
+    "showAvailableBalance": {
+      "type": "BalanceDetailsView",
+      "description": "Property, that determines how balance details should be rendered. Options for this property is described by BalanceDetailsView model: BalanceDetailsView.Booked - only booked balance data is rendered, OOTB behavior; BalanceDetailsView.Available - only available balance data is rendered; BalanceDetailsView.Ordinary - available balance data is rendered as primary with label Available, booked balance as secondary with label Balance; BalanceDetailsView.Reverse  - booked balance data is rendered as primary with label Balance, available balance as secondary with label Available. Default value undefined is the same behavior as BalanceDetailsView.Booked",
+      "default": "undefined"
+    },
+    "showBankBranchCode": {
+      "type": "boolean",
+      "description": "Will show the bank branch code. Defaults to false",
+      "default": "false"
+    },
+    "showCurrencySymbol": {
+      "type": "boolean",
+      "description": "Will show currency Symbol in amount. Default value true",
+      "default": "true"
+    },
+    "showError": {
+      "type": "boolean",
+      "description": "Show the error border around account selector. By default, error message will be visible on invalid and touch state. If user wants to show it on submit or some other scenario, then by passing the value for showError, error borders can be triggered."
+    },
+    "size": {
+      "type": "AccountSelectorSize",
+      "options": "sm | md",
+      "description": "Set account selector view size"
+    },
+    "typeahead": {
+      "type": "Subject<string>",
+      "description": "Custom autocomplete or advanced filter."
+    },
+    "typeToSearchText": {
+      "type": "string",
+      "description": "Set custom text when using Typeahead"
+    },
+    "virtualScroll": {
+      "type": "boolean",
+      "description": "Enables virtual scrolling mechanism",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "blur": {
+      "type": "EventEmitter<void>",
+      "description": "Emit event when account selector is blurred"
+    },
+    "change": {
+      "type": "EventEmitter<object | []>",
+      "description": "Emitter when item is added to selected items or removed from selected items. When Multiple is true: Output is Items[] When Multuple is false: Output is Item"
+    },
+    "clearSearch": {
+      "type": "EventEmitter<void>",
+      "description": "Emitter when clear search"
+    },
+    "filterChange": {
+      "type": "EventEmitter<string>",
+      "description": "Emitter when filter value is changed"
+    },
+    "focus": {
+      "type": "EventEmitter<void>",
+      "description": "Emit event when account selector is focused"
+    },
+    "remove": {
+      "type": "EventEmitter<any>",
+      "description": "Emitter when item is removed"
+    },
+    "scroll": {
+      "type": "EventEmitter<literal type>",
+      "description": "Emitter when scroll is triggered (will emmit scroll events if virtualScroll is enabled)"
+    },
+    "scrollToEnd": {
+      "type": "EventEmitter<void>",
+      "description": "Emitter when scrollToEnd is triggered"
+    },
+    "search": {
+      "type": "EventEmitter<string>",
+      "description": "Emitter when search is performed. Outputs search term"
+    }
+  },
+  "methods": {
+    "focusEditableElement": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onArrowLeft": {
+      "description": "Listens for the 'keydown.arrowLeft' event and focuses on the selectAllButton if the ngSelect is open. This method is used to handle the left arrow key press event and focuses on the selectAllButton if the ngSelect dropdown is open.",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onArrowRight": {
+      "description": "Listens for the 'keydown.arrowRight' event and focuses on the unselectAllButton if the ngSelect is open. This method is used to handle the right arrow key press event and focuses on the unselectAllButton if the ngSelect dropdown is open.",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onArrowUpOrDown": {
+      "description": "Listens to keydown events for the arrowUp and arrowDown keys. Performs certain actions if either selectAllFocused or unselectAllFocused conditions are met. Blurs the corresponding buttons and focuses on various elements.",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onBlur": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onChange": {
+      "params": [
+        {
+          "name": "event",
+          "type": "Event | any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClear": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClose": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onEnterKey": {
+      "description": "Listens for the 'keydown.enter' event and performs actions based on the active element. This method is used to handle the enter key press event and performs actions based on the active element. If the active element is the selectAllButton, it calls the selectAll() method. If the active element is the unselectAllButton, it calls the unselectAll() method.",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onFilterChange": {
+      "params": [
+        {
+          "name": "query",
+          "type": "string | undefined"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onFocus": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onOpen": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onRemove": {
+      "params": [
+        {
+          "name": "event",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onScroll": {
+      "params": [
+        {
+          "name": "position",
+          "type": "literal type"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onScrollToEnd": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onSearch": {
+      "params": [
+        {
+          "name": "event",
+          "type": "string | SearchPayload"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "resetAccountSelectorModel": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "selectAll": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "unselectAll": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
 </body>
 </html>

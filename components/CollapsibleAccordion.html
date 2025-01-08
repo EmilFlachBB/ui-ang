@@ -12,216 +12,95 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: CollapsibleAccordion</h1>
-    
-    <p>Component that groups Collapsible components to show them in an accordion fashion. It can assure that only one Collapsible panel can be opened at a time.</p>
-    
-    <p><strong>Selector:</strong> <code>bb-collapsible-accordion-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>closeOthers</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Assures that only one Collapsible panel can be opened at a time.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>obeyParentAccordion</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                When true the Accordion will inherit the parent Accordion behaviour.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>openFirst</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                When true displays the first panel on load.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
-      <section class="doc-section">
-        <h2>Methods</h2>
-        
-      <div class="method ">
-        <h3>
-          <code>collapseAll(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>expandAll(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>registerNestedAccordion(childAccordion: CollapsibleAccordionComponent): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>childAccordion</code> (<code>CollapsibleAccordionComponent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>registerNestedPanel(panel: ICollapsible): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>panel</code> (<code>ICollapsible</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>unregisterNestedAccordion(childAccordion: CollapsibleAccordionComponent): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>childAccordion</code> (<code>CollapsibleAccordionComponent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>unregisterNestedPanel(panel: ICollapsible): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>panel</code> (<code>ICollapsible</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      </section>
-    
+    <pre><code>{
+  "module": "CollapsibleAccordionModule",
+  "selector": "bb-collapsible-accordion-ui",
+  "description": "Component that groups Collapsible components to show them in an accordion fashion. It can assure that only one Collapsible panel can be opened at a time.",
+  "inputs": {
+    "closeOthers": {
+      "type": "boolean",
+      "description": "Assures that only one Collapsible panel can be opened at a time.",
+      "default": "false"
+    },
+    "obeyParentAccordion": {
+      "type": "boolean",
+      "description": "When true the Accordion will inherit the parent Accordion behaviour."
+    },
+    "openFirst": {
+      "type": "boolean",
+      "description": "When true displays the first panel on load.",
+      "default": "false"
+    }
+  },
+  "methods": {
+    "collapseAll": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "expandAll": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerNestedAccordion": {
+      "params": [
+        {
+          "name": "childAccordion",
+          "type": "CollapsibleAccordionComponent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerNestedPanel": {
+      "params": [
+        {
+          "name": "panel",
+          "type": "ICollapsible"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "unregisterNestedAccordion": {
+      "params": [
+        {
+          "name": "childAccordion",
+          "type": "CollapsibleAccordionComponent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "unregisterNestedPanel": {
+      "params": [
+        {
+          "name": "panel",
+          "type": "ICollapsible"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
 </body>
 </html>

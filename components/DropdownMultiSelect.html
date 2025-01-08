@@ -12,641 +12,320 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: DropdownMultiSelect</h1>
-    
-    <p>Component that use for DropDown Multi Select.</p>
-    
-    <p><strong>Selector:</strong> <code>bb-dropdown-multi-select-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>container</code></td>
-              <td><code>string | "body"</code></td>
-              <td>
-                
-                Specifies which element the dropdown should be appended to.
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>dropdownHeaderText</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                The dropdown header text.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>dropdownPosition</code></td>
-              <td><code>PlacementArray</code></td>
-              <td>
-                
-                The position of the dropdown
-              </td>
-              <td><code>['bottom-end', 'bottom-start', 'top-end', 'top-start']</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>filtering</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Enable filtering; Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>label</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The label for the Dropdown multi select. Defaults to an empty string.
-              </td>
-              <td><code>''</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>placeholder</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The placeholder for the multi select.
-              </td>
-              <td><code>'No items selected'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>readonly</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether the Dropdown multi select is read only. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-activedescendant</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                It identifies the currently active element when focus is on a composite widget, combobox, textbox, group, or application.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-autocomplete</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                It indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-controls</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                When an interactive or input control has an impact on another element in a document or application, the aria-control indicates which element or elements the user interface widget controls.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-describedby</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-expanded</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or not its child elements are displayed or hidden.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-invalid</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The aria-invalid state indicates the entered value is not in a format expected by the application.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-label</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Accessible label when control does not need to render label tag.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-labelledby</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The aria-labelledby property enables authors to reference other elements on the page to define an accessible name. This is useful when using elements that don't have native support for associating elements to provide an accessible name.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>aria-owns</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The aria-owns attribute identifies an element (or elements) in order to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>autofocus</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether the text input should be auto-focused when shown.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>disabled</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether the component is mutable or clickable. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>id</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The id for the input. Defaults to unique string. Used to map the label to the input.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>inputClassName</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Class names that must be included on the &lt;input&gt; form control
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>required</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Whether the input is required. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>role</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                Customize the ARIA role for the HTML input/select/textarea element inside this component. This can be used to improve accessibility for components, for example by configuring [role]=&quot;'combobox'&quot; for a component that provides an autocomplete list. Values that are valid for the native HTML form elements are allowed.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>size</code></td>
-              <td><code>number | string</code></td>
-              <td>
-                
-                Configure the minimum width to fit the specified number of characters that should fit for HTML &lt;input&gt;
-              </td>
-              <td>-</td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Outputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Output</th>
-            <th>Type</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>blur</code></td>
-              <td><code>EventEmitter</code></td>
-              <td>
-                
-                An event emitter for on blur actions.
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>focus</code></td>
-              <td><code>EventEmitter</code></td>
-              <td>
-                
-                An event emitter for on focus actions.
-              </td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Methods</h2>
-        
-      <div class="method ">
-        <h3>
-          <code>clearAll($event: Event): void</code>
-          
-        </h3>
-        <p>Unselect all selected options from the listbox</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>$event</code> (<code>Event</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>getLabel(label: string): string</code>
-          
-        </h3>
-        <p>Updating labels while searching</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>label</code> (<code>string</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>getLabeledByIds(tokens: Array<string | undefined>): string | undefined</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>tokens</code> (<code>Array<string | undefined></code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onDropdownToggle(isOpen: boolean): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>isOpen</code> (<code>boolean</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onFocusOut(event: FocusEvent): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>event</code> (<code>FocusEvent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onListboxBlur(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onListboxFocus(): void</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onListboxKeyDown(event: KeyboardEvent): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>event</code> (<code>KeyboardEvent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>trackByValueFn(_: number, item: DropdownMultiSelectOptionComponent): any</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>_</code> (<code>number</code>): undefined</li>
-            
-              <li><code>item</code> (<code>DropdownMultiSelectOptionComponent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>writeValue(value: string[] | null): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>value</code> (<code>string[] | null</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>getSizeByKeyword(arg: any): number | undefined</code>
-          
-        </h3>
-        <p>Returns the `input` `size` value for a keyword, such as "xxl". Subclasses can choose to implement a custom mapping, which will be used to configure `size`.</p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>arg</code> (<code>any</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onBlur($event: FocusEvent): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>$event</code> (<code>FocusEvent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onFocus($event: FocusEvent): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>$event</code> (<code>FocusEvent</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onValueChange(newValue: Object | string): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>newValue</code> (<code>Object | string</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>registerOnChange(fn: function): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>fn</code> (<code>function</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>registerOnTouched(fn: function): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>fn</code> (<code>function</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>setDisabledState(isDisabled: boolean): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>isDisabled</code> (<code>boolean</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      </section>
-    
+    <pre><code>{
+  "module": "DropdownMultiSelectModule",
+  "selector": "bb-dropdown-multi-select-ui",
+  "description": "Component that use for DropDown Multi Select.",
+  "inputs": {
+    "container": {
+      "type": "string | \"body\"",
+      "description": "Specifies which element the dropdown should be appended to.",
+      "default": "''"
+    },
+    "dropdownHeaderText": {
+      "type": "string | undefined",
+      "description": "The dropdown header text."
+    },
+    "dropdownPosition": {
+      "type": "PlacementArray",
+      "description": "The position of the dropdown",
+      "default": "['bottom-end', 'bottom-start', 'top-end', 'top-start']"
+    },
+    "filtering": {
+      "type": "boolean",
+      "description": "Enable filtering; Defaults to false.",
+      "default": "false"
+    },
+    "label": {
+      "type": "string",
+      "description": "The label for the Dropdown multi select. Defaults to an empty string.",
+      "default": "''"
+    },
+    "placeholder": {
+      "type": "string",
+      "description": "The placeholder for the multi select.",
+      "default": "'No items selected'"
+    },
+    "readonly": {
+      "type": "boolean",
+      "description": "Whether the Dropdown multi select is read only. Defaults to false.",
+      "default": "false"
+    },
+    "aria-activedescendant": {
+      "type": "string",
+      "description": "It identifies the currently active element when focus is on a composite widget, combobox, textbox, group, or application."
+    },
+    "aria-autocomplete": {
+      "type": "string",
+      "description": "It indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox."
+    },
+    "aria-controls": {
+      "type": "string",
+      "description": "When an interactive or input control has an impact on another element in a document or application, the aria-control indicates which element or elements the user interface widget controls."
+    },
+    "aria-describedby": {
+      "type": "string",
+      "description": "Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them."
+    },
+    "aria-expanded": {
+      "type": "string",
+      "description": "The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or not its child elements are displayed or hidden."
+    },
+    "aria-invalid": {
+      "type": "string",
+      "description": "The aria-invalid state indicates the entered value is not in a format expected by the application."
+    },
+    "aria-label": {
+      "type": "string",
+      "description": "Accessible label when control does not need to render label tag."
+    },
+    "aria-labelledby": {
+      "type": "string",
+      "description": "The aria-labelledby property enables authors to reference other elements on the page to define an accessible name. This is useful when using elements that don't have native support for associating elements to provide an accessible name."
+    },
+    "aria-owns": {
+      "type": "string",
+      "description": "The aria-owns attribute identifies an element (or elements) in order to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship."
+    },
+    "autofocus": {
+      "type": "boolean",
+      "description": "Whether the text input should be auto-focused when shown.",
+      "default": "false"
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Whether the component is mutable or clickable. Defaults to false.",
+      "default": "false"
+    },
+    "id": {
+      "type": "string",
+      "description": "The id for the input. Defaults to unique string. Used to map the label to the input."
+    },
+    "inputClassName": {
+      "type": "string",
+      "description": "Class names that must be included on the &lt;input&gt; form control"
+    },
+    "required": {
+      "type": "boolean",
+      "description": "Whether the input is required. Defaults to false.",
+      "default": "false"
+    },
+    "role": {
+      "type": "string | undefined",
+      "description": "Customize the ARIA role for the HTML input/select/textarea element inside this component. This can be used to improve accessibility for components, for example by configuring [role]=&quot;'combobox'&quot; for a component that provides an autocomplete list. Values that are valid for the native HTML form elements are allowed."
+    },
+    "size": {
+      "type": "number | string",
+      "description": "Configure the minimum width to fit the specified number of characters that should fit for HTML &lt;input&gt;"
+    }
+  },
+  "outputs": {
+    "blur": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on blur actions."
+    },
+    "focus": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on focus actions."
+    }
+  },
+  "methods": {
+    "clearAll": {
+      "description": "Unselect all selected options from the listbox",
+      "params": [
+        {
+          "name": "$event",
+          "type": "Event"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "getLabel": {
+      "description": "Updating labels while searching",
+      "params": [
+        {
+          "name": "label",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "type": "string"
+      }
+    },
+    "getLabeledByIds": {
+      "params": [
+        {
+          "name": "tokens",
+          "type": "Array<string | undefined>"
+        }
+      ],
+      "returns": {
+        "type": "string | undefined"
+      }
+    },
+    "onDropdownToggle": {
+      "params": [
+        {
+          "name": "isOpen",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onFocusOut": {
+      "params": [
+        {
+          "name": "event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onListboxBlur": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onListboxFocus": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onListboxKeyDown": {
+      "params": [
+        {
+          "name": "event",
+          "type": "KeyboardEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "trackByValueFn": {
+      "params": [
+        {
+          "name": "_",
+          "type": "number"
+        },
+        {
+          "name": "item",
+          "type": "DropdownMultiSelectOptionComponent"
+        }
+      ],
+      "returns": {
+        "type": "any"
+      }
+    },
+    "writeValue": {
+      "params": [
+        {
+          "name": "value",
+          "type": "string[] | null"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "getSizeByKeyword": {
+      "description": "Returns the `input` `size` value for a keyword, such as \"xxl\". Subclasses can choose to implement a custom mapping, which will be used to configure `size`.",
+      "params": [
+        {
+          "name": "arg",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "number | undefined"
+      }
+    },
+    "onBlur": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onFocus": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onValueChange": {
+      "params": [
+        {
+          "name": "newValue",
+          "type": "Object | string"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnChange": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnTouched": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "setDisabledState": {
+      "params": [
+        {
+          "name": "isDisabled",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
 </body>
 </html>

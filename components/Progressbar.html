@@ -12,173 +12,64 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: Progressbar</h1>
-    
-    <p>Component that represents the progress of a task.</p>
-    
-    <p><strong>Selector:</strong> <code>bb-progressbar-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>animated</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                A flag indicating if the stripes of the progress bar should be animated. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>ariaLabel</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Accessible label for the progressbar.
-              </td>
-              <td><code>'progress bar'</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>height</code></td>
-              <td><code>string | undefined</code></td>
-              <td>
-                
-                Height of the progress bar. Can take values in px, em, rem.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>max</code></td>
-              <td><code>number</code></td>
-              <td>
-                
-                Maximum value of the progressbar. Defaults to 100.
-              </td>
-              <td><code>100</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>showValue</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                A flag indicating if the current value should be displayed within the progressbar. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>striped</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                A flag indicating if the progress bar should be striped. Defaults to false.
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>type</code></td>
-              <td><code>ProgressbarType | undefined</code></td>
-              <td>
-                
-                Type of progress bar. Takes the values primary, success, info, warning &amp; danger.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>value</code></td>
-              <td><code>number</code></td>
-              <td>
-                
-                Current value of the progressbar. Should always be less or equal to max. Defaults to 0.
-              </td>
-              <td><code>0</code></td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
+    <pre><code>{
+  "module": "ProgressbarModule",
+  "selector": "bb-progressbar-ui",
+  "description": "Component that represents the progress of a task.",
+  "inputs": {
+    "animated": {
+      "type": "boolean",
+      "description": "A flag indicating if the stripes of the progress bar should be animated. Defaults to false.",
+      "default": "false"
+    },
+    "ariaLabel": {
+      "type": "string",
+      "description": "Accessible label for the progressbar.",
+      "default": "'progress bar'"
+    },
+    "height": {
+      "type": "string | undefined",
+      "description": "Height of the progress bar. Can take values in px, em, rem."
+    },
+    "max": {
+      "type": "number",
+      "description": "Maximum value of the progressbar. Defaults to 100.",
+      "default": "100"
+    },
+    "showValue": {
+      "type": "boolean",
+      "description": "A flag indicating if the current value should be displayed within the progressbar. Defaults to false.",
+      "default": "false"
+    },
+    "striped": {
+      "type": "boolean",
+      "description": "A flag indicating if the progress bar should be striped. Defaults to false.",
+      "default": "false"
+    },
+    "type": {
+      "type": "ProgressbarType | undefined",
+      "options": "primary | success | info | warning | danger",
+      "description": "Type of progress bar. Takes the values primary, success, info, warning &amp; danger."
+    },
+    "value": {
+      "type": "number",
+      "description": "Current value of the progressbar. Should always be less or equal to max. Defaults to 0.",
+      "default": "0"
+    }
+  }
+}</code></pre>
 </body>
 </html>

@@ -12,188 +12,66 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: ModalFooter</h1>
-    
-    
-    
-    <p><strong>Selector:</strong> <code>bb-modal-footer-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>cancelText</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The text of the cancel button.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>confirmText</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                The text of the confirm button.
-              </td>
-              <td>-</td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Outputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Output</th>
-            <th>Type</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>cancel</code></td>
-              <td><code>EventEmitter</code></td>
-              <td>
-                
-                The event that's fired after cancel button is pressed. Can be used with (click)=&quot;dialogRef.onCancel()&quot; where dialogRef is a templateRef on &lt;bb-dialog-ui #dialogRef /&gt;
-              </td>
-            </tr>
-          
-            <tr >
-              <td><code>confirm</code></td>
-              <td><code>EventEmitter</code></td>
-              <td>
-                
-                The event that's fired after confirm button is pressed. Can be used with (click)=&quot;dialogRef.onConfirm()&quot; where dialogRef is a templateRef on &lt;bb-dialog-ui #dialogRef /&gt;
-              </td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-      <section class="doc-section">
-        <h2>Methods</h2>
-        
-      <div class="method ">
-        <h3>
-          <code>onCancel($event: any): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>$event</code> (<code>any</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>onConfirm($event: any): void</code>
-          
-        </h3>
-        <p></p>
-        
-          <h4>Parameters:</h4>
-          <ul>
-            
-              <li><code>$event</code> (<code>any</code>): undefined</li>
-            
-          </ul>
-        
-        
-      </div>
-    
-      </section>
-    
+    <pre><code>{
+  "module": "ModalFooterModule",
+  "selector": "bb-modal-footer-ui",
+  "inputs": {
+    "cancelText": {
+      "type": "string",
+      "description": "The text of the cancel button."
+    },
+    "confirmText": {
+      "type": "string",
+      "description": "The text of the confirm button."
+    }
+  },
+  "outputs": {
+    "cancel": {
+      "type": "EventEmitter",
+      "description": "The event that's fired after cancel button is pressed. Can be used with (click)=&quot;dialogRef.onCancel()&quot; where dialogRef is a templateRef on &lt;bb-dialog-ui #dialogRef /&gt;"
+    },
+    "confirm": {
+      "type": "EventEmitter",
+      "description": "The event that's fired after confirm button is pressed. Can be used with (click)=&quot;dialogRef.onConfirm()&quot; where dialogRef is a templateRef on &lt;bb-dialog-ui #dialogRef /&gt;"
+    }
+  },
+  "methods": {
+    "onCancel": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onConfirm": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
 </body>
 </html>

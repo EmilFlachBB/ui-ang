@@ -12,74 +12,33 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Pipe: PresetTitle</h1>
-    
-    
-    
-    
-    
-    
-    
-    
+    <pre><code>{
+  "ngname": "presetTitle",
+  "transform": {
+    "params": [
+      {
+        "name": "value",
+        "type": "EmptyStatePresetType",
+        "options": "unknown_error_personal | consents | sweeps | batches | payment_not_found | transactions | budgets | permissions | upcoming_payments | results_found | notifications | unknown_error_organisation | cards | cashflow | data_found | no_internet | location | user | pockets | insights | transaction_limits | no_contacts | no_conversations | nothing_to_approve | operation_timeout"
+      }
+    ],
+    "returns": {
+      "type": "any"
+    }
+  }
+}</code></pre>
 </body>
 </html>

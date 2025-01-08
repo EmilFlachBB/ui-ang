@@ -12,143 +12,45 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Directive: ValueDiff</h1>
-    
-    
-    
-    
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>bbValueDiff</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                New data with which we will compare content.
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>position</code></td>
-              <td><code>ValueDiffPosition</code></td>
-              <td>
-                
-                A position where differences will be added. Default value: 'before'
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>showArrow</code></td>
-              <td><code>boolean</code></td>
-              <td>
-                
-                Show arrow between old and new value Default value: false
-              </td>
-              <td><code>false</code></td>
-            </tr>
-          
-            <tr >
-              <td><code>sr-only-new</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Text for screen reader to describe new value Default value: 'Current value:'
-              </td>
-              <td>-</td>
-            </tr>
-          
-            <tr >
-              <td><code>sr-only-old</code></td>
-              <td><code>string</code></td>
-              <td>
-                
-                Text for screen reader to describe old value Default value: 'Previous value:'
-              </td>
-              <td>-</td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
+    <pre><code>{
+  "module": "ValueDiffModule",
+  "directive": "bbValueDiff",
+  "inputs": {
+    "bbValueDiff": {
+      "type": "string",
+      "description": "New data with which we will compare content."
+    },
+    "position": {
+      "type": "ValueDiffPosition",
+      "description": "A position where differences will be added. Default value: 'before'"
+    },
+    "showArrow": {
+      "type": "boolean",
+      "description": "Show arrow between old and new value Default value: false",
+      "default": "false"
+    },
+    "sr-only-new": {
+      "type": "string",
+      "description": "Text for screen reader to describe new value Default value: 'Current value:'"
+    },
+    "sr-only-old": {
+      "type": "string",
+      "description": "Text for screen reader to describe old value Default value: 'Previous value:'"
+    }
+  }
+}</code></pre>
 </body>
 </html>

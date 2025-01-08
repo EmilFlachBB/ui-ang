@@ -12,128 +12,42 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
         }
-        code {
+        pre {
             background: #f5f5f5;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        .deprecated {
-            opacity: 0.7;
-        }
-        .badge {
-            background: #ff5252;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .doc-section {
-            margin: 2em 0;
-        }
-        .method {
-            margin: 2em 0;
-            padding: 1em;
-            background: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
-        }
-        h1 { color: #2196f3; }
-        h2 { 
-            color: #1976d2;
-            border-bottom: 2px solid #1976d2;
-            padding-bottom: 0.3em;
+            overflow-x: auto;
         }
         a { color: #2196f3; }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1em;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-link">← Back to Index</a>
+    <a href="../index.html">← Back to Index</a>
     <h1>Component: ActionStatus</h1>
-    
-    <p>Component that displays a loading indicator or icon to indicate an action response.</p>
-    
-    <p><strong>Selector:</strong> <code>bb-action-status-ui</code></p>
-    
-    
-      <section class="doc-section">
-        <h2>Inputs</h2>
-        
-      <table>
-        <thead>
-          <tr>
-            <th>Input</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr >
-              <td><code>state</code></td>
-              <td><code>ActionState</code></td>
-              <td>
-                
-                The current state of the action.
-              </td>
-              <td>-</td>
-            </tr>
-          
-        </tbody>
-      </table>
-    
-      </section>
-    
-    
-    
-      <section class="doc-section">
-        <h2>Methods</h2>
-        
-      <div class="method ">
-        <h3>
-          <code>getColor(): string | undefined</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      <div class="method ">
-        <h3>
-          <code>isLoading(): boolean</code>
-          
-        </h3>
-        <p></p>
-        
-        
-      </div>
-    
-      </section>
-    
+    <pre><code>{
+  "module": "ActionStatusModule",
+  "selector": "bb-action-status-ui",
+  "description": "Component that displays a loading indicator or icon to indicate an action response.",
+  "inputs": {
+    "state": {
+      "type": "ActionState",
+      "options": "loading | success | info | warning | error | message",
+      "description": "The current state of the action."
+    }
+  },
+  "methods": {
+    "getColor": {
+      "returns": {
+        "type": "string | undefined"
+      }
+    },
+    "isLoading": {
+      "returns": {
+        "type": "boolean"
+      }
+    }
+  }
+}</code></pre>
 </body>
 </html>
