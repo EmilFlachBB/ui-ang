@@ -1,0 +1,25 @@
+{
+  "module": "HighlightModule",
+  "directive": "bbHighlight",
+  "description": "Directive that encapsulate logic for highlighting positive/negative numbers. Example usage with bb-amount-ui (AmountModule)",
+  "inputs": {
+    "amount": {
+      "type": "string | number",
+      "description": "Setter (Input) for value of highlighted number"
+    },
+    "bbHighlight": {
+      "type": "boolean | string",
+      "description": "Setter (Input) that turn on/off highlight"
+    },
+    "negativeClass": {
+      "type": "string",
+      "description": "The class for positive value.",
+      "default": "DEFAULT_NEGATIVE_CLASS"
+    },
+    "positiveClass": {
+      "type": "string",
+      "description": "The class for negative value.",
+      "default": "DEFAULT_POSITIVE_CLASS"
+    }
+  }
+}

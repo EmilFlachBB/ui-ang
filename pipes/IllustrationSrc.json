@@ -1,0 +1,22 @@
+{
+  "ngname": "illustrationSrc",
+  "transform": {
+    "params": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "assetPath",
+        "type": "string"
+      },
+      {
+        "name": "fileType",
+        "type": "string"
+      }
+    ],
+    "returns": {
+      "type": "string"
+    }
+  }
+}

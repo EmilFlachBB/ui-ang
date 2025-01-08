@@ -1,0 +1,10 @@
+{
+  "module": "InputRangeMinModule",
+  "directive": "bbInputRangeMin",
+  "inputs": {
+    "bbInputRangeMin": {
+      "type": "number",
+      "description": "Minimum possible value (optional);"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "module": "TableFocusModule",
+  "directive": "bbTableFocus",
+  "inputs": {
+    "focusFirstRowOnChanges": {
+      "type": "boolean",
+      "default": "false"
+    }
+  },
+  "methods": {
+    "onKeyEvent": {
+      "params": [
+        {
+          "name": "event",
+          "type": "KeyboardEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

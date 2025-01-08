@@ -1,0 +1,14 @@
+{
+  "ngname": "illustrationAlt",
+  "transform": {
+    "params": [
+      {
+        "name": "text",
+        "type": "string"
+      }
+    ],
+    "returns": {
+      "type": "any"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "module": "MinDateValidatorModule",
+  "directive": "minDate",
+  "inputs": {
+    "minDate": {
+      "type": "string | NgbDateStruct | undefined"
+    }
+  },
+  "methods": {
+    "registerOnValidatorChange": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "validate": {
+      "params": [
+        {
+          "name": "control",
+          "type": "AbstractControl"
+        }
+      ],
+      "returns": {
+        "type": "ValidationErrors | null"
+      }
+    }
+  }
+}

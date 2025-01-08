@@ -1,0 +1,27 @@
+{
+  "module": "DigitOnlyModule",
+  "directive": "bbDigitOnly",
+  "inputs": {
+    "allowNegativeSign": {
+      "type": "boolean",
+      "default": "false"
+    },
+    "bbDigitOnly": {
+      "type": "boolean",
+      "default": "true"
+    }
+  },
+  "methods": {
+    "onKeyDown": {
+      "params": [
+        {
+          "name": "e",
+          "type": "KeyboardEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

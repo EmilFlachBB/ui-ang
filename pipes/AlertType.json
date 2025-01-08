@@ -1,0 +1,15 @@
+{
+  "ngname": "alertType",
+  "transform": {
+    "params": [
+      {
+        "name": "alertModifier",
+        "type": "AlertType",
+        "options": "warning | error | success | info"
+      }
+    ],
+    "returns": {
+      "type": "any"
+    }
+  }
+}

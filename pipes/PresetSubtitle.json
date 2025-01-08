@@ -1,0 +1,15 @@
+{
+  "ngname": "presetSubtitle",
+  "transform": {
+    "params": [
+      {
+        "name": "value",
+        "type": "EmptyStatePresetType",
+        "options": "unknown_error_personal | consents | sweeps | batches | payment_not_found | transactions | budgets | permissions | upcoming_payments | results_found | notifications | unknown_error_organisation | cards | cashflow | data_found | no_internet | location | user | pockets | insights | transaction_limits | no_contacts | no_conversations | nothing_to_approve | operation_timeout"
+      }
+    ],
+    "returns": {
+      "type": "any"
+    }
+  }
+}

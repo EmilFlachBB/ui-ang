@@ -1,0 +1,18 @@
+{
+  "ngname": "bbAmountInputCurrencyRemap",
+  "transform": {
+    "params": [
+      {
+        "name": "currency",
+        "type": "string"
+      },
+      {
+        "name": "mapCurrency",
+        "type": "boolean"
+      }
+    ],
+    "returns": {
+      "type": "any"
+    }
+  }
+}

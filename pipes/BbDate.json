@@ -1,0 +1,33 @@
+{
+  "ngname": "bbDate",
+  "description": "Pipe for formatting dates ### Locale token `LOCALE_ID` enables you to globally set the same locale for all instances of `bbDatePipe` in your project. Refer to https://angular.io/api/core/LOCALE_ID for more information. ### Default timezone and format option `DATE_PIPE_DEFAULT_OPTIONS` enables you to globally set the default timezone and date format for all instances of `bbDatePipe` in your project. Refer to https://angular.io/api/common/DATE_PIPE_DEFAULT_OPTIONS for more information. ### Format configuration token `DATE_PIPE_CONFIG` enables to globally setup format for all instances of `bbDatePipe` in your project. The following is an example of how to use the token: ```typescript  import { DATE_PIPE_CONFIG, DateFormat } from '@backbase/ui-ang/date-pipe';  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';  import { AppModule } from './app/app.module';  platformBrowserDynamic().bootstrapModule(AppModule, {    providers: [{ provide: DATE_PIPE_CONFIG, useValue: DateFormat.short }]  }); ```",
+  "transform": {
+    "description": "Depending on format type, formats a date Custom format is called with bbShort, and formats to 'MMMM d, y at HH:mm', otherwise uses the predifined angular formats",
+    "params": [
+      {
+        "name": "value",
+        "type": "any",
+        "description": "the date that should be formatted"
+      },
+      {
+        "name": "format",
+        "description": "the format type for the date to be formatted",
+        "default": "this.dateFormatConfig?.format ?? this.defaultOptions?.dateFormat ?? 'mediumDate'"
+      },
+      {
+        "name": "timezone",
+        "type": "string | undefined",
+        "description": "used for formatting the time",
+        "default": "this.defaultOptions?.timezone"
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "description": "locale to use for formatting"
+      }
+    ],
+    "returns": {
+      "type": "string | null"
+    }
+  }
+}

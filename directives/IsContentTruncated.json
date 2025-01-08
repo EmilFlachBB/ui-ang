@@ -1,0 +1,9 @@
+{
+  "module": "IsContentTruncatedModule",
+  "directive": "bbIsContentTruncated",
+  "inputs": {
+    "hostRef": {
+      "type": "CheckContentTruncationBehaviour"
+    }
+  }
+}

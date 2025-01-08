@@ -1,0 +1,17 @@
+{
+  "ngname": "bbIban",
+  "description": "Pipe for formatting iban",
+  "transform": {
+    "description": "Splits the iban up with spaces Applies global numbers format configuration for IBAN attribute type",
+    "params": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "the iban that should be formatted"
+      }
+    ],
+    "returns": {
+      "type": "string"
+    }
+  }
+}

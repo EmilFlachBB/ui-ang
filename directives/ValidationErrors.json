@@ -1,0 +1,38 @@
+{
+  "module": "ValidationErrorsModule",
+  "directive": "bbFormControl",
+  "inputs": {
+    "errorComponent": {
+      "type": "Type<ValidationErrorComponentModel>",
+      "description": "Custom component for error message. Use only if you need to set custom component for specific control. To specify custom component for all form errors use BB_DYNAMIC_ERROR_TMPL InjectionToken.",
+      "default": "this.errorTmpl"
+    },
+    "errorLabels": {
+      "type": "PlainObject<string>",
+      "description": "Custom error labels object. Use only if you need to set custom error labels for specific control. To specify custom error labels for entire form use BB_VALIDATION_ERRORS InjectionToken.",
+      "default": "{}"
+    },
+    "inputSelector": {
+      "type": "string",
+      "description": "Selector to indicate the control in which aria-describedby should be set.",
+      "default": "'.form-control'"
+    },
+    "label": {
+      "type": "string | null",
+      "description": "Input label",
+      "default": "null"
+    },
+    "showError": {
+      "type": "() => boolean",
+      "description": "Custom function to specify when errors should be shown. By default will be shown when control is invalid.",
+      "default": "this.showErrorDefault"
+    }
+  },
+  "methods": {
+    "onElBlur": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

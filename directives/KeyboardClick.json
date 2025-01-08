@@ -1,0 +1,35 @@
+{
+  "module": "KeyboardClickModule",
+  "directive": "bbKeyboardClick",
+  "description": "Directive that add click/keydown.enter/keydown.space events on element Used for adding accessibility(tab navigation events) for element",
+  "outputs": {
+    "bbKeyboardClick": {
+      "type": "EventEmitter",
+      "description": "Stream that should be fired on click/keydown.enter/keydown.space"
+    }
+  },
+  "methods": {
+    "onActionKeyPressed": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "KeyboardEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClicked": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "MouseEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

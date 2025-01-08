@@ -1,0 +1,12 @@
+{
+  "module": "FocusInvalidInputModule",
+  "directive": "bbFocusInvalidInput",
+  "description": "Directive to focus the first invalid form input.",
+  "methods": {
+    "onFormSubmit": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

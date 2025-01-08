@@ -1,0 +1,9 @@
+{
+  "module": "ElementViewInitModule",
+  "directive": "bbElementViewInit",
+  "outputs": {
+    "bbElementViewInit": {
+      "type": "EventEmitter"
+    }
+  }
+}

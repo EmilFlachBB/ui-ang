@@ -1,0 +1,4 @@
+{
+  "module": "ControlErrorContainerModule",
+  "directive": "bbControlErrorContainer"
+}

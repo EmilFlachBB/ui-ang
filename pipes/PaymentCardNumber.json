@@ -1,0 +1,28 @@
+{
+  "ngname": "paymentCardNumber",
+  "description": "A card number is the digit identifier found on payment cards, such as credit cards and debit cards. This card number prefix identifies the issuer of the card, and the digits that follow are used by the issuing organization, such as a bank, to identify the cardholder as a customer with their designated accounts. ### Numbers masking synchronization token It is possible to enable numbers masking synchronization with backend. If set to `true` FE does not apply any masking and relies on the backend masking behavior. To enable this feaure the `SYNCHRONIZE_NUMBERS_MASKING` token should be provided. For example: ```typescript  // other imports  import { SYNCHRONIZE_NUMBERS_MASKING } from '@backbase/ui-ang/payment-card-number-pipe';  @NgModule({    //...    providers: [      //...      { provide: SYNCHRONIZE_NUMBERS_MASKING, useValue: true }    ]  })  export class AppModule {}  ```",
+  "transform": {
+    "description": "Formats a card number, mask it and split it into segments - do not set config parameter to use with a global accountsFormat configuration - use config parameter to apply a custom accountsFormat configuration",
+    "params": [
+      {
+        "name": "value",
+        "type": "string | number",
+        "description": "the string to transform"
+      },
+      {
+        "name": "config",
+        "type": "PaymentCardNumberFormat",
+        "description": "the formatting configuration"
+      },
+      {
+        "name": "maskChar",
+        "type": "string",
+        "description": "the character to mask with, deprecated from 6.0.0",
+        "default": "'•'"
+      }
+    ],
+    "returns": {
+      "type": "string"
+    }
+  }
+}
