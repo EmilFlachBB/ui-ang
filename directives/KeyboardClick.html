@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directive: KeyboardClick - UI-Ang Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to Index</a>
+    <h1>Directive: KeyboardClick</h1>
+    <pre><code>{
+  "module": "KeyboardClickModule",
+  "directive": "bbKeyboardClick",
+  "description": "Directive that add click/keydown.enter/keydown.space events on element Used for adding accessibility(tab navigation events) for element",
+  "outputs": {
+    "bbKeyboardClick": {
+      "type": "EventEmitter",
+      "description": "Stream that should be fired on click/keydown.enter/keydown.space"
+    }
+  },
+  "methods": {
+    "onActionKeyPressed": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "KeyboardEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClicked": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "MouseEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
+</body>
+</html>

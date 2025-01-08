@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: ActionStatus - UI-Ang Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to Index</a>
+    <h1>Component: ActionStatus</h1>
+    <pre><code>{
+  "module": "ActionStatusModule",
+  "selector": "bb-action-status-ui",
+  "description": "Component that displays a loading indicator or icon to indicate an action response.",
+  "inputs": {
+    "state": {
+      "type": "ActionState",
+      "options": "loading | success | info | warning | error | message",
+      "description": "The current state of the action."
+    }
+  },
+  "methods": {
+    "getColor": {
+      "returns": {
+        "type": "string | undefined"
+      }
+    },
+    "isLoading": {
+      "returns": {
+        "type": "boolean"
+      }
+    }
+  }
+}</code></pre>
+</body>
+</html>

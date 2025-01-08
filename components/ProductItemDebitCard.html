@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: ProductItemDebitCard - UI-Ang Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to Index</a>
+    <h1>Component: ProductItemDebitCard</h1>
+    <pre><code>{
+  "module": "ProductItemDebitCardModule",
+  "selector": "bb-product-item-debit-card-ui",
+  "description": "A component that renders a styled-container or card for debit card.",
+  "inputs": {
+    "active": {
+      "type": "boolean",
+      "description": "Whether the card should have a check icon. Defaults to true.",
+      "default": "true"
+    },
+    "favorite": {
+      "type": "boolean",
+      "description": "Whether the card should be marked as favourite. Defaults to false.",
+      "default": "false"
+    },
+    "favoriteIconColor": {
+      "type": "string",
+      "description": "The color of the favourite icon when favorite=true. Defaults to primary.",
+      "default": "'primary'"
+    },
+    "highlight": {
+      "type": "boolean",
+      "description": "Whether the amount and currency value should be highlighted."
+    },
+    "productDetailsInfo": {
+      "type": "Record<string | any>",
+      "description": "The product details information."
+    },
+    "productNumber": {
+      "type": "string",
+      "description": "The product number."
+    },
+    "productNumberFormat": {
+      "type": "PaymentCardNumberFormat",
+      "description": "Configuration of how the product number should be formatted. Defaults to the following format: { length: 16, maskRange: [0, 12], segments: 4 }",
+      "default": "DefaultPaymentCardNumberFormat"
+    },
+    "title": {
+      "type": "string",
+      "description": "The card title."
+    }
+  }
+}</code></pre>
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directive: ViewExtension - UI-Ang Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to Index</a>
+    <h1>Directive: ViewExtension</h1>
+    <pre><code>{
+  "module": "ViewExtensionModule",
+  "description": "Abstract directive used in journeys to provide locations where custom components can be rendered. ```html ``` Journeys should create a concrete implementation of this directive which defines a specific data type for `ContextType`: ```typescript // Some data type available for use in a view extension: export interface ExampleEntity {   id: string;   additions?: Record;   // etc } // The extension slot directive (does not need to be public API) @Directive({   selector: '[bbExampleEntityAdditions]' }) export class ExampleEntityAdditionsDirective extends ViewExtensionDirective {} ``` The journey should also publicly export a type derived from {@link ViewExtensionComponent} with the same type parameter for `ContextType`, and allow configuring a concrete implementation of that type via the journey module and a private injection token: ```typescript // view-specific ViewExtensionComponent type: export type ExampleEntityExtensionComponent = ViewExtensionComponent; // journey module & config: export interface MyJourneyModuleConfig {   route?: Route;   viewExtensions?: {     entityDetails?: Type   } } @NgModule({   //... }) export class MyJourneyModule {   static forRoot(     {route, viewExtensions}: MyJourneyModuleConfig = {}   ): ModuleWithProviders {     return {       ngModule: MyJourneyModule,       providers: [         provideRoutes([route || defaultRoute]),         {           // internal injection token           provide: ΘMY_JOURNEY_EXTENSIONS,           useValue: viewExtensions || {}         }       ],     };   } } // journey view component: @Component({   //... }) export class JourneyViewComponent {   // implementation of ViewExtensionComponent provided via config:   additionalDetailsComponent: Type | undefined;   constructor(@Inject(ΘMY_JOURNEY_EXTENSIONS) extensionConfig) {     this.additionalDetailsComponent = extensionConfig.entityDetails;   } } ``` The journey view component containing extension point should conditionally render an `ng-container` with this directive if an implementation of the corresponding `ViewExtensionComponent` has been configured: ```html      ``` See {@link ViewExtensionComponent}",
+  "inputs": {
+    "componentType": {
+      "type": "Type<ViewExtensionComponent<ContextType>> | undefined",
+      "description": "The component class to render in this extension point. Required."
+    },
+    "context": {
+      "type": "ContextType | undefined",
+      "description": "The data available to the custom view extension component.  Will be passed into the custom component instance via its own context input."
+    }
+  }
+}</code></pre>
+</body>
+</html>
