@@ -1,0 +1,161 @@
+{
+  "module": "DropdownMenuModule",
+  "selector": "bb-dropdown-menu-ui",
+  "description": "Component that displays a button with a dropdown - `dropDownButtonLabel` is discernible text for dropdown button which is used as the `aria-label`. - `aria-owns` handles contextual relationship between a parent and its child elements, in this case between dropdown menu and dropdown items, it's internally handled by the component with unique ids. - `aria-activedescendant` identifies currently active element of dropdown item. It's internally handled but when `bbDropdownMenuItem` directive and [role=menuitem] is used for listing dropdown elements then use [id]=\"option\". Example: ``` {{ option}} ``` ### Keyboard navigation guide This guide will help you understand the keyboard navigation on dropdown menu and its dropdown items. | Key | Function | |-----|----------| | Enter | **When the dropdown menu is open and an item within it is focused:**1. **Pressing Enter** selects the item, closes the dropdown, and refocuses on the dropdown button. | | ArrowDown | **When the dropdown menu is closed:**1. **Pressing ArrowDown** opens the dropdown menu and focuses on the first item. **When the dropdown menu is open and an item is focused:**1. **Pressing ArrowDown** moves the focus to the next item. | | ArrowUp | **When the dropdown menu is closed:**1. Pressing ArrowUp opens the dropdown menu and focuses on the first item. **When the dropdown menu is open and an item is focused:**1. **Pressing ArrowUp** moves the focus to the previous item. | | Tab | **When the dropdown menu is open:**1. If the focus is on the dropdown button, pressing Tab shifts the focus to the first item in the dropdown.2. If the focus is on the last item in the dropdown, **pressing Tab** toggles the focus back to the dropdown button and closes the dropdown.3. If the focus is on any item other than the last, **pressing Tab** shifts the focus to the next item in the dropdown. | | Tab + Shift | **When the dropdown menu is open:**1. If the focus is on the dropdown button, **pressing Tab + Shift** closes the dropdown menu.2. If the focus is on the first item in the dropdown, **pressing Tab + Shift** toggles the focus to the dropdown button.3. If the focus is on any item other than the first, **pressing Tab + Shift** shifts the focus to the previous item in the dropdown. |",
+  "inputs": {
+    "autoClose": {
+      "type": "boolean | \"inside\" | \"outside\"",
+      "description": "Whether the dropdown should be closed when clicking one of dropdown items or pressing ESC. Defaults to true.",
+      "default": "true"
+    },
+    "btnCircle": {
+      "type": "boolean",
+      "description": "The flag to indicate whether the dropdown button should be in a circular shape. Defaults to 'false'. This will only work when there's only an icon inside the button without a text.",
+      "default": "false"
+    },
+    "btnColor": {
+      "type": "string",
+      "description": "Color of the button. Defaults to primary.",
+      "default": "'primary'"
+    },
+    "buttonSize": {
+      "type": "\"sm\" | \"md\"",
+      "description": "Predefined button sizes",
+      "default": "'md'"
+    },
+    "container": {
+      "type": "string | \"body\"",
+      "description": "Specifies which element the dropdown should be appended to.",
+      "default": "''"
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Whether the component is mutable or clickable. Defaults to false.",
+      "default": "false"
+    },
+    "dropDownButtonLabel": {
+      "type": "any",
+      "description": "Dropdown menu (toggle) button aria label. Defaults to &quot;Toggle dropdown&quot;.",
+      "default": "$localize`:@@bb-dropdown-menu-ui.dropdown-button.aria-label:Toggle dropdown`"
+    },
+    "dropDownMenuId": {
+      "type": "string",
+      "description": "ID for the dropdown menu"
+    },
+    "dropDownMenuRole": {
+      "type": "string",
+      "description": "The role of the dropdown menu defaults to menu",
+      "default": "'menu'"
+    },
+    "fullWidth": {
+      "type": "boolean",
+      "description": "If true it will stretch the button inside to 100% width.",
+      "default": "false"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon that is displayed in the button."
+    },
+    "iconColor": {
+      "type": "string",
+      "description": "The color of the icon to be displayed."
+    },
+    "iconSize": {
+      "type": "string",
+      "description": "The size of the icon to be displayed. Defaults to md.",
+      "default": "'md'"
+    },
+    "label": {
+      "type": "string",
+      "description": "The label for the button dropdown. Defaults to an empty string.",
+      "default": "''"
+    },
+    "leftIcon": {
+      "type": "string"
+    },
+    "optionLabelKey": {
+      "type": "string",
+      "description": "Key that contains the label of the option object. Mandatory when the type of option is object"
+    },
+    "options": {
+      "type": "Array<string | object>",
+      "description": "If the value is an object, please provide a optionLabelKey.",
+      "default": "[]"
+    },
+    "position": {
+      "type": "Placement | PlacementArray",
+      "description": "The position of the dropdown, position will be picked in order of feasibility.",
+      "default": "['bottom-end', 'bottom-start', 'top-end', 'top-start']"
+    },
+    "role": {
+      "type": "string",
+      "description": "Customize the ARIA role for the HTML input/select/textarea element inside this component. This can be used to improve accessibility for components, for example by configuring [role]=&quot;'combobox'&quot; for a component that provides an autocomplete list. Values that are valid for the native HTML form elements are allowed.",
+      "default": "'group'"
+    }
+  },
+  "outputs": {
+    "select": {
+      "type": "EventEmitter",
+      "description": "Event (Output) that emits the value of selected dropdown item."
+    }
+  },
+  "methods": {
+    "closeDropdownAndReturnFocus": {
+      "description": "Internal handler to close dropdown on keyboard clicks and return focus to the dropdown button",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "getOptionLabel": {
+      "description": "Function that returns the label of the dropdown item",
+      "params": [
+        {
+          "name": "option",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "string"
+      }
+    },
+    "onClick": {
+      "description": "Internal handler for clicks on dropdown items",
+      "params": [
+        {
+          "name": "event",
+          "type": "Event"
+        },
+        {
+          "name": "item",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onKeyUp": {
+      "params": [
+        {
+          "name": "event",
+          "type": "KeyboardEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onOpenChange": {
+      "description": "Drop down change state event handler",
+      "params": [
+        {
+          "name": "isOpen",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

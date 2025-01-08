@@ -1,0 +1,48 @@
+{
+  "module": "TrackerSegmentModule",
+  "selector": "bb-tracker-segment-ui",
+  "inputs": {
+    "ariaLabel": {
+      "type": "string",
+      "description": "Aria label for the segment."
+    },
+    "countText": {
+      "type": "string",
+      "description": "Sets custom count text."
+    },
+    "hideCount": {
+      "type": "boolean",
+      "description": "Whether segment count should be hidden. Defaults to 'false'",
+      "default": "false"
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "Whether the segment is marked as active. Defaults to 'false'.",
+      "default": "false"
+    },
+    "isCompleted": {
+      "type": "boolean",
+      "description": "Whether the segment is marked as completed. Defaults to 'false'.",
+      "default": "false"
+    },
+    "label": {
+      "type": "string",
+      "description": "Label of the segment.",
+      "default": "''"
+    },
+    "progress": {
+      "type": "number",
+      "description": "Progress level of the segment. Defaults to '0'.",
+      "default": "0"
+    },
+    "separator": {
+      "type": "string",
+      "description": "Separator between count text and segment label. Applicable only to horizontal or linear mode. Defaults to '-'.",
+      "default": "''"
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Optional subtitle for the segment."
+    }
+  }
+}

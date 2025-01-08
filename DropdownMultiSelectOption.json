@@ -1,0 +1,25 @@
+{
+  "module": "DropdownMultiSelectOptionModule",
+  "selector": "bb-dropdown-multi-select-option-ui",
+  "description": "Component that represents a single option that is part of the multi select component.",
+  "inputs": {
+    "id": {
+      "type": "string",
+      "description": "The id for the input. Defaults to unique string."
+    },
+    "label": {
+      "type": "string",
+      "description": "The label of the option item",
+      "default": "''"
+    },
+    "state": {
+      "type": "boolean | undefined",
+      "default": "false"
+    },
+    "value": {
+      "type": "string",
+      "description": "The value of the native option element",
+      "default": "''"
+    }
+  }
+}

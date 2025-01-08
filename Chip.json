@@ -1,0 +1,23 @@
+{
+  "module": "ChipModule",
+  "selector": "bb-chip-ui",
+  "description": "Component that displays a chip with optional action button",
+  "inputs": {
+    "dismissible": {
+      "type": "boolean",
+      "description": "Defines if a dismiss button is displayed on chip",
+      "default": "false"
+    },
+    "label": {
+      "type": "string",
+      "description": "Chip label",
+      "optional": false
+    }
+  },
+  "outputs": {
+    "close": {
+      "type": "EventEmitter",
+      "description": "Emits when the chip dismiss button is clicked"
+    }
+  }
+}

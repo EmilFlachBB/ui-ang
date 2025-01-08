@@ -1,0 +1,50 @@
+{
+  "module": "TabGroupModule",
+  "selector": "bb-tab-group-ui",
+  "description": "TabGroupComponent represents component that is used as a wrapper for tab item components. It tracks user interaction and notifies parent upon selection change",
+  "inputs": {
+    "initialSelection": {
+      "type": "number | undefined",
+      "description": "Setter (Input) for initial tab item selection"
+    }
+  },
+  "outputs": {
+    "select": {
+      "type": "EventEmitter",
+      "description": "Event (Output) that emits new value once tab item selection has changed. As a parameter it provides index of newly selected item"
+    }
+  },
+  "methods": {
+    "onClick": {
+      "description": "Internal handler for clicks on tab items",
+      "params": [
+        {
+          "name": "event",
+          "type": "MouseEvent"
+        },
+        {
+          "name": "index",
+          "type": "number"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onKeyDown": {
+      "params": [
+        {
+          "name": "event",
+          "type": "KeyboardEvent"
+        },
+        {
+          "name": "index",
+          "type": "number"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

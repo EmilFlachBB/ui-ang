@@ -1,0 +1,29 @@
+{
+  "module": "CollapsibleModule",
+  "selector": "bb-collapsible-ui",
+  "description": "Provides an expandable details-summary/body-header view.",
+  "inputs": {
+    "hasChevron": {
+      "type": "boolean",
+      "description": "Whether chevron should be displayed. Defaults to true.",
+      "default": "true",
+      "deprecated": true,
+      "deprecationMessage": "Deprecated in ui-ang@11. To be removed in ui-ang@13."
+    },
+    "isOpen": {
+      "type": "boolean",
+      "description": "Toggles the content."
+    },
+    "recreateBodyContent": {
+      "type": "boolean",
+      "description": "If true, it will use the ngIf approach to create the content which is less performant but removes the extra div. In case of styling issues, set this to true.",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "isOpenChange": {
+      "type": "EventEmitter",
+      "description": "Emits the toggle content event."
+    }
+  }
+}

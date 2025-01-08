@@ -1,0 +1,59 @@
+{
+  "module": "TrackerModule",
+  "selector": "bb-tracker-ui",
+  "inputs": {
+    "countFn": {
+      "type": "function",
+      "description": "Custom counting function that overrides default behaviour."
+    },
+    "hideCount": {
+      "type": "boolean",
+      "description": "Whether segment count should be hidden. Defaults to 'false'.",
+      "default": "false"
+    },
+    "progressAriaLabel": {
+      "type": "string",
+      "description": "Aria label attribute for active segment's progress element. Defaults to 'progress'.",
+      "default": "'progress'"
+    },
+    "segmented": {
+      "type": "boolean",
+      "description": "Whether tracker is in segmented mode. Defaults to true.",
+      "default": "true"
+    },
+    "separator": {
+      "type": "string",
+      "description": "Separator between count text and segment label. Applicable only to non-vertical mode. Defaults to '-'.",
+      "default": "'-'"
+    },
+    "vertical": {
+      "type": "boolean",
+      "description": "Whether tracker is in vertical mode. Defaults to false.",
+      "default": "false"
+    }
+  },
+  "methods": {
+    "calculateCount": {
+      "description": "Calculates count text of the segment.",
+      "params": [
+        {
+          "name": "segment",
+          "type": "TrackerSegmentComponent | null"
+        },
+        {
+          "name": "segmentIndex",
+          "type": "number | null"
+        }
+      ],
+      "returns": {
+        "type": "string"
+      }
+    },
+    "stateChanged": {
+      "description": "Marks the component to be change detected.",
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

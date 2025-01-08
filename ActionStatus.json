@@ -1,0 +1,24 @@
+{
+  "module": "ActionStatusModule",
+  "selector": "bb-action-status-ui",
+  "description": "Component that displays a loading indicator or icon to indicate an action response.",
+  "inputs": {
+    "state": {
+      "type": "ActionState",
+      "options": "loading | success | info | warning | error | message",
+      "description": "The current state of the action."
+    }
+  },
+  "methods": {
+    "getColor": {
+      "returns": {
+        "type": "string | undefined"
+      }
+    },
+    "isLoading": {
+      "returns": {
+        "type": "boolean"
+      }
+    }
+  }
+}

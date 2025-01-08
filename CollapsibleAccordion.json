@@ -1,0 +1,77 @@
+{
+  "module": "CollapsibleAccordionModule",
+  "selector": "bb-collapsible-accordion-ui",
+  "description": "Component that groups Collapsible components to show them in an accordion fashion. It can assure that only one Collapsible panel can be opened at a time.",
+  "inputs": {
+    "closeOthers": {
+      "type": "boolean",
+      "description": "Assures that only one Collapsible panel can be opened at a time.",
+      "default": "false"
+    },
+    "obeyParentAccordion": {
+      "type": "boolean",
+      "description": "When true the Accordion will inherit the parent Accordion behaviour."
+    },
+    "openFirst": {
+      "type": "boolean",
+      "description": "When true displays the first panel on load.",
+      "default": "false"
+    }
+  },
+  "methods": {
+    "collapseAll": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "expandAll": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerNestedAccordion": {
+      "params": [
+        {
+          "name": "childAccordion",
+          "type": "CollapsibleAccordionComponent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerNestedPanel": {
+      "params": [
+        {
+          "name": "panel",
+          "type": "ICollapsible"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "unregisterNestedAccordion": {
+      "params": [
+        {
+          "name": "childAccordion",
+          "type": "CollapsibleAccordionComponent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "unregisterNestedPanel": {
+      "params": [
+        {
+          "name": "panel",
+          "type": "ICollapsible"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

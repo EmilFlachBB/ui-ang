@@ -1,0 +1,11 @@
+{
+  "module": "CardVendorModule",
+  "selector": "bb-card-vendor-ui",
+  "description": "Component that displays the logo of a card vendor.",
+  "inputs": {
+    "vendor": {
+      "type": "string | undefined",
+      "description": "The vendor that this component displays the logo of.  Mandatory."
+    }
+  }
+}

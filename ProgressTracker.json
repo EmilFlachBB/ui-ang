@@ -1,0 +1,32 @@
+{
+  "module": "ProgressTrackerModule",
+  "selector": "bb-progress-tracker",
+  "description": "A tracker component that tracks multiple ongoing or asynchronous processes on a page. It handles multiple ongoing process events so that you can trigger, cancel and/or destroy events on demand. It is easily extendable as you can you can extend the templates by passing your customised template as input bindings. Refer to examples for the implementation.",
+  "inputs": {
+    "eventList": {
+      "type": "IProgressTrackerConfig[]"
+    },
+    "isOpen": {
+      "type": "boolean",
+      "description": "Determines whether the Progress Tracker is opened or closed on render. This input property controls the state of the Progress Tracker. When set to true, the Progress Tracker will be opened by default. When set to false, it will be closed by default. Note: A toggle outside of the progress-tracker-container is not currently supported. Clicking on the toggle calls document:click which keeps the container closed. Defaults to false.",
+      "default": "false"
+    },
+    "progressTrackerHeaderTemplate": {
+      "type": "TemplateRef<any>",
+      "description": "The reference to a custom template for the Progress Tracker Item Header. Allows to completely override the way Progress Tracker Item heading is displayed."
+    },
+    "progressTrackerItemTemplate": {
+      "type": "TemplateRef<IProgressTrackerItemTemplateConfig>",
+      "description": "The reference to a custom template for the Progress Tracker Item. Allows to completely override the way Progress Tracker Item is displayed."
+    },
+    "progressTrackerTemplate": {
+      "type": "TemplateRef<IProgressTrackerTemplateConfig>",
+      "description": "The reference to a custom template for the Progress Tracker Container. Allows to completely override the way Progress Tracker is displayed."
+    }
+  },
+  "outputs": {
+    "cancel": {
+      "type": "EventEmitter"
+    }
+  }
+}

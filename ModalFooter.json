@@ -1,0 +1,48 @@
+{
+  "module": "ModalFooterModule",
+  "selector": "bb-modal-footer-ui",
+  "inputs": {
+    "cancelText": {
+      "type": "string",
+      "description": "The text of the cancel button."
+    },
+    "confirmText": {
+      "type": "string",
+      "description": "The text of the confirm button."
+    }
+  },
+  "outputs": {
+    "cancel": {
+      "type": "EventEmitter",
+      "description": "The event that's fired after cancel button is pressed. Can be used with (click)=&quot;dialogRef.onCancel()&quot; where dialogRef is a templateRef on &lt;bb-dialog-ui #dialogRef /&gt;"
+    },
+    "confirm": {
+      "type": "EventEmitter",
+      "description": "The event that's fired after confirm button is pressed. Can be used with (click)=&quot;dialogRef.onConfirm()&quot; where dialogRef is a templateRef on &lt;bb-dialog-ui #dialogRef /&gt;"
+    }
+  },
+  "methods": {
+    "onCancel": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onConfirm": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

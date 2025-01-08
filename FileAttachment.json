@@ -1,0 +1,86 @@
+{
+  "module": "FileAttachmentModule",
+  "selector": "bb-file-attachment-ui",
+  "description": "### Accessibility Current component provide option to pass needed accessibility attributes:  - id  - aria-label  - aria-describedby Component displays file attachment.",
+  "inputs": {
+    "aria-describedby": {
+      "type": "string",
+      "description": "Set aria-describedby  with an element id that contains a detailed decription of the widget.",
+      "default": "'file-attachment-card-body'"
+    },
+    "aria-label": {
+      "type": "string",
+      "description": "Accessible label for delete button when control does not need to render label tag.",
+      "default": "'Delete file'"
+    },
+    "block": {
+      "type": "boolean",
+      "description": "The flag to indicate whether the file-attachment should fill the container that it is in. Defaults to 'false'.",
+      "default": "false"
+    },
+    "deletable": {
+      "type": "boolean",
+      "description": "Show delete button flag. Defaults to false.",
+      "default": "false"
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Disabled state flag. Defaults to false.",
+      "default": "false"
+    },
+    "fileContent": {
+      "type": "Observable<ArrayBuffer> | undefined",
+      "description": "Set file content (required if disabled property is not set to true)."
+    },
+    "id": {
+      "type": "string",
+      "description": "The id for attachment card.",
+      "default": "'file-attachment-card-body_' + getDynamicId()"
+    },
+    "loading": {
+      "type": "boolean",
+      "description": "Loading indicator flag. Defaults to false.",
+      "default": "false"
+    },
+    "name": {
+      "type": "string | undefined",
+      "description": "Set file name (required)."
+    },
+    "size": {
+      "type": "number | string | undefined",
+      "description": "Set file size (required). Accepts number or string."
+    }
+  },
+  "outputs": {
+    "delete": {
+      "type": "EventEmitter",
+      "description": "Event emitted on delete button click."
+    }
+  },
+  "methods": {
+    "onDelete": {
+      "description": "Delete attachment event emitter.",
+      "params": [
+        {
+          "name": "event",
+          "type": "MouseEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onDownload": {
+      "description": "Download attachment method.",
+      "params": [
+        {
+          "name": "$event",
+          "type": "Event"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

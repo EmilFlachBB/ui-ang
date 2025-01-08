@@ -1,0 +1,24 @@
+{
+  "module": "StepperModule",
+  "selector": "bb-stepper-ui",
+  "description": "Component that represents a navigation stepper.",
+  "outputs": {
+    "select": {
+      "type": "EventEmitter<any>",
+      "description": "Emits an event when a step's link is clicked."
+    }
+  },
+  "methods": {
+    "onClickHandler": {
+      "params": [
+        {
+          "name": "data",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

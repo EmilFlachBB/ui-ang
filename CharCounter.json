@@ -1,0 +1,38 @@
+{
+  "module": "CharCounterModule",
+  "selector": "bb-char-counter-ui",
+  "description": "Component for counting characters typed inside a form element",
+  "deprecated": true,
+  "deprecationMessage": "Deprecated in ui-ang@11. To be made into a private component which is used in `bb-textarea-ui` and `bb-rich-text-editor-ui` in ui-ang@13.",
+  "inputs": {
+    "blockTyping": {
+      "type": "boolean",
+      "description": "Whether the element should be blocked when maximum character count is reached."
+    },
+    "element": {
+      "type": "HTMLInputElement | HTMLTextAreaElement | undefined",
+      "description": "The element reference which the characters are typed in."
+    },
+    "inputValue": {
+      "type": "string | undefined",
+      "description": "Passed value from parent input, it gives option to count char event if value was programmatically changed"
+    },
+    "limitExceededText": {
+      "type": "string",
+      "description": "Additional text to display when when maximum character count has been exceeded. Defaults to ''.",
+      "default": "''"
+    },
+    "maxLength": {
+      "type": "number",
+      "description": "Indicator for maximum character count.",
+      "default": "150"
+    }
+  },
+  "methods": {
+    "calculateElementValue": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

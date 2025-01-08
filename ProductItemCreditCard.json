@@ -1,0 +1,75 @@
+{
+  "module": "ProductItemCreditCardModule",
+  "selector": "bb-product-item-credit-card-ui",
+  "description": "A component that renders a styled-container or card for credit card.",
+  "inputs": {
+    "amount": {
+      "type": "number",
+      "description": "The card amount value."
+    },
+    "currency": {
+      "type": "string",
+      "description": "The card currency."
+    },
+    "mainSectionAmount": {
+      "type": "number",
+      "description": "The card additional main section amount value."
+    },
+    "mainSectionCurrency": {
+      "type": "string",
+      "description": "The card additional main section currency."
+    },
+    "mainSectionTitle": {
+      "type": "string",
+      "description": "The card additional main section amount value."
+    },
+    "secondarySectionAmount": {
+      "type": "number",
+      "description": "The card additional secondary section amount value."
+    },
+    "secondarySectionCurrency": {
+      "type": "string",
+      "description": "The card additional secondary section currency."
+    },
+    "secondarySectionTitle": {
+      "type": "string",
+      "description": "The card additional secondary section amount value."
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Whether the card should have a check icon. Defaults to true.",
+      "default": "true"
+    },
+    "favorite": {
+      "type": "boolean",
+      "description": "Whether the card should be marked as favourite. Defaults to false.",
+      "default": "false"
+    },
+    "favoriteIconColor": {
+      "type": "string",
+      "description": "The color of the favourite icon when favorite=true. Defaults to primary.",
+      "default": "'primary'"
+    },
+    "highlight": {
+      "type": "boolean",
+      "description": "Whether the amount and currency value should be highlighted."
+    },
+    "productDetailsInfo": {
+      "type": "Record<string | any>",
+      "description": "The product details information."
+    },
+    "productNumber": {
+      "type": "string",
+      "description": "The product number."
+    },
+    "productNumberFormat": {
+      "type": "PaymentCardNumberFormat",
+      "description": "Configuration of how the product number should be formatted. Defaults to the following format: { length: 16, maskRange: [0, 12], segments: 4 }",
+      "default": "DefaultPaymentCardNumberFormat"
+    },
+    "title": {
+      "type": "string",
+      "description": "The card title."
+    }
+  }
+}

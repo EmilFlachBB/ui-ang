@@ -1,0 +1,28 @@
+{
+  "module": "HeaderModule",
+  "selector": "bb-header-ui",
+  "description": "Component that displays a header.",
+  "deprecated": true,
+  "deprecationMessage": "Component is deprecated as of ui-ang v11. It will be removed in ui-ang v13. Please use PageHeaderComponent to replace your primary header and native HTML h2-h5 to replace smaller headers.",
+  "inputs": {
+    "heading": {
+      "type": "string | TemplateRef<any> | undefined",
+      "description": "The text or label or a TemplateRef to be displayed as the header."
+    },
+    "headingClasses": {
+      "type": "string | undefined",
+      "description": "The heading classes to be added to the component."
+    },
+    "headingType": {
+      "type": "string | undefined",
+      "description": "The heading type to be rendered in the component."
+    }
+  },
+  "methods": {
+    "getHeadingTemplate": {
+      "returns": {
+        "type": "TemplateRef | undefined"
+      }
+    }
+  }
+}

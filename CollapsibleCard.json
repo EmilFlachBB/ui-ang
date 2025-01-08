@@ -1,0 +1,56 @@
+{
+  "module": "CollapsibleCardModule",
+  "selector": "bb-collapsible-card-ui",
+  "description": "Provides an expandable details-summary/body-header view. Uses bb-collapsible-ui for a predefined template ### Accessibility ariaLabelForIcon is discernible text for chevron icon",
+  "inputs": {
+    "aria-label": {
+      "type": "string | null",
+      "description": "Accessible label for collapsible card",
+      "default": "'toggle'"
+    },
+    "ariaLabelForIcon": {
+      "type": "string",
+      "description": "Accessible label for chevron icon.",
+      "default": "'Chevron icon'"
+    },
+    "hasChevron": {
+      "type": "boolean",
+      "description": "Whether chevron should be displayed. Defaults to true.",
+      "default": "true"
+    },
+    "highlight": {
+      "type": "boolean",
+      "description": "Whether card should be highlighted. Defaults to false.",
+      "default": "false"
+    },
+    "isOpen": {
+      "type": "boolean",
+      "description": "Collapsible card open state",
+      "default": "false"
+    },
+    "shadow": {
+      "type": "boolean",
+      "description": "Whether card should has shadow effect. Defaults to true.",
+      "default": "true"
+    },
+    "size": {
+      "type": "CollapsibleCardSize",
+      "options": "sm | md | lg",
+      "description": "Card size. Defaults to md.",
+      "default": "'md'"
+    }
+  },
+  "outputs": {
+    "isOpenChange": {
+      "type": "EventEmitter",
+      "description": "Emits when the isOpen input is changed."
+    }
+  },
+  "methods": {
+    "toggle": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}
