@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Component: InfiniteScroll - UI-Ang Documentation</title>
+    <title>Component: InfiniteScroll</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,66 +12,190 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
         }
-        pre {
+        code {
             background: #f5f5f5;
-            padding: 15px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .deprecated {
+            opacity: 0.7;
+        }
+        .badge {
+            background: #ff5252;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+        }
+        .doc-section {
+            margin: 2em 0;
+        }
+        .method {
+            margin: 2em 0;
+            padding: 1em;
+            background: #f8f9fa;
             border-radius: 5px;
-            overflow-x: auto;
+        }
+        h1 { color: #2196f3; }
+        h2 { 
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.3em;
         }
         a { color: #2196f3; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back to Index</a>
+    <a href="../index.html" class="back-link">← Back to Index</a>
     <h1>Component: InfiniteScroll</h1>
-    <pre><code>{
-  "module": "InfiniteScrollModule",
-  "selector": "bb-infinite-scroll-ui",
-  "description": "Component that displays an infinite scroll.",
-  "inputs": {
-    "aria-label": {
-      "type": "string",
-      "description": "Accessible label when control does not need to render label tag.",
-      "default": "'Infinite scrolling content'"
-    },
-    "debounce": {
-      "type": "number",
-      "description": "Specify debounce duration in ms",
-      "default": "100"
-    },
-    "disableScrollEnd": {
-      "type": "boolean",
-      "description": "If true then scrollEnd event should NOT be emitted",
-      "default": "false"
-    },
-    "focusable": {
-      "type": "boolean",
-      "description": "Sets the focusability of the component. If value is true, the component becomes focusable. If value is false, the component becomes non-focusable. Component is focusable by default",
-      "default": "true"
-    },
-    "isLoading": {
-      "type": "boolean",
-      "description": "Takes a boolean value to indicate the loading state of data",
-      "default": "false"
-    },
-    "offset": {
-      "type": "number",
-      "description": "The number of pixels from the bottom of the element at which to trigger the scrollEnd event.",
-      "default": "0"
-    },
-    "scrollContainer": {
-      "type": "string",
-      "description": "Takes a CSS class selector to identify the scrolling element",
-      "default": "'.infinite-scroll-wrapper'"
-    }
-  },
-  "outputs": {
-    "scrollEnd": {
-      "type": "EventEmitter",
-      "description": "Event that is triggered when the user has scrolled to the bottom of the element."
-    }
-  }
-}</code></pre>
+    
+    <p>Component that displays an infinite scroll.</p>
+    
+    <p><strong>Selector:</strong> <code>bb-infinite-scroll-ui</code></p>
+    
+    
+      <section class="doc-section">
+        <h2>Inputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>aria-label</code></td>
+              <td><code>string</code></td>
+              <td>
+                
+                Accessible label when control does not need to render label tag.
+              </td>
+              <td><code>'Infinite scrolling content'</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>debounce</code></td>
+              <td><code>number</code></td>
+              <td>
+                
+                Specify debounce duration in ms
+              </td>
+              <td><code>100</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>disableScrollEnd</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                If true then scrollEnd event should NOT be emitted
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>focusable</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                Sets the focusability of the component. If value is true, the component becomes focusable. If value is false, the component becomes non-focusable. Component is focusable by default
+              </td>
+              <td><code>true</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>isLoading</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                Takes a boolean value to indicate the loading state of data
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>offset</code></td>
+              <td><code>number</code></td>
+              <td>
+                
+                The number of pixels from the bottom of the element at which to trigger the scrollEnd event.
+              </td>
+              <td><code>0</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>scrollContainer</code></td>
+              <td><code>string</code></td>
+              <td>
+                
+                Takes a CSS class selector to identify the scrolling element
+              </td>
+              <td><code>'.infinite-scroll-wrapper'</code></td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Outputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Output</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>scrollEnd</code></td>
+              <td><code>EventEmitter</code></td>
+              <td>
+                
+                Event that is triggered when the user has scrolled to the bottom of the element.
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
 </body>
 </html>

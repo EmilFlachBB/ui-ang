@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Component: Paginator - UI-Ang Documentation</title>
+    <title>Component: Paginator</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,74 +12,202 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
         }
-        pre {
+        code {
             background: #f5f5f5;
-            padding: 15px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .deprecated {
+            opacity: 0.7;
+        }
+        .badge {
+            background: #ff5252;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+        }
+        .doc-section {
+            margin: 2em 0;
+        }
+        .method {
+            margin: 2em 0;
+            padding: 1em;
+            background: #f8f9fa;
             border-radius: 5px;
-            overflow-x: auto;
+        }
+        h1 { color: #2196f3; }
+        h2 { 
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.3em;
         }
         a { color: #2196f3; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back to Index</a>
+    <a href="../index.html" class="back-link">← Back to Index</a>
     <h1>Component: Paginator</h1>
-    <pre><code>{
-  "module": "PaginatorModule",
-  "selector": "bb-pagination-ui",
-  "description": "A component that displays page numbers and allows to customize them in several ways.",
-  "inputs": {
-    "boundaryLinks": {
-      "type": "boolean",
-      "description": "If true, the &quot;First&quot; and &quot;Last&quot; page links are shown. Defaults to false.",
-      "default": "false"
-    },
-    "directionLinks": {
-      "type": "boolean",
-      "description": "If true, the &quot;Next&quot; and &quot;Previous&quot; page links are shown. Defaults to false.",
-      "default": "false"
-    },
-    "itemsPerPage": {
-      "type": "number",
-      "description": "The number of items per page.",
-      "default": "10"
-    },
-    "maxNavPages": {
-      "type": "number",
-      "description": "The maximum number of pages to display.",
-      "default": "5"
-    },
-    "page": {
-      "type": "number",
-      "description": "The current page. bb-paginator-ui is 0-indexed, but ngb-pagination is 1-indexed. Corrects input by adding 1 internally.",
-      "default": "1"
-    },
-    "totalItems": {
-      "type": "number",
-      "description": "The number of items in your paginated collection. Note, that this is not the number of pages. Page numbers are calculated dynamically based on totalItems and itemsPerPage.",
-      "default": "0"
-    }
-  },
-  "outputs": {
-    "pageChange": {
-      "type": "EventEmitter<number>",
-      "description": "An event fired when the page is changed. Will fire only if collection size is set and all values are valid. Event payload is the number of the newly selected page. bb-paginator-ui is 0-indexed, but ngb-pagination is 1-indexed. Corrects output by subtracting 1 internally."
-    }
-  },
-  "methods": {
-    "onPageChange": {
-      "params": [
-        {
-          "name": "page",
-          "type": "number"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    }
-  }
-}</code></pre>
+    
+    <p>A component that displays page numbers and allows to customize them in several ways.</p>
+    
+    <p><strong>Selector:</strong> <code>bb-pagination-ui</code></p>
+    
+    
+      <section class="doc-section">
+        <h2>Inputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>boundaryLinks</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                If true, the &quot;First&quot; and &quot;Last&quot; page links are shown. Defaults to false.
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>directionLinks</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                If true, the &quot;Next&quot; and &quot;Previous&quot; page links are shown. Defaults to false.
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>itemsPerPage</code></td>
+              <td><code>number</code></td>
+              <td>
+                
+                The number of items per page.
+              </td>
+              <td><code>10</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>maxNavPages</code></td>
+              <td><code>number</code></td>
+              <td>
+                
+                The maximum number of pages to display.
+              </td>
+              <td><code>5</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>page</code></td>
+              <td><code>number</code></td>
+              <td>
+                
+                The current page. bb-paginator-ui is 0-indexed, but ngb-pagination is 1-indexed. Corrects input by adding 1 internally.
+              </td>
+              <td><code>1</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>totalItems</code></td>
+              <td><code>number</code></td>
+              <td>
+                
+                The number of items in your paginated collection. Note, that this is not the number of pages. Page numbers are calculated dynamically based on totalItems and itemsPerPage.
+              </td>
+              <td><code>0</code></td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Outputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Output</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>pageChange</code></td>
+              <td><code>EventEmitter<number></code></td>
+              <td>
+                
+                An event fired when the page is changed. Will fire only if collection size is set and all values are valid. Event payload is the number of the newly selected page. bb-paginator-ui is 0-indexed, but ngb-pagination is 1-indexed. Corrects output by subtracting 1 internally.
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Methods</h2>
+        
+      <div class="method ">
+        <h3>
+          <code>onPageChange(page: number): void</code>
+          
+        </h3>
+        <p></p>
+        
+          <h4>Parameters:</h4>
+          <ul>
+            
+              <li><code>page</code> (<code>number</code>): undefined</li>
+            
+          </ul>
+        
+        
+      </div>
+    
+      </section>
+    
 </body>
 </html>

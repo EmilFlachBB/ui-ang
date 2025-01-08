@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directive: bbInfiniteScroll - UI-Ang Documentation</title>
+    <title>Directive: bbInfiniteScroll</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,94 +12,271 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
         }
-        pre {
+        code {
             background: #f5f5f5;
-            padding: 15px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .deprecated {
+            opacity: 0.7;
+        }
+        .badge {
+            background: #ff5252;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+        }
+        .doc-section {
+            margin: 2em 0;
+        }
+        .method {
+            margin: 2em 0;
+            padding: 1em;
+            background: #f8f9fa;
             border-radius: 5px;
-            overflow-x: auto;
+        }
+        h1 { color: #2196f3; }
+        h2 { 
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.3em;
         }
         a { color: #2196f3; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back to Index</a>
+    <a href="../index.html" class="back-link">← Back to Index</a>
     <h1>Directive: bbInfiniteScroll</h1>
-    <pre><code>{
-  "module": "bbInfiniteScrollModule",
-  "directive": "bbInfiniteScrollDirective",
-  "inputs": {
-    "alwaysCallback": {
-      "type": "boolean",
-      "default": "false"
-    },
-    "fromRoot": {
-      "type": "boolean",
-      "default": "false"
-    },
-    "horizontal": {
-      "type": "boolean",
-      "default": "false"
-    },
-    "immediateCheck": {
-      "type": "boolean",
-      "default": "false"
-    },
-    "infiniteScrollContainer": {
-      "type": "any",
-      "default": "null"
-    },
-    "infiniteScrollDisabled": {
-      "type": "boolean",
-      "default": "false"
-    },
-    "infiniteScrollDistance": {
-      "type": "number",
-      "default": "2"
-    },
-    "infiniteScrollThrottle": {
-      "type": "number",
-      "default": "150"
-    },
-    "infiniteScrollUpDistance": {
-      "type": "number",
-      "default": "1.5"
-    },
-    "scrollWindow": {
-      "type": "boolean",
-      "default": "true"
-    }
-  },
-  "outputs": {
-    "scrolled": {
-      "type": "EventEmitter"
-    },
-    "scrolledUp": {
-      "type": "EventEmitter"
-    }
-  },
-  "methods": {
-    "destroyScroller": {
-      "returns": {
-        "type": "void"
-      }
-    },
-    "handleOnScroll": {
-      "params": [
-        {
-          "type": "IInfiniteScrollAction"
-        }
-      ],
-      "returns": {
-        "type": "any"
-      }
-    },
-    "setup": {
-      "returns": {
-        "type": "void"
-      }
-    }
-  }
-}</code></pre>
+    
+    
+    
+    
+    
+    
+      <section class="doc-section">
+        <h2>Inputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>alwaysCallback</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                undefined
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>fromRoot</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                undefined
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>horizontal</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                undefined
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>immediateCheck</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                undefined
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>infiniteScrollContainer</code></td>
+              <td><code>any</code></td>
+              <td>
+                
+                undefined
+              </td>
+              <td><code>null</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>infiniteScrollDisabled</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                undefined
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>infiniteScrollDistance</code></td>
+              <td><code>number</code></td>
+              <td>
+                
+                undefined
+              </td>
+              <td><code>2</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>infiniteScrollThrottle</code></td>
+              <td><code>number</code></td>
+              <td>
+                
+                undefined
+              </td>
+              <td><code>150</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>infiniteScrollUpDistance</code></td>
+              <td><code>number</code></td>
+              <td>
+                
+                undefined
+              </td>
+              <td><code>1.5</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>scrollWindow</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                undefined
+              </td>
+              <td><code>true</code></td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Outputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Output</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>scrolled</code></td>
+              <td><code>EventEmitter</code></td>
+              <td>
+                
+                undefined
+              </td>
+            </tr>
+          
+            <tr >
+              <td><code>scrolledUp</code></td>
+              <td><code>EventEmitter</code></td>
+              <td>
+                
+                undefined
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Methods</h2>
+        
+      <div class="method ">
+        <h3>
+          <code>destroyScroller(): void</code>
+          
+        </h3>
+        <p></p>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>handleOnScroll(undefined: IInfiniteScrollAction): any</code>
+          
+        </h3>
+        <p></p>
+        
+          <h4>Parameters:</h4>
+          <ul>
+            
+              <li><code>undefined</code> (<code>IInfiniteScrollAction</code>): undefined</li>
+            
+          </ul>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>setup(): void</code>
+          
+        </h3>
+        <p></p>
+        
+        
+      </div>
+    
+      </section>
+    
 </body>
 </html>

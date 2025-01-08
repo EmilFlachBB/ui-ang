@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Component: AccountNumber - UI-Ang Documentation</title>
+    <title>Component: AccountNumber</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,95 +12,240 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
         }
-        pre {
+        code {
             background: #f5f5f5;
-            padding: 15px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .deprecated {
+            opacity: 0.7;
+        }
+        .badge {
+            background: #ff5252;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+        }
+        .doc-section {
+            margin: 2em 0;
+        }
+        .method {
+            margin: 2em 0;
+            padding: 1em;
+            background: #f8f9fa;
             border-radius: 5px;
-            overflow-x: auto;
+        }
+        h1 { color: #2196f3; }
+        h2 { 
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.3em;
         }
         a { color: #2196f3; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back to Index</a>
+    <a href="../index.html" class="back-link">← Back to Index</a>
     <h1>Component: AccountNumber</h1>
-    <pre><code>{
-  "module": "AccountNumberModule",
-  "selector": "bb-account-number, bb-account-number-ui",
-  "description": "Component that displays account number according to the IBAN, BBAN, cardNumber and number. ### Usage By default, The masking and unmasking of the account number is not implemented and requires custom implementation. In order to have a fully working component with masking capabilities, map the `mask` and `unmask` outputs to functions such that it toggles between the masked and unmasked number. ```typescript @Component({   selector: 'bb-account-number-ui-showcase',   template: `             `, }) export class AccountNumberShowcaseComponent {   number = '1234';   masked = false;   onMask() {     this.number = '**34';     this.masked = true;   }   onUnmask() {     this.number = '1234';     this.masked = false;   }   constructor() {} } ```",
-  "inputs": {
-    "account": {
-      "type": "ArrangementItem",
-      "description": "Account that contains account number, a format will be picked automatically Used when number unset",
-      "default": "{}"
-    },
-    "masked": {
-      "type": "boolean",
-      "description": "Defines whether the attribute is masked",
-      "default": "false"
-    },
-    "number": {
-      "type": "string | number | undefined",
-      "description": "Account number, Use with type to specify which format to use"
-    },
-    "tooltipTrigger": {
-      "type": "string",
-      "description": "/** Defines toolitp trigger behavior for masking/unmasking buttons",
-      "default": "'hover focus'"
-    },
-    "type": {
-      "type": "AccountNumberType | undefined",
-      "options": "cardNumber | iban | bban",
-      "description": "Account number type ('bban', 'iban' or 'cardNumber')"
-    },
-    "unmaskable": {
-      "type": "boolean",
-      "description": "Defines whether the attribute is unmaskable",
-      "default": "false"
-    }
-  },
-  "outputs": {
-    "mask": {
-      "type": "EventEmitter<AccountNumberType>",
-      "options": "cardNumber | iban | bban",
-      "description": "Emits a AccountNumberType to be masked"
-    },
-    "unmask": {
-      "type": "EventEmitter<AccountNumberType>",
-      "options": "cardNumber | iban | bban",
-      "description": "Emits a AccountNumberType to be unmasked"
-    }
-  },
-  "methods": {
-    "getAccountNumber": {
-      "description": "Gives either number if provided. Otherwise, try to get from account.",
-      "returns": {
-        "type": "string | number",
-        "description": "Either account number or iban or bban"
-      }
-    },
-    "getAccountNumberType": {
-      "description": "Gives either type if provided. Otherwise, try to get from account.",
-      "returns": {
-        "type": "AccountNumberType",
-        "options": "cardNumber | iban | bban",
-        "description": "'cardNumber' | 'iban' | 'bban'"
-      }
-    },
-    "onMask": {
-      "description": "Event handler for the `mask` button Emits the `masked` output with a `MaskedAttribute`",
-      "returns": {
-        "type": "void"
-      }
-    },
-    "onUnmask": {
-      "description": "Event handler for the `unmask` button Emits the `unmasked` output with a `MaskedAttribute`",
-      "returns": {
-        "type": "void"
-      }
-    }
-  }
-}</code></pre>
+    
+    <p>Component that displays account number according to the IBAN, BBAN, cardNumber and number. ### Usage By default, The masking and unmasking of the account number is not implemented and requires custom implementation. In order to have a fully working component with masking capabilities, map the `mask` and `unmask` outputs to functions such that it toggles between the masked and unmasked number. ```typescript @Component({   selector: 'bb-account-number-ui-showcase',   template: `             `, }) export class AccountNumberShowcaseComponent {   number = '1234';   masked = false;   onMask() {     this.number = '**34';     this.masked = true;   }   onUnmask() {     this.number = '1234';     this.masked = false;   }   constructor() {} } ```</p>
+    
+    <p><strong>Selector:</strong> <code>bb-account-number, bb-account-number-ui</code></p>
+    
+    
+      <section class="doc-section">
+        <h2>Inputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>account</code></td>
+              <td><code>ArrangementItem</code></td>
+              <td>
+                
+                Account that contains account number, a format will be picked automatically Used when number unset
+              </td>
+              <td><code>{}</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>masked</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                Defines whether the attribute is masked
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>number</code></td>
+              <td><code>string | number | undefined</code></td>
+              <td>
+                
+                Account number, Use with type to specify which format to use
+              </td>
+              <td>-</td>
+            </tr>
+          
+            <tr >
+              <td><code>tooltipTrigger</code></td>
+              <td><code>string</code></td>
+              <td>
+                
+                /** Defines toolitp trigger behavior for masking/unmasking buttons
+              </td>
+              <td><code>'hover focus'</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>type</code></td>
+              <td><code>AccountNumberType | undefined</code></td>
+              <td>
+                
+                Account number type ('bban', 'iban' or 'cardNumber')
+              </td>
+              <td>-</td>
+            </tr>
+          
+            <tr >
+              <td><code>unmaskable</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                Defines whether the attribute is unmaskable
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Outputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Output</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>mask</code></td>
+              <td><code>EventEmitter<AccountNumberType></code></td>
+              <td>
+                
+                Emits a AccountNumberType to be masked
+              </td>
+            </tr>
+          
+            <tr >
+              <td><code>unmask</code></td>
+              <td><code>EventEmitter<AccountNumberType></code></td>
+              <td>
+                
+                Emits a AccountNumberType to be unmasked
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Methods</h2>
+        
+      <div class="method ">
+        <h3>
+          <code>getAccountNumber(): string | number</code>
+          
+        </h3>
+        <p>Gives either number if provided. Otherwise, try to get from account.</p>
+        
+        
+          <h4>Returns:</h4>
+          <p>Either account number or iban or bban</p>
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>getAccountNumberType(): AccountNumberType</code>
+          
+        </h3>
+        <p>Gives either type if provided. Otherwise, try to get from account.</p>
+        
+        
+          <h4>Returns:</h4>
+          <p>'cardNumber' | 'iban' | 'bban'</p>
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>onMask(): void</code>
+          
+        </h3>
+        <p>Event handler for the `mask` button Emits the `masked` output with a `MaskedAttribute`</p>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>onUnmask(): void</code>
+          
+        </h3>
+        <p>Event handler for the `unmask` button Emits the `unmasked` output with a `MaskedAttribute`</p>
+        
+        
+      </div>
+    
+      </section>
+    
 </body>
 </html>

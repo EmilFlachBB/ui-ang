@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Component: InputDatepickerDayTemplateRange - UI-Ang Documentation</title>
+    <title>Component: InputDatepickerDayTemplateRange</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,101 +12,251 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
         }
-        pre {
+        code {
             background: #f5f5f5;
-            padding: 15px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .deprecated {
+            opacity: 0.7;
+        }
+        .badge {
+            background: #ff5252;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+        }
+        .doc-section {
+            margin: 2em 0;
+        }
+        .method {
+            margin: 2em 0;
+            padding: 1em;
+            background: #f8f9fa;
             border-radius: 5px;
-            overflow-x: auto;
+        }
+        h1 { color: #2196f3; }
+        h2 { 
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.3em;
         }
         a { color: #2196f3; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back to Index</a>
+    <a href="../index.html" class="back-link">← Back to Index</a>
     <h1>Component: InputDatepickerDayTemplateRange</h1>
-    <pre><code>{
-  "module": "InputDatepickerDayTemplateRangeModule",
-  "selector": "bb-input-datepicker-range-day-template-ui",
-  "inputs": {
-    "currentMonth": {
-      "type": "string",
-      "description": "CurrentMonth on the datepicker window."
-    },
-    "date": {
-      "type": "NgbDate",
-      "description": "Date to render."
-    },
-    "disabled": {
-      "type": "boolean",
-      "description": "When true the date is rendered as disabled.",
-      "default": "false"
-    },
-    "fromDate": {
-      "type": "NgDateStructNullable",
-      "options": "NgbDateStruct | null",
-      "description": "Selected &quot;from&quot; date.",
-      "default": "null"
-    },
-    "hoveredDate": {
-      "type": "NgDateStructNullable",
-      "options": "NgbDateStruct | null",
-      "description": "Hovered date by a user",
-      "default": "null"
-    },
-    "splitRange": {
-      "type": "boolean",
-      "description": "If &quot;true&quot; the datepicker is displayed with two input fields for &quot;from&quot; and &quot;to&quot; dates",
-      "default": "false"
-    },
-    "toDate": {
-      "type": "NgDateStructNullable",
-      "options": "NgbDateStruct | null",
-      "description": "Selected &quot;to&quot; date",
-      "default": "null"
-    },
-    "toDateDatepicker": {
-      "type": "boolean",
-      "description": "&quot;true&quot; when &quot;splitRange&quot; is &quot;true&quot; and the parent datepicker belongs to second datepicker input (the one for &quot;to&quot; date)",
-      "default": "false"
-    }
-  },
-  "outputs": {
-    "hovered": {
-      "type": "EventEmitter",
-      "description": "Event to trigger on date hover."
-    },
-    "rangeSelect": {
-      "type": "EventEmitter",
-      "description": "Emits an event when a range is selected"
-    }
-  },
-  "methods": {
-    "onKeyUp": {
-      "description": "Keypress handler",
-      "params": [
-        {
-          "name": "event",
-          "type": "KeyboardEvent"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    },
-    "onMouseOut": {
-      "description": "Handle mouseover. Emit the hovered date with null.",
-      "returns": {
-        "type": "void"
-      }
-    },
-    "onMouseOver": {
-      "description": "Handle mouseover. Emit the hovered date with date.",
-      "returns": {
-        "type": "void"
-      }
-    }
-  }
-}</code></pre>
+    
+    
+    
+    <p><strong>Selector:</strong> <code>bb-input-datepicker-range-day-template-ui</code></p>
+    
+    
+      <section class="doc-section">
+        <h2>Inputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>currentMonth</code></td>
+              <td><code>string</code></td>
+              <td>
+                
+                CurrentMonth on the datepicker window.
+              </td>
+              <td>-</td>
+            </tr>
+          
+            <tr >
+              <td><code>date</code></td>
+              <td><code>NgbDate</code></td>
+              <td>
+                
+                Date to render.
+              </td>
+              <td>-</td>
+            </tr>
+          
+            <tr >
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                When true the date is rendered as disabled.
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>fromDate</code></td>
+              <td><code>NgDateStructNullable</code></td>
+              <td>
+                
+                Selected &quot;from&quot; date.
+              </td>
+              <td><code>null</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>hoveredDate</code></td>
+              <td><code>NgDateStructNullable</code></td>
+              <td>
+                
+                Hovered date by a user
+              </td>
+              <td><code>null</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>splitRange</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                If &quot;true&quot; the datepicker is displayed with two input fields for &quot;from&quot; and &quot;to&quot; dates
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>toDate</code></td>
+              <td><code>NgDateStructNullable</code></td>
+              <td>
+                
+                Selected &quot;to&quot; date
+              </td>
+              <td><code>null</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>toDateDatepicker</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                &quot;true&quot; when &quot;splitRange&quot; is &quot;true&quot; and the parent datepicker belongs to second datepicker input (the one for &quot;to&quot; date)
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Outputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Output</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>hovered</code></td>
+              <td><code>EventEmitter</code></td>
+              <td>
+                
+                Event to trigger on date hover.
+              </td>
+            </tr>
+          
+            <tr >
+              <td><code>rangeSelect</code></td>
+              <td><code>EventEmitter</code></td>
+              <td>
+                
+                Emits an event when a range is selected
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Methods</h2>
+        
+      <div class="method ">
+        <h3>
+          <code>onKeyUp(event: KeyboardEvent): void</code>
+          
+        </h3>
+        <p>Keypress handler</p>
+        
+          <h4>Parameters:</h4>
+          <ul>
+            
+              <li><code>event</code> (<code>KeyboardEvent</code>): undefined</li>
+            
+          </ul>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>onMouseOut(): void</code>
+          
+        </h3>
+        <p>Handle mouseover. Emit the hovered date with null.</p>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>onMouseOver(): void</code>
+          
+        </h3>
+        <p>Handle mouseover. Emit the hovered date with date.</p>
+        
+        
+      </div>
+    
+      </section>
+    
 </body>
 </html>

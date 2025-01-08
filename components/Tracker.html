@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Component: Tracker - UI-Ang Documentation</title>
+    <title>Component: Tracker</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,77 +12,187 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
         }
-        pre {
+        code {
             background: #f5f5f5;
-            padding: 15px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .deprecated {
+            opacity: 0.7;
+        }
+        .badge {
+            background: #ff5252;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+        }
+        .doc-section {
+            margin: 2em 0;
+        }
+        .method {
+            margin: 2em 0;
+            padding: 1em;
+            background: #f8f9fa;
             border-radius: 5px;
-            overflow-x: auto;
+        }
+        h1 { color: #2196f3; }
+        h2 { 
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.3em;
         }
         a { color: #2196f3; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back to Index</a>
+    <a href="../index.html" class="back-link">← Back to Index</a>
     <h1>Component: Tracker</h1>
-    <pre><code>{
-  "module": "TrackerModule",
-  "selector": "bb-tracker-ui",
-  "inputs": {
-    "countFn": {
-      "type": "function",
-      "description": "Custom counting function that overrides default behaviour."
-    },
-    "hideCount": {
-      "type": "boolean",
-      "description": "Whether segment count should be hidden. Defaults to 'false'.",
-      "default": "false"
-    },
-    "progressAriaLabel": {
-      "type": "string",
-      "description": "Aria label attribute for active segment's progress element. Defaults to 'progress'.",
-      "default": "'progress'"
-    },
-    "segmented": {
-      "type": "boolean",
-      "description": "Whether tracker is in segmented mode. Defaults to true.",
-      "default": "true"
-    },
-    "separator": {
-      "type": "string",
-      "description": "Separator between count text and segment label. Applicable only to non-vertical mode. Defaults to '-'.",
-      "default": "'-'"
-    },
-    "vertical": {
-      "type": "boolean",
-      "description": "Whether tracker is in vertical mode. Defaults to false.",
-      "default": "false"
-    }
-  },
-  "methods": {
-    "calculateCount": {
-      "description": "Calculates count text of the segment.",
-      "params": [
-        {
-          "name": "segment",
-          "type": "TrackerSegmentComponent | null"
-        },
-        {
-          "name": "segmentIndex",
-          "type": "number | null"
-        }
-      ],
-      "returns": {
-        "type": "string"
-      }
-    },
-    "stateChanged": {
-      "description": "Marks the component to be change detected.",
-      "returns": {
-        "type": "void"
-      }
-    }
-  }
-}</code></pre>
+    
+    
+    
+    <p><strong>Selector:</strong> <code>bb-tracker-ui</code></p>
+    
+    
+      <section class="doc-section">
+        <h2>Inputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>countFn</code></td>
+              <td><code>function</code></td>
+              <td>
+                
+                Custom counting function that overrides default behaviour.
+              </td>
+              <td>-</td>
+            </tr>
+          
+            <tr >
+              <td><code>hideCount</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                Whether segment count should be hidden. Defaults to 'false'.
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>progressAriaLabel</code></td>
+              <td><code>string</code></td>
+              <td>
+                
+                Aria label attribute for active segment's progress element. Defaults to 'progress'.
+              </td>
+              <td><code>'progress'</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>segmented</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                Whether tracker is in segmented mode. Defaults to true.
+              </td>
+              <td><code>true</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>separator</code></td>
+              <td><code>string</code></td>
+              <td>
+                
+                Separator between count text and segment label. Applicable only to non-vertical mode. Defaults to '-'.
+              </td>
+              <td><code>'-'</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>vertical</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                Whether tracker is in vertical mode. Defaults to false.
+              </td>
+              <td><code>false</code></td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+    
+      <section class="doc-section">
+        <h2>Methods</h2>
+        
+      <div class="method ">
+        <h3>
+          <code>calculateCount(segment: TrackerSegmentComponent | null, segmentIndex: number | null): string</code>
+          
+        </h3>
+        <p>Calculates count text of the segment.</p>
+        
+          <h4>Parameters:</h4>
+          <ul>
+            
+              <li><code>segment</code> (<code>TrackerSegmentComponent | null</code>): undefined</li>
+            
+              <li><code>segmentIndex</code> (<code>number | null</code>): undefined</li>
+            
+          </ul>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>stateChanged(): void</code>
+          
+        </h3>
+        <p>Marks the component to be change detected.</p>
+        
+        
+      </div>
+    
+      </section>
+    
 </body>
 </html>

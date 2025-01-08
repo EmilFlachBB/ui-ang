@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pipe: PhoneNumber - UI-Ang Documentation</title>
+    <title>Pipe: PhoneNumber</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,45 +12,74 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
         }
-        pre {
+        code {
             background: #f5f5f5;
-            padding: 15px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .deprecated {
+            opacity: 0.7;
+        }
+        .badge {
+            background: #ff5252;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+        }
+        .doc-section {
+            margin: 2em 0;
+        }
+        .method {
+            margin: 2em 0;
+            padding: 1em;
+            background: #f8f9fa;
             border-radius: 5px;
-            overflow-x: auto;
+        }
+        h1 { color: #2196f3; }
+        h2 { 
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.3em;
         }
         a { color: #2196f3; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back to Index</a>
+    <a href="../index.html" class="back-link">← Back to Index</a>
     <h1>Pipe: PhoneNumber</h1>
-    <pre><code>{
-  "ngname": "phoneNumber",
-  "description": "Pipe for formatting phone numbers to various international formats ### Global configuration token `INPUT_PHONE_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `InputPhoneComponent` in your project. The following properties can be overwritten using the token:  - `maxLength`  - `minLength`  - `autocomplete`  - `mask`  - `displayFormat`  - `validationPattern`  - `hideSelectedCountryFlag`  - `defaultCountryIsoCode`  - `countryList` #### Usage notes The following is an example of how to use the token: ```typescript  import { INPUT_PHONE_CONFIG_TOKEN } from '@backbase/ui-ang/input-phone';  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';  import { AppModule } from './app/app.module';  const inputPhoneConfig = {    maxLength: 10,    minLength: 5,    autocomplete: 'off',    displayFormat: 'E.164',  }  providers: [    {      provide: INPUT_PHONE_CONFIG_TOKEN,      useValue: inputPhoneConfig,    },  ] ``` ### Country Code Format Config Token `COUNTRY_CODE_FORMAT_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `InputPhoneComponent` in your project. #### Usage notes The following is an example of how to use the token. Note: the `minLength` and `maxLength` properties do not account for the country dialling code: ```typescript  import { COUNTRY_CODE_FORMAT_CONFIG_TOKEN } from '@backbase/ui-ang/input-phone';  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';  import { AppModule } from './app/app.module';  const countryCodeFormatConfig = {    '+1': {      mask: '+0 (000) 000-0000',      minLength: 8,      maxLength, 12,    },  };  providers: [    {      provide: COUNTRY_CODE_FORMAT_CONFIG_TOKEN,      useValue: countryCodeFormatConfig,    },  ] ``` #### IMPORTANT NOTE:  - If you wish to validate & format ALL phone numbers using the SAME `minLength`, `maxLength` and/or `mask`, please configure these values using the `INPUT_PHONE_CONFIG_TOKEN`.  - If you need to support phone numbers for multiple countries (DIFFERENT `minLength`, `maxLength` & `mask`), we advise to use the `COUNTRY_CODE_FORMAT_CONFIG_TOKEN` instead.",
-  "transform": {
-    "description": "Formats a phone number to any entered country code international format",
-    "params": [
-      {
-        "name": "value",
-        "type": "string | number",
-        "description": "the phone number string to transform"
-      },
-      {
-        "name": "countryCode",
-        "type": "CountryCode",
-        "description": "the two letter CDLR code for the country to format to"
-      },
-      {
-        "name": "isInputElement",
-        "type": "boolean",
-        "description": "whether the value was entered in an input element"
-      }
-    ],
-    "returns": {
-      "type": "string"
-    }
-  }
-}</code></pre>
+    
+    <p>Pipe for formatting phone numbers to various international formats ### Global configuration token `INPUT_PHONE_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `InputPhoneComponent` in your project. The following properties can be overwritten using the token:  - `maxLength`  - `minLength`  - `autocomplete`  - `mask`  - `displayFormat`  - `validationPattern`  - `hideSelectedCountryFlag`  - `defaultCountryIsoCode`  - `countryList` #### Usage notes The following is an example of how to use the token: ```typescript  import { INPUT_PHONE_CONFIG_TOKEN } from '@backbase/ui-ang/input-phone';  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';  import { AppModule } from './app/app.module';  const inputPhoneConfig = {    maxLength: 10,    minLength: 5,    autocomplete: 'off',    displayFormat: 'E.164',  }  providers: [    {      provide: INPUT_PHONE_CONFIG_TOKEN,      useValue: inputPhoneConfig,    },  ] ``` ### Country Code Format Config Token `COUNTRY_CODE_FORMAT_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `InputPhoneComponent` in your project. #### Usage notes The following is an example of how to use the token. Note: the `minLength` and `maxLength` properties do not account for the country dialling code: ```typescript  import { COUNTRY_CODE_FORMAT_CONFIG_TOKEN } from '@backbase/ui-ang/input-phone';  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';  import { AppModule } from './app/app.module';  const countryCodeFormatConfig = {    '+1': {      mask: '+0 (000) 000-0000',      minLength: 8,      maxLength, 12,    },  };  providers: [    {      provide: COUNTRY_CODE_FORMAT_CONFIG_TOKEN,      useValue: countryCodeFormatConfig,    },  ] ``` #### IMPORTANT NOTE:  - If you wish to validate & format ALL phone numbers using the SAME `minLength`, `maxLength` and/or `mask`, please configure these values using the `INPUT_PHONE_CONFIG_TOKEN`.  - If you need to support phone numbers for multiple countries (DIFFERENT `minLength`, `maxLength` & `mask`), we advise to use the `COUNTRY_CODE_FORMAT_CONFIG_TOKEN` instead.</p>
+    
+    
+    
+    
+    
+    
 </body>
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directive: TableSortable - UI-Ang Documentation</title>
+    <title>Directive: TableSortable</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,102 +12,246 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
         }
-        pre {
+        code {
             background: #f5f5f5;
-            padding: 15px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .deprecated {
+            opacity: 0.7;
+        }
+        .badge {
+            background: #ff5252;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+        }
+        .doc-section {
+            margin: 2em 0;
+        }
+        .method {
+            margin: 2em 0;
+            padding: 1em;
+            background: #f8f9fa;
             border-radius: 5px;
-            overflow-x: auto;
+        }
+        h1 { color: #2196f3; }
+        h2 { 
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.3em;
         }
         a { color: #2196f3; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back to Index</a>
+    <a href="../index.html" class="back-link">← Back to Index</a>
     <h1>Directive: TableSortable</h1>
-    <pre><code>{
-  "module": "TableSortableModule",
-  "directive": "bbSortable",
-  "inputs": {
-    "bbSortable": {
-      "type": "string",
-      "description": "The name of the column to be sorted"
-    },
-    "direction": {
-      "type": "SortDirection",
-      "options": "asc | desc | null",
-      "description": "The current sort direction. Accepts one of the values of 'asc', 'desc' or null",
-      "default": "null"
-    },
-    "sortDisabled": {
-      "type": "boolean",
-      "description": "Toggles the sorting functionality on the column."
-    }
-  },
-  "outputs": {
-    "sort": {
-      "type": "EventEmitter",
-      "description": "An event emitter for on sort actions."
-    }
-  },
-  "methods": {
-    "emitSortEvent": {
-      "description": "Notify table with new sorting params",
-      "returns": {
-        "type": "void"
-      }
-    },
-    "getMenuOptionSelectionChanges": {
-      "description": "Combined stream of all of the bbTableMenuitem selectionChange events.",
-      "params": [
-        {
-          "name": "menuOptions",
-          "type": "QueryList<DropdownMenuOptionToken>"
-        }
-      ],
-      "returns": {
-        "type": "any"
-      }
-    },
-    "markAllMenuOptionAsInactive": {
-      "returns": {
-        "type": "void"
-      }
-    },
-    "markMenuOptionAsActive": {
-      "description": "mark the new menuitem as active only if sorting order is asc/desc",
-      "params": [
-        {
-          "name": "menuOption",
-          "type": "DropdownMenuOptionToken"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    },
-    "onMenuOptionSelect": {
-      "params": [
-        {
-          "name": "menuOption",
-          "type": "DropdownMenuOptionToken"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    },
-    "rotate": {
-      "returns": {
-        "type": "void"
-      }
-    },
-    "updateAriaSortAttribute": {
-      "returns": {
-        "type": "void"
-      }
-    }
-  }
-}</code></pre>
+    
+    
+    
+    
+    
+    
+      <section class="doc-section">
+        <h2>Inputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>bbSortable</code></td>
+              <td><code>string</code></td>
+              <td>
+                
+                The name of the column to be sorted
+              </td>
+              <td>-</td>
+            </tr>
+          
+            <tr >
+              <td><code>direction</code></td>
+              <td><code>SortDirection</code></td>
+              <td>
+                
+                The current sort direction. Accepts one of the values of 'asc', 'desc' or null
+              </td>
+              <td><code>null</code></td>
+            </tr>
+          
+            <tr >
+              <td><code>sortDisabled</code></td>
+              <td><code>boolean</code></td>
+              <td>
+                
+                Toggles the sorting functionality on the column.
+              </td>
+              <td>-</td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Outputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Output</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>sort</code></td>
+              <td><code>EventEmitter</code></td>
+              <td>
+                
+                An event emitter for on sort actions.
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Methods</h2>
+        
+      <div class="method ">
+        <h3>
+          <code>emitSortEvent(): void</code>
+          
+        </h3>
+        <p>Notify table with new sorting params</p>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>getMenuOptionSelectionChanges(menuOptions: QueryList<DropdownMenuOptionToken>): any</code>
+          
+        </h3>
+        <p>Combined stream of all of the bbTableMenuitem selectionChange events.</p>
+        
+          <h4>Parameters:</h4>
+          <ul>
+            
+              <li><code>menuOptions</code> (<code>QueryList<DropdownMenuOptionToken></code>): undefined</li>
+            
+          </ul>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>markAllMenuOptionAsInactive(): void</code>
+          
+        </h3>
+        <p></p>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>markMenuOptionAsActive(menuOption: DropdownMenuOptionToken): void</code>
+          
+        </h3>
+        <p>mark the new menuitem as active only if sorting order is asc/desc</p>
+        
+          <h4>Parameters:</h4>
+          <ul>
+            
+              <li><code>menuOption</code> (<code>DropdownMenuOptionToken</code>): undefined</li>
+            
+          </ul>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>onMenuOptionSelect(menuOption: DropdownMenuOptionToken): void</code>
+          
+        </h3>
+        <p></p>
+        
+          <h4>Parameters:</h4>
+          <ul>
+            
+              <li><code>menuOption</code> (<code>DropdownMenuOptionToken</code>): undefined</li>
+            
+          </ul>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>rotate(): void</code>
+          
+        </h3>
+        <p></p>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>updateAriaSortAttribute(): void</code>
+          
+        </h3>
+        <p></p>
+        
+        
+      </div>
+    
+      </section>
+    
 </body>
 </html>

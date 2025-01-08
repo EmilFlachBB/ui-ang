@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pipe: PaymentCardNumber - UI-Ang Documentation</title>
+    <title>Pipe: PaymentCardNumber</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,46 +12,74 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
         }
-        pre {
+        code {
             background: #f5f5f5;
-            padding: 15px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .deprecated {
+            opacity: 0.7;
+        }
+        .badge {
+            background: #ff5252;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+        }
+        .doc-section {
+            margin: 2em 0;
+        }
+        .method {
+            margin: 2em 0;
+            padding: 1em;
+            background: #f8f9fa;
             border-radius: 5px;
-            overflow-x: auto;
+        }
+        h1 { color: #2196f3; }
+        h2 { 
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.3em;
         }
         a { color: #2196f3; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back to Index</a>
+    <a href="../index.html" class="back-link">← Back to Index</a>
     <h1>Pipe: PaymentCardNumber</h1>
-    <pre><code>{
-  "ngname": "paymentCardNumber",
-  "description": "A card number is the digit identifier found on payment cards, such as credit cards and debit cards. This card number prefix identifies the issuer of the card, and the digits that follow are used by the issuing organization, such as a bank, to identify the cardholder as a customer with their designated accounts. ### Numbers masking synchronization token It is possible to enable numbers masking synchronization with backend. If set to `true` FE does not apply any masking and relies on the backend masking behavior. To enable this feaure the `SYNCHRONIZE_NUMBERS_MASKING` token should be provided. For example: ```typescript  // other imports  import { SYNCHRONIZE_NUMBERS_MASKING } from '@backbase/ui-ang/payment-card-number-pipe';  @NgModule({    //...    providers: [      //...      { provide: SYNCHRONIZE_NUMBERS_MASKING, useValue: true }    ]  })  export class AppModule {}  ```",
-  "transform": {
-    "description": "Formats a card number, mask it and split it into segments - do not set config parameter to use with a global accountsFormat configuration - use config parameter to apply a custom accountsFormat configuration",
-    "params": [
-      {
-        "name": "value",
-        "type": "string | number",
-        "description": "the string to transform"
-      },
-      {
-        "name": "config",
-        "type": "PaymentCardNumberFormat",
-        "description": "the formatting configuration"
-      },
-      {
-        "name": "maskChar",
-        "type": "string",
-        "description": "the character to mask with, deprecated from 6.0.0",
-        "default": "'•'"
-      }
-    ],
-    "returns": {
-      "type": "string"
-    }
-  }
-}</code></pre>
+    
+    <p>A card number is the digit identifier found on payment cards, such as credit cards and debit cards. This card number prefix identifies the issuer of the card, and the digits that follow are used by the issuing organization, such as a bank, to identify the cardholder as a customer with their designated accounts. ### Numbers masking synchronization token It is possible to enable numbers masking synchronization with backend. If set to `true` FE does not apply any masking and relies on the backend masking behavior. To enable this feaure the `SYNCHRONIZE_NUMBERS_MASKING` token should be provided. For example: ```typescript  // other imports  import { SYNCHRONIZE_NUMBERS_MASKING } from '@backbase/ui-ang/payment-card-number-pipe';  @NgModule({    //...    providers: [      //...      { provide: SYNCHRONIZE_NUMBERS_MASKING, useValue: true }    ]  })  export class AppModule {}  ```</p>
+    
+    
+    
+    
+    
+    
 </body>
 </html>

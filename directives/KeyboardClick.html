@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directive: KeyboardClick - UI-Ang Documentation</title>
+    <title>Directive: KeyboardClick</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,53 +12,140 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            color: #333;
         }
-        pre {
+        code {
             background: #f5f5f5;
-            padding: 15px;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .deprecated {
+            opacity: 0.7;
+        }
+        .badge {
+            background: #ff5252;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f5f5f5;
+        }
+        .doc-section {
+            margin: 2em 0;
+        }
+        .method {
+            margin: 2em 0;
+            padding: 1em;
+            background: #f8f9fa;
             border-radius: 5px;
-            overflow-x: auto;
+        }
+        h1 { color: #2196f3; }
+        h2 { 
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 0.3em;
         }
         a { color: #2196f3; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1em;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back to Index</a>
+    <a href="../index.html" class="back-link">← Back to Index</a>
     <h1>Directive: KeyboardClick</h1>
-    <pre><code>{
-  "module": "KeyboardClickModule",
-  "directive": "bbKeyboardClick",
-  "description": "Directive that add click/keydown.enter/keydown.space events on element Used for adding accessibility(tab navigation events) for element",
-  "outputs": {
-    "bbKeyboardClick": {
-      "type": "EventEmitter",
-      "description": "Stream that should be fired on click/keydown.enter/keydown.space"
-    }
-  },
-  "methods": {
-    "onActionKeyPressed": {
-      "params": [
-        {
-          "name": "$event",
-          "type": "KeyboardEvent"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    },
-    "onClicked": {
-      "params": [
-        {
-          "name": "$event",
-          "type": "MouseEvent"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    }
-  }
-}</code></pre>
+    
+    <p>Directive that add click/keydown.enter/keydown.space events on element Used for adding accessibility(tab navigation events) for element</p>
+    
+    
+    
+    
+    
+      <section class="doc-section">
+        <h2>Outputs</h2>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Output</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td><code>bbKeyboardClick</code></td>
+              <td><code>EventEmitter</code></td>
+              <td>
+                
+                Stream that should be fired on click/keydown.enter/keydown.space
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      </section>
+    
+    
+      <section class="doc-section">
+        <h2>Methods</h2>
+        
+      <div class="method ">
+        <h3>
+          <code>onActionKeyPressed($event: KeyboardEvent): void</code>
+          
+        </h3>
+        <p></p>
+        
+          <h4>Parameters:</h4>
+          <ul>
+            
+              <li><code>$event</code> (<code>KeyboardEvent</code>): undefined</li>
+            
+          </ul>
+        
+        
+      </div>
+    
+      <div class="method ">
+        <h3>
+          <code>onClicked($event: MouseEvent): void</code>
+          
+        </h3>
+        <p></p>
+        
+          <h4>Parameters:</h4>
+          <ul>
+            
+              <li><code>$event</code> (<code>MouseEvent</code>): undefined</li>
+            
+          </ul>
+        
+        
+      </div>
+    
+      </section>
+    
 </body>
 </html>
