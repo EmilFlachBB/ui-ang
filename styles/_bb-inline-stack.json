@@ -1,0 +1,25 @@
+{
+  "classes": [
+    "bb-inline-stack",
+    "bb-inline-stack--density-lg",
+    "bb-inline-stack--density-md",
+    "bb-inline-stack--density-none",
+    "bb-inline-stack--density-sm",
+    "bb-inline-stack--density-xl",
+    "bb-inline-stack--density-xs",
+    "bb-inline-stack__item",
+    "bb-inline-stack__item--spacing-lg",
+    "bb-inline-stack__item--spacing-md",
+    "bb-inline-stack__item--spacing-none",
+    "bb-inline-stack__item--spacing-sm",
+    "bb-inline-stack__item--spacing-xl",
+    "bb-inline-stack__item--spacing-xs"
+  ],
+  "examples": [
+    "<span class=\"bb-inline-stack\">\n<span class=\"bb-inline-stack__item\">\nTab\n</span>\n<span class=\"bb-inline-stack__item\">\nTab\n</span>\n</span>",
+    "<span class=\"bb-inline-stack bb-inline-stack--density-md\">\n<span class=\"bb-inline-stack__item\">Tab 1</span>\n<span class=\"bb-inline-stack__item\">Tab 2</span>\n</span>",
+    "<span class=\"bb-inline-stack\">\n<span class=\"bb-inline-stack__item bb-inline-stack__item--spacing-md\">\nTab\n</span>\n<span class=\"bb-inline-stack__item bb-inline-stack__item--spacing-md\">\nTab\n</span>\n</span>",
+    "<span class=\"bb-inline-stack bb-inline-stack--density-none\">\n<span class=\"bb-inline-stack__item\">Tab 1</span>\n<span class=\"bb-inline-stack__item\">Tab 2</span>\n</span>",
+    "<span class=\"bb-inline-stack\">\n<span class=\"bb-inline-stack__item bb-inline-stack__item--spacing-none\">\nTab\n</span>\n<span class=\"bb-inline-stack__item bb-inline-stack__item--spacing-none\">\nTab\n</span>\n</span>"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "classes": [
+    "bb-tabs-container__tabs"
+  ],
+  "examples": [
+    "<div class=\"bb-tabs-container\">\n<div class=\"bb-tabs-container__tabs\">\n<bb-tab-group-ui [initialSelection]=\"0\" (select)=\"onTabSelect($event)\" (click)=\"onClick($event)\">\n<bb-tab-ui>First</bb-tab-ui>\n<bb-tab-ui>Second</bb-tab-ui>\n<bb-tab-ui>Third</bb-tab-ui>\n</bb-tab-group-ui>\n</div>\n<div class=\"tab-main-content\">\n<div data-role=\"first-tab\" *ngIf=\"index === 0\">First tab content here</div>\n<div data-role=\"second-tab\" *ngIf=\"index === 1\">Second tab content here</div>\n<div data-role=\"third-tab\" *ngIf=\"index === 2\">Third tab content here</div>\n</div>\n</div>"
+  ]
+}

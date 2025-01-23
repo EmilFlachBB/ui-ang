@@ -1,0 +1,14 @@
+{
+  "classes": [
+    "bb-vertical-tabs-container",
+    "bb-vertical-tabs-container__button",
+    "bb-vertical-tabs-container__main",
+    "bb-vertical-tabs-container__sidebar"
+  ],
+  "examples": [
+    "<div class=\"bb-vertical-tabs-container\">\n<div class=\"bb-vertical-tabs-container__sidebar\">\nMain Sidebar Example\n<div class=\"bb-vertical-tabs-container__button\">Button example.</div>\n</div>\n<div class=\"bb-vertical-tabs-container__main\">\nMain View Example\n</div>\n</div>",
+    "<div class=\"bb-vertical-tabs-container\">\n<div class=\"bb-vertical-tabs-container__sidebar\">\nMain Sidebar Example\n<div class=\"bb-vertical-tabs-container__button\">Button example.</div>\n</div>\n<div class=\"bb-vertical-tabs-container__main\">\nMain View Example\n</div>\n</div>",
+    "<div class=\"bb-vertical-tabs-container\">\n<div class=\"bb-vertical-tabs-container__sidebar\">\nMain Sidebar Example\n<div class=\"bb-vertical-tabs-container__button\">Button example.</div>\n</div>\n<div class=\"bb-vertical-tabs-container__main\">\nMain View Example\n</div>\n</div>",
+    "<div class=\"bb-vertical-tabs-container\">\n<div class=\"bb-vertical-tabs-container__sidebar\">\nMain Sidebar Example\n<div class=\"bb-vertical-tabs-container__button\">Button example.</div>\n</div>\n<div class=\"bb-vertical-tabs-container__main\">\nMain View Example\n</div>\n</div>"
+  ]
+}

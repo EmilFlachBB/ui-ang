@@ -1,0 +1,12 @@
+{
+  "classes": [
+    "bb-icon",
+    "bb-topbar",
+    "bb-topbar__branding-area",
+    "bb-topbar__content-area",
+    "bb-topbar__nav-expand-marker",
+    "bb-topbar__nav-expand-marker--horizontal-nav",
+    "bb-topbar__navigation-area"
+  ],
+  "examples": []
+}

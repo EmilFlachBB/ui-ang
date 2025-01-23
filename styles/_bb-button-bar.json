@@ -1,0 +1,32 @@
+{
+  "classes": [
+    "bb-button-bar",
+    "bb-button-bar--center",
+    "bb-button-bar--density-lg",
+    "bb-button-bar--density-md",
+    "bb-button-bar--density-sm",
+    "bb-button-bar--density-xl",
+    "bb-button-bar--density-xs",
+    "bb-button-bar--end",
+    "bb-button-bar--reverse",
+    "bb-button-bar--spacing-lg",
+    "bb-button-bar--spacing-md",
+    "bb-button-bar--spacing-sm",
+    "bb-button-bar--spacing-xl",
+    "bb-button-bar--spacing-xs",
+    "bb-button-bar--sticky",
+    "bb-button-bar__button",
+    "bb-button-bar__button--across"
+  ],
+  "examples": [
+    "<div class=\"bb-button-bar\">\n<button class=\"bb-button-bar__button btn btn-primary\">Primary action</button>\n<button class=\"bb-button-bar__button btn btn-secondary\">Secondary action</button>\n<button class=\"bb-button-bar__button btn btn-tertiary\">Tertiary action</button>\n</div>\n\n@example html - Button order reversed: `bb-button-bar--reverse`\n<div class=\"bb-button-bar bb-button-bar--reverse\">\n<button class=\"bb-button-bar__button btn btn-tertiary\">Tertiary action</button>\n<button class=\"bb-button-bar__button btn btn-secondary\">Secondary action</button>\n<button class=\"bb-button-bar__button btn btn-primary\">Primary action</button>\n</div>\n\n@example html - Buttons aligned in center: `bb-button-bar--center`\n<div class=\"bb-button-bar bb-button-bar--center\">\n<button class=\"bb-button-bar__button btn btn-primary\">Primary action</button>\n<button class=\"bb-button-bar__button btn btn-secondary\">Secondary action</button>\n<button class=\"bb-button-bar__button btn btn-tertiary\">Tertiary action</button>\n</div>\n\n@example html - Extra top spacing: `bb-button-bar--spacing-md`\n<div class=\"bb-button-bar bb-button-bar--spacing-md\">\n<button class=\"bb-button-bar__button btn btn-primary\">Primary action</button>\n<button class=\"bb-button-bar__button btn btn-secondary\">Secondary action</button>\n<button class=\"bb-button-bar__button btn btn-tertiary\">Tertiary action</button>\n</div>\n\n@example html - Bigger spacing between button elements: `bb-button-bar--density-lg`\n<div class=\"bb-button-bar bb-button-bar--density-lg\">\n<button class=\"bb-button-bar__button btn btn-primary\">Primary action</button>\n<button class=\"bb-button-bar__button btn btn-secondary\">Secondary action</button>\n<button class=\"bb-button-bar__button btn btn-tertiary\">Tertiary action</button>\n</div>",
+    "<button class=\"bb-button-bar__button btn btn-primary\">Primary action</button>",
+    "<button class=\"bb-button-bar__button--across btn btn-primary\">\nPrimary action\n</button>",
+    "<div class=\"bb-button-bar bb-button-bar--reverse\">\n...\n</div>",
+    "<div class=\"bb-button-bar bb-button-bar--center\">\n...\n</div>",
+    "<div class=\"bb-button-bar bb-button-bar--end\">\n...\n</div>",
+    "<div class=\"bb-button-bar bb-button-bar--sticky\">\n...\n</div>",
+    "<div class=\"bb-button-bar bb-button-bar--spacing-md\">\n...\n</div>",
+    "<div class=\"bb-button-bar bb-button-bar--density-xs\">\n...\n</div>"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "classes": [
+    "bb-page-layout--horizontal-nav",
+    "bb-page-layout--nav-expanded",
+    "bb-page-layout__main",
+    "bb-page-layout__nav-backdrop",
+    "bb-page-layout__toggler",
+    "bb-page-layout__topbar"
+  ],
+  "examples": []
+}

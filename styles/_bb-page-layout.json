@@ -1,0 +1,16 @@
+{
+  "classes": [
+    "bb-page-layout",
+    "bb-page-layout--sticky-sidebar",
+    "bb-page-layout--sticky-topbar",
+    "bb-page-layout__container",
+    "bb-page-layout__content",
+    "bb-page-layout__content-anchor",
+    "bb-page-layout__main",
+    "bb-page-layout__nav-backdrop",
+    "bb-page-layout__skip-to-content",
+    "bb-page-layout__topbar",
+    "bb-sidebar"
+  ],
+  "examples": []
+}

@@ -1,0 +1,25 @@
+{
+  "classes": [
+    "bb-d-block",
+    "bb-d-flex",
+    "bb-d-lg-block",
+    "bb-d-lg-flex",
+    "bb-d-lg-none",
+    "bb-d-md-block",
+    "bb-d-md-flex",
+    "bb-d-md-none",
+    "bb-d-none",
+    "bb-d-print-block",
+    "bb-d-print-flex",
+    "bb-d-print-none",
+    "bb-d-sm-block",
+    "bb-d-sm-flex",
+    "bb-d-sm-none",
+    "bb-d-xl-block",
+    "bb-d-xl-flex",
+    "bb-d-xl-none"
+  ],
+  "examples": [
+    "<div class=\"bb-d-flex\">\nDisplay flex\n</div>\n<div class=\"bb-d-none\">\nDisplay none\n</div>\n<div class=\"bb-d-md-none\">\nDisplay none on medium screens and larger\n</div>\n<div class=\"bb-d-none bb-d-md-block\">\nDisplay block on medium screens and larger and display none on smaller screens\n</div>"
+  ]
+}
