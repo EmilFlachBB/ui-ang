@@ -2,6 +2,7 @@
   "module": "CollapsibleModule",
   "selector": "bb-collapsible-ui",
   "description": "Provides an expandable details-summary/body-header view.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-collapsible--docs",
   "inputs": {
     "hasChevron": {
       "type": "boolean",

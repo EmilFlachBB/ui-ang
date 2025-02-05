@@ -2,6 +2,7 @@
   "module": "HighlightModule",
   "directive": "bbHighlight",
   "description": "Directive that encapsulate logic for highlighting positive/negative numbers. Example usage with bb-amount-ui (AmountModule)",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-highlight--docs",
   "inputs": {
     "amount": {
       "type": "string | number",

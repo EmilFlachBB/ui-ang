@@ -2,6 +2,7 @@
   "module": "ModeHeaderModule",
   "selector": "bb-mode-header-ui",
   "description": "Component that displays a mode header.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-mode-header--docs",
   "inputs": {
     "closeButtonAriaLabel": {
       "type": "string",

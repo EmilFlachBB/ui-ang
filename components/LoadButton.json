@@ -2,6 +2,7 @@
   "module": "LoadButtonModule",
   "selector": "bb-load-button-ui",
   "description": "Component that displays a button with integrated loading indicator. Refer to [Button Component](https://designsystem.backbase.com/web-components/button/web) for button colors and sizes. ### Use Case There are two use-cases for this component:    - Finite loading - button is disabled but remains displayed after a certain limit    - Infinite loading - button is always functional #### Finite Loading This is used primarily when paginating a list of items and the number of items is known. The component is enabled and allows loading as long as the current number of displayed results (determined by `from` and `size`) is under the `totalCount`. ```html     ``` #### Infinite Loading This is used primarily when you are loading a content only once or endlessly. This is the default behaviour. This behaviour is available as long as the `totalCount` is 1. ```html     ```",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-load-button--docs",
   "inputs": {
     "aria-label": {
       "type": "string",
@@ -49,7 +50,6 @@
     },
     "color": {
       "type": "ButtonColor | string",
-      "options": "primary | info | success | warning | danger | secondary | light | dark | link | tertiary | link-text | link-text-light | unstyled | link-dark | neutral",
       "description": "The color for the button.  Defaults to 'primary'.",
       "default": "'primary'"
     },
@@ -64,7 +64,6 @@
     },
     "type": {
       "type": "ButtonType",
-      "options": "button | submit | reset",
       "description": "The HTML5 button type.  Defaults to 'button'.",
       "default": "'button'"
     }

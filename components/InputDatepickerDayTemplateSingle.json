@@ -17,7 +17,6 @@
     },
     "hoveredDate": {
       "type": "NgDateStructNullable",
-      "options": "NgbDateStruct | null",
       "description": "Hovered date by a user.",
       "default": "null"
     },

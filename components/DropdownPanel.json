@@ -2,6 +2,7 @@
   "module": "DropdownPanelModule",
   "selector": "bb-dropdown-panel-ui",
   "description": "Component incapsulating logic for showing/hiding dropdown.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-dropdown-panel--docs",
   "inputs": {
     "buttonClass": {
       "type": "string",

@@ -1,6 +1,7 @@
 {
   "module": "ValueDiffModule",
   "directive": "bbValueDiff",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-value-diff--docs",
   "inputs": {
     "bbValueDiff": {
       "type": "string",

@@ -2,6 +2,7 @@
   "module": "InputValidationMessageModule",
   "selector": "bb-input-validation-message-ui",
   "description": "Component that displays an input validation message or helper. ### Global configuration token `INPUT_VALIDATION_MESSAGE_CONFIG` enables you to globally set the same configuration for all instances of `InputValidationMessageComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not be able to overwrite it. The following properties can be overwritten using the token:  - `showIcon` #### Usage notes The following is an example of how to use the token: ```typescript import { INPUT_VALIDATION_MESSAGE_CONFIG } from '@backbase/ui-ang/input-validation-message'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const inputValidationMessageShowIcon = { showIcon: false }; platformBrowserDynamic().bootstrapModule(AppModule, {   providers: [{ provide: INPUT_VALIDATION_MESSAGE_CONFIG, useValue: inputValidationMessageShowIcon }] }); ```",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-input-validation-message--docs",
   "inputs": {
     "messageId": {
       "type": "string",

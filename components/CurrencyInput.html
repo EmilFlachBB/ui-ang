@@ -38,6 +38,7 @@
   "module": "CurrencyInputModule",
   "selector": "bb-currency-input-ui",
   "description": "Component to display and manage the currency and the amount ### Global configuration token `CURRENCY_INPUT_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of the `CurrencyInputComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not able to overwrite it. The following properties can be overwritten using the token:  - `allowNegativeValue`  - `currencies`  - `placeholder` #### Usage notes The following is an example of how to use the token: ```typescript import { CURRENCY_INPUT_CONFIG_TOKEN } from '@backbase/ui-ang/currency-input'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const currencyInputConfig = {   allowNegativeValue: true } platformBrowserDynamic().bootstrapModule(AppModule, {   providers: [{ provide: CURRENCY_INPUT_CONFIG_TOKEN, useValue: currencyInputConfig }] }); ``` ### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - aria-describedby  - aria-invalid  - aria-labelledby  - integerLabelSrOnly  - decimalLabelSrOnly",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-currency-input--docs",
   "inputs": {
     "allowNegativeValue": {
       "description": "Flag is used to allow input negative value This attribute can be overwritten via the global configuration token"
@@ -148,7 +149,6 @@
     },
     "resultType": {
       "type": "ResultType",
-      "options": "string | number",
       "description": "For set output type string/number, by default 'number', when  need work with long number ( bigger than MAX_SAFE_INTEGER = 9,007,199,254,740,993 ) need to use 'string'",
       "default": "'number'"
     }

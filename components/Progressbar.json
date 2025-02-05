@@ -2,6 +2,7 @@
   "module": "ProgressbarModule",
   "selector": "bb-progressbar-ui",
   "description": "Component that represents the progress of a task.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-progressbar--docs",
   "inputs": {
     "animated": {
       "type": "boolean",
@@ -34,7 +35,6 @@
     },
     "type": {
       "type": "ProgressbarType | undefined",
-      "options": "primary | success | info | warning | danger",
       "description": "Type of progress bar. Takes the values primary, success, info, warning &amp; danger."
     },
     "value": {

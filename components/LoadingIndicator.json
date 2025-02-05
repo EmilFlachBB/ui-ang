@@ -2,6 +2,7 @@
   "module": "LoadingIndicatorModule",
   "selector": "bb-loading-indicator-ui",
   "description": "Component that displays a loading spinner and message.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-loading-indicator--docs",
   "inputs": {
     "hasBackground": {
       "type": "boolean",
@@ -15,7 +16,6 @@
     },
     "loaderSize": {
       "type": "LoadingIndicatorSize",
-      "options": "lg | md | sm",
       "description": "The size of the loading indicator. Defaults to 'md'.",
       "default": "'md'"
     },

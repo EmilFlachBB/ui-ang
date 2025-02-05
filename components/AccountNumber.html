@@ -38,6 +38,7 @@
   "module": "AccountNumberModule",
   "selector": "bb-account-number, bb-account-number-ui",
   "description": "Component that displays account number according to the IBAN, BBAN, cardNumber and number. ### Usage By default, The masking and unmasking of the account number is not implemented and requires custom implementation. In order to have a fully working component with masking capabilities, map the `mask` and `unmask` outputs to functions such that it toggles between the masked and unmasked number. ```typescript @Component({   selector: 'bb-account-number-ui-showcase',   template: `             `, }) export class AccountNumberShowcaseComponent {   number = '1234';   masked = false;   onMask() {     this.number = '**34';     this.masked = true;   }   onUnmask() {     this.number = '1234';     this.masked = false;   }   constructor() {} } ```",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-account-number--docs",
   "inputs": {
     "account": {
       "type": "ArrangementItem",
@@ -60,7 +61,6 @@
     },
     "type": {
       "type": "AccountNumberType | undefined",
-      "options": "cardNumber | iban | bban",
       "description": "Account number type ('bban', 'iban' or 'cardNumber')"
     },
     "unmaskable": {
@@ -72,12 +72,10 @@
   "outputs": {
     "mask": {
       "type": "EventEmitter<AccountNumberType>",
-      "options": "cardNumber | iban | bban",
       "description": "Emits a AccountNumberType to be masked"
     },
     "unmask": {
       "type": "EventEmitter<AccountNumberType>",
-      "options": "cardNumber | iban | bban",
       "description": "Emits a AccountNumberType to be unmasked"
     }
   },
@@ -93,7 +91,6 @@
       "description": "Gives either type if provided. Otherwise, try to get from account.",
       "returns": {
         "type": "AccountNumberType",
-        "options": "cardNumber | iban | bban",
         "description": "'cardNumber' | 'iban' | 'bban'"
       }
     },

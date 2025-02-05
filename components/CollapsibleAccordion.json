@@ -2,6 +2,7 @@
   "module": "CollapsibleAccordionModule",
   "selector": "bb-collapsible-accordion-ui",
   "description": "Component that groups Collapsible components to show them in an accordion fashion. It can assure that only one Collapsible panel can be opened at a time.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-collapsible-accordion--docs",
   "inputs": {
     "closeOthers": {
       "type": "boolean",

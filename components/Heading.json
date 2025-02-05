@@ -45,7 +45,6 @@
     },
     "navigationItems": {
       "type": "HeadingNavigationItem<any>[]",
-      "options": "HeadingNavigationButtonItem<T> | HeadingNavigationSeparatorItem",
       "description": "An array of objects representing the navigation menu items.",
       "default": "[]"
     },

@@ -2,6 +2,7 @@
   "module": "IllustrationModule",
   "selector": "bb-illustration-ui",
   "description": "Component that displays an illustration from the Design System visual asset library. ### Usage If you already have a Backbase app, please follow https://backbase.io/developers/documentation/web-devkit/app-development/configure-static-assets/#_configure_an_application_to_add_static_assets to configure static assets inclusion. For this component in particular, you may need to add: ```ts \"assets\": [   {     \"glob\": \"**\\/*\",     \"input\": \"node_modules/@backbase/ui-ang/assets\",     \"output\": \"/assets/design-system\"   } ] ``` ### Global configuration token `ILLUSTRATION_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `IllustrationComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not be able to overwrite it. The following properties can be overwritten using the token:  - `assetPath`  - `fileType` #### Usage notes The following is an example of how to use the token: ```ts import { ILLUSTRATION_CONFIG_TOKEN } from '@backbase/ui-ang/illustration'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const illustrationConfig = {   fileType: 'png' } platformBrowserDynamic().bootstrapModule(AppModule, {   providers: [{ provide: ILLUSTRATION_CONFIG_TOKEN, useValue: illustrationConfig }] }); ```",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-illustration--docs",
   "inputs": {
     "assetPath": {
       "type": "string",
@@ -29,7 +30,6 @@
     },
     "size": {
       "type": "IllustrationSizeObject",
-      "options": " |  |  |  | ",
       "description": "Either a string indicating the size. For example: &quot;sm&quot;, &quot;md&quot; an object with dimensions: { width, height }  Input is required.",
       "optional": false
     }

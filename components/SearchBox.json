@@ -2,6 +2,7 @@
   "module": "SearchBoxModule",
   "selector": "bb-search-box-ui",
   "description": "Component that provides you a search input field. ### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - Set aria-describedby  with an element id that contains a detailed decription about the Search box.  - aria-label or  aria-labelledby can be used to display the label for search box. If  showSearch = true , searchLabel is discernible text for search button. If  showClear = true , clearLabel is discernible text for clear button.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-search-box--docs",
   "inputs": {
     "autocomplete": {
       "type": "string",
@@ -55,7 +56,6 @@
     },
     "typeaheadOptions": {
       "type": "TypeaheadOptions<T> | undefined",
-      "options": "[]",
       "description": "The list of options to use when typeahead is available. See https://ng-bootstrap.github.io/#/components/typeahead/api#NgbTypeahead for the list of options."
     },
     "aria-activedescendant": {

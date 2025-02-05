@@ -1,6 +1,7 @@
 {
   "module": "LocaleSelectorModule",
   "selector": "bb-locale-selector-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-locale-selector--docs",
   "inputs": {
     "btnColor": {
       "type": "string",

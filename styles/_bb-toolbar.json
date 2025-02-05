@@ -1,4 +1,5 @@
 {
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-structure-bb-toolbar--docs",
   "classes": [
     "bb-toolbar",
     "bb-toolbar__item",

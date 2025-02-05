@@ -2,6 +2,7 @@
   "module": "InputInlineEditModule",
   "selector": "bb-input-inline-edit-ui",
   "description": "### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - role  - aria-activedescendant  - aria-describedby  - aria-expanded  - aria-invalid  - aria-label  - aria-labelledby  - aria-owns Component that enables inline input editing.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-input-inline-edit--docs",
   "inputs": {
     "ariaLabelAccept": {
       "type": "any",

@@ -22,7 +22,6 @@
     },
     "menu": {
       "type": "HeadingNavigationItem<any>[]",
-      "options": "HeadingNavigationButtonItem<T> | HeadingNavigationSeparatorItem",
       "description": "Array of representation of the link menu object",
       "default": "[]"
     },

@@ -2,6 +2,7 @@
   "module": "KeyboardClickModule",
   "directive": "bbKeyboardClick",
   "description": "Directive that add click/keydown.enter/keydown.space events on element Used for adding accessibility(tab navigation events) for element",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-keyboard-click--docs",
   "outputs": {
     "bbKeyboardClick": {
       "type": "EventEmitter",

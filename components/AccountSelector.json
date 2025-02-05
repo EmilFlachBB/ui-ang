@@ -2,6 +2,7 @@
   "module": "AccountSelectorModule",
   "selector": "bb-account-selector-ui",
   "description": "Component that provides a select, multiselect and auto complete feature. ### Custom templates AccountSelectorComponent allows providing optional custom templates for the different parts of its view. Below is an example of what a component with all custom templates migh look like: ```typescript                         ``` By default `items` input property has the type `any` to allow any types of items when providing custom item template. If a custom template for items is not provided then `items` internally matches the type `AccountSelectorDefaultItem[]`, which could be imported from `@backbase/ui-ang/account-selector` ### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - aria-describedby will be linked to the account selector component, dropdown list and search box  - aria-invalid will be linked to the search box",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-account-selector--docs",
   "inputs": {
     "accountSelectorInstructions": {
       "type": "string",
@@ -52,7 +53,6 @@
     },
     "groupByFn": {
       "type": "GroupByFunction",
-      "options": "function",
       "description": "Allow to group items by key or function expression"
     },
     "groupValueFn": {
@@ -147,7 +147,6 @@
     },
     "size": {
       "type": "AccountSelectorSize",
-      "options": "sm | md",
       "description": "Set account selector view size"
     },
     "typeahead": {

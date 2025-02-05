@@ -2,6 +2,7 @@
   "module": "AmountInputModule",
   "selector": "bb-amount-input-ui",
   "description": "### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - set aria-describedby with ID of another element in the DOM with descriptive text about the amount input,    by default it is set to div defining the type of currency  - set aria-invalid with boolean value when the entered input value is not valid  - set aria-labelledby with ID of another element in the DOM as input's label Component that displays a text input.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-amount-input--docs",
   "inputs": {
     "autoDecimal": {
       "type": "boolean",

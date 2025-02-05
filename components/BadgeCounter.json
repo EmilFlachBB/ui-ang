@@ -2,10 +2,10 @@
   "module": "BadgeCounterModule",
   "selector": "bb-badge-counter-ui",
   "description": "Component that displays a counter badge.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-badge-counter--docs",
   "inputs": {
     "color": {
       "type": "BadgeColor",
-      "options": "primary | info | success | warning | danger | secondary",
       "description": "The (background) color of the badge. Defaults to 'primary'.",
       "default": "'primary'"
     },

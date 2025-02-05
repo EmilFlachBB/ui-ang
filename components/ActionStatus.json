@@ -2,10 +2,10 @@
   "module": "ActionStatusModule",
   "selector": "bb-action-status-ui",
   "description": "Component that displays a loading indicator or icon to indicate an action response.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-action-status--docs",
   "inputs": {
     "state": {
       "type": "ActionState",
-      "options": "loading | success | info | warning | error | message",
       "description": "The current state of the action."
     }
   },

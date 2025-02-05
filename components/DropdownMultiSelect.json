@@ -2,6 +2,7 @@
   "module": "DropdownMultiSelectModule",
   "selector": "bb-dropdown-multi-select-ui",
   "description": "Component that use for DropDown Multi Select.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-dropdown-multi-select--docs",
   "inputs": {
     "container": {
       "type": "string | \"body\"",

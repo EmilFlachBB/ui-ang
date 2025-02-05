@@ -2,6 +2,7 @@
   "module": "LogoModule",
   "selector": "bb-logo-ui",
   "description": "Component that displays the company logo.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-logo--docs",
   "inputs": {
     "isInverse": {
       "type": "boolean",
@@ -10,7 +11,6 @@
     },
     "type": {
       "type": "LogoType",
-      "options": "full | emblem",
       "description": "The type of the logo.  Defaults to 'full'.",
       "default": "'full'"
     }

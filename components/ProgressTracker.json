@@ -2,6 +2,7 @@
   "module": "ProgressTrackerModule",
   "selector": "bb-progress-tracker",
   "description": "A tracker component that tracks multiple ongoing or asynchronous processes on a page. It handles multiple ongoing process events so that you can trigger, cancel and/or destroy events on demand. It is easily extendable as you can you can extend the templates by passing your customised template as input bindings. Refer to examples for the implementation.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-progress-tracker--docs",
   "inputs": {
     "eventList": {
       "type": "IProgressTrackerConfig[]"

@@ -2,6 +2,7 @@
   "module": "InputTextModule",
   "selector": "bb-input-text-ui",
   "description": "Component that displays a text input. ### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - role  - aria-activedescendant  - aria-describedby  - aria-expanded  - aria-invalid  - aria-label  - aria-labelledby  - aria-owns",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-input-text--docs",
   "inputs": {
     "autocomplete": {
       "type": "string | undefined",

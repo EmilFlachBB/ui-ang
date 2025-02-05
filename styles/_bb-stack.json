@@ -1,4 +1,5 @@
 {
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-structure-bb-stack--docs",
   "classes": [
     "bb-stack",
     "bb-stack--align-baseline",

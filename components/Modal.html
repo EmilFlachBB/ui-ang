@@ -38,6 +38,7 @@
   "module": "ModalModule",
   "selector": "bb-modal-ui",
   "description": "Component that displays a modal window. ### Controlling components with overflow/z-index If you have nested modals, dropdowns or select components, add (or remove) the property `container=\"body\"` on your topmost component. You may have to toggle around depending on your setup or if your modal/dropdown/select has overflow. Alternatively, you can also add the `.modal-overflow` class by doing: `[modalOptions]=\"{ modalDialogClass: 'modal-overflow' }\"`.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-modal--docs",
   "inputs": {
     "aria-describedby": {
       "type": "string | undefined",
@@ -53,7 +54,6 @@
     },
     "modalOptions": {
       "type": "NgbModalOptions",
-      "options": "[]",
       "description": "Dialog options inherited from https://ng-bootstrap.github.io/#/components/modal/api#NgbModalOptions. Defaults to an empty object.",
       "default": "{}"
     },

@@ -2,6 +2,7 @@
   "module": "NotificationModule",
   "selector": "bb-notification-ui",
   "description": "Component that displays a notification. ### Usage Notification component can be rendered with `NotificationService` Below is an example of this this will look like: ```typescript @Component({    standalone: true,    selector: 'bb-some-component',    template: '',    imports: [NotificationModule],  })  export class SomeComponent {    notificationService = inject(NotificationService);    showNotification() {      this.notificationService.showNotification({        header: 'This is the header of notification',        message: 'This is the message of notification',      });    }  } ``` ### Usage with NotificationService NotificationComponent allows providing header and message as templates. Below is an example of what a component with might look like: ```typescript @Component({    standalone: true,    selector: 'bb-some-component',    template: '              Template header                    This is an html message message template          ',    imports: [NotificationModule],  })  export class SomeComponent {   @ViewChild('headerTml', { static: true }) headerTml: TemplateRef | undefined;   @ViewChild('messageTemplate', { static: true }) messageTemplate: TemplateRef | undefined;    notificationService = inject(NotificationService);    showNotification() {      this.notificationService.showNotification({        header: this.headerTml,        message: this.messageTemplate,      });    }  } ```",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-notification--docs",
   "inputs": {
     "animation": {
       "type": "boolean",
@@ -44,7 +45,6 @@
     },
     "modifier": {
       "type": "NotificationType",
-      "options": "success | info | warning | error | alert",
       "description": "The type modifier for the notification. Defaults to 'info' This property will be used to add additional class names to the wrapper div of the notification in the following format: bb-notification--&lt;&lt;modifier&gt;&gt;",
       "default": "'info'"
     },

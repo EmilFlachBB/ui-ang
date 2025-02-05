@@ -2,6 +2,7 @@
   "module": "AvatarModule",
   "selector": "bb-avatar-ui",
   "description": "Component that displays an avatar. ### Global configuration token `AVATAR_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `AvatarComponent` in your project. The following properties can be overwritten using the token: - `initialsFn` #### Usage notes The following is an example of how to use the token: ``` import { AVATAR_CONFIG_TOKEN } from '@backbase/ui-ang/avatar'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const avatarConfig = { initialsFn: (text) => `${text[0]}${text[1]}` } platformBrowserDynamic().bootstrapModule(AppModule, { providers: [{ provide: AVATAR_CONFIG_TOKEN, useValue: avatarConfig }] }); ```",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-avatar--docs",
   "inputs": {
     "image": {
       "type": "string",
