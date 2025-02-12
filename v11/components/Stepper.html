@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: Stepper</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v11 Index</a>
+    <h1>Component: Stepper</h1>
+    <pre><code>{
+  "module": "StepperModule",
+  "selector": "bb-stepper-ui",
+  "description": "Component that represents a navigation stepper.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-stepper--docs",
+  "outputs": {
+    "select": {
+      "type": "EventEmitter<any>",
+      "description": "Emits an event when a step's link is clicked."
+    }
+  },
+  "methods": {
+    "hasCurrentChildStep": {
+      "description": "Returns the current selected sub-step Deprecated. The property will be removed in `ui-ang@11.0.0` and is no longer used by the component.",
+      "deprecated": true,
+      "deprecationMessage": "Deprecated since `ui-ang@10.0.0`.",
+      "params": [
+        {
+          "type": "StepperStepComponent"
+        }
+      ],
+      "returns": {
+        "type": "StepperStepComponent | undefined"
+      }
+    },
+    "onClickHandler": {
+      "params": [
+        {
+          "name": "data",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
+</body>
+</html>

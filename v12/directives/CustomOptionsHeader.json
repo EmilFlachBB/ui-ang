@@ -1,0 +1,4 @@
+{
+  "module": "CustomOptionsHeaderModule",
+  "directive": "bbCustomOptionsHeader"
+}

@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: Notification</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v11 Index</a>
+    <h1>Component: Notification</h1>
+    <pre><code>{
+  "module": "NotificationModule",
+  "selector": "bb-notification-ui",
+  "description": "Component that displays a notification.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-notification--docs",
+  "inputs": {
+    "animation": {
+      "type": "boolean",
+      "description": "If true, notification opening and closing will be animated. Animation is triggered only when the .hide() or .show() functions are called."
+    },
+    "autofocus": {
+      "type": "boolean",
+      "description": "Whether the notification should focused when rendered.",
+      "default": "false"
+    },
+    "closeAction": {
+      "type": "Function | undefined",
+      "description": "The callback function for the manually close event.",
+      "default": "undefined"
+    },
+    "dismissible": {
+      "type": "boolean",
+      "description": "Whether the notification is dismissible. Defaults to true. If true then an additional class name is added to the wrapper div of the notification in the following format bb-notification--dismissible",
+      "default": "true"
+    },
+    "header": {
+      "type": "TemplateRef<any> | string | undefined",
+      "description": "The header for the notification."
+    },
+    "headerContext": {
+      "type": "any",
+      "description": "The context for notification header template."
+    },
+    "hostAction": {
+      "type": "Function | undefined",
+      "description": "The callback function for the host click event.",
+      "default": "undefined"
+    },
+    "message": {
+      "type": "TemplateRef<any> | string",
+      "description": "The message template for the notification. Defaults to an empty string.",
+      "default": "''"
+    },
+    "messageContext": {
+      "type": "any",
+      "description": "The context for notification message template."
+    },
+    "modifier": {
+      "type": "NotificationType",
+      "options": "'success' | 'info' | 'warning' | 'error' | 'alert'",
+      "description": "The type modifier for the notification. Defaults to 'info' This property will be used to add additional class names to the wrapper div of the notification in the following format: bb-notification--&lt;&lt;modifier&gt;&gt;",
+      "default": "'info'"
+    },
+    "primaryAction": {
+      "type": "Function | undefined",
+      "description": "A callback function for the primary action. Required for buttons on notification."
+    },
+    "primaryActionTemplate": {
+      "type": "TemplateRef<any> | undefined",
+      "description": "The primary action template for the notification."
+    },
+    "primaryActionText": {
+      "type": "string | undefined",
+      "description": "The text for the primary action button. Will throw an error if unset and primary action set."
+    },
+    "secondaryAction": {
+      "type": "Function | undefined",
+      "description": "A callback function for the secondary action. Required for buttons on notification."
+    },
+    "secondaryActionTemplate": {
+      "type": "TemplateRef<any> | undefined",
+      "description": "The secondary action template for the notification."
+    },
+    "secondaryActionText": {
+      "type": "string | undefined",
+      "description": "The text for the secondary action button. Will throw an error if unset and secondary action set."
+    }
+  },
+  "outputs": {
+    "close": {
+      "type": "EventEmitter",
+      "description": "Notification manually close event stream."
+    }
+  },
+  "methods": {
+    "beforeDestroy": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "getHeaderTemplate": {
+      "returns": {
+        "type": "TemplateRef | undefined"
+      }
+    },
+    "getMessageTemplate": {
+      "returns": {
+        "type": "TemplateRef | undefined"
+      }
+    },
+    "hasButtonRow": {
+      "returns": {
+        "type": "boolean"
+      }
+    },
+    "hasPrimaryAction": {
+      "returns": {
+        "type": "boolean"
+      }
+    },
+    "hasSecondaryAction": {
+      "returns": {
+        "type": "boolean"
+      }
+    },
+    "onKeyEvent": {
+      "params": [
+        {
+          "name": "event",
+          "type": "KeyboardEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onNotificationClick": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onNotificationClose": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onPrimaryPress": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onSecondaryPress": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
+</body>
+</html>

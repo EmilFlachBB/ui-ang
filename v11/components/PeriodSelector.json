@@ -1,0 +1,44 @@
+{
+  "module": "PeriodSelectorModule",
+  "selector": "bb-period-selector-ui",
+  "description": "Component that selects a period.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-period-selector--docs",
+  "inputs": {
+    "period": {
+      "type": "PeriodSize",
+      "description": "Period step. Defaults to 'month'.",
+      "default": "'month'"
+    },
+    "periodEnd": {
+      "type": "Date | undefined",
+      "description": "End date of the period."
+    },
+    "periodFormatters": {
+      "type": "PeriodFormatters",
+      "description": "Custom date period formatter. Accepts formatters in the form of: Example :{ title?: (date: Date) =&gt; string; start?: (date: Date) =&gt; string; end?: (date: Date) =&gt; string; }"
+    },
+    "periodStart": {
+      "type": "Date | undefined",
+      "description": "Start date of the period."
+    }
+  },
+  "outputs": {
+    "periodChange": {
+      "type": "EventEmitter<Period>",
+      "description": "Emits an event when the period is changed."
+    }
+  },
+  "methods": {
+    "changePeriod": {
+      "params": [
+        {
+          "name": "next",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "module": "ProductItemLoanModule",
+  "selector": "bb-product-item-loan-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-product-item-loan--docs",
+  "inputs": {
+    "amount": {
+      "type": "number | undefined",
+      "description": "The card amount value."
+    },
+    "currency": {
+      "type": "string | undefined",
+      "description": "The card currency."
+    },
+    "active": {
+      "type": "",
+      "description": "Whether the card should have a check icon. Defaults to true.",
+      "default": "true"
+    },
+    "favorite": {
+      "type": "",
+      "description": "Whether the card should be marked as favourite. Defaults to false.",
+      "default": "false"
+    },
+    "favoriteIconColor": {
+      "type": "",
+      "description": "The color of the favourite icon when favorite=true. Defaults to primary.",
+      "default": "'primary'"
+    },
+    "highlight": {
+      "type": "boolean",
+      "description": "Whether the amount and currency value should be highlighted."
+    },
+    "productDetailsInfo": {
+      "type": "Record<string | any>",
+      "description": "The product details information."
+    },
+    "productNumber": {
+      "type": "string",
+      "description": "The product number."
+    },
+    "productNumberFormat": {
+      "type": "PaymentCardNumberFormat",
+      "description": "Configuration of how the product number should be formatted. Defaults to the following format: { length: 16, maskRange: [0, 12], segments: 4 }",
+      "default": "DefaultPaymentCardNumberFormat"
+    },
+    "title": {
+      "type": "string",
+      "description": "The card title."
+    }
+  }
+}

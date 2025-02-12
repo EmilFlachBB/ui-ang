@@ -1,0 +1,62 @@
+{
+  "module": "InputDatepickerDayTemplateSingleModule",
+  "selector": "bb-input-datepicker-single-day-template-ui",
+  "inputs": {
+    "currentMonth": {
+      "type": "string",
+      "description": "The current month on the datepicker window."
+    },
+    "date": {
+      "type": "NgbDate",
+      "description": "Date to render."
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "When true the date is rendered as disabled",
+      "default": "false"
+    },
+    "hoveredDate": {
+      "type": "NgDateStructNullable",
+      "options": "NgbDateStruct | null",
+      "description": "Hovered date by a user.",
+      "default": "null"
+    },
+    "selected": {
+      "type": "boolean",
+      "description": "Indicates whether the date is selected",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "hovered": {
+      "type": "EventEmitter",
+      "description": "Event to trigger on date hover."
+    }
+  },
+  "methods": {
+    "onKeyUp": {
+      "description": "Keypress handler",
+      "params": [
+        {
+          "name": "event",
+          "type": "KeyboardEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onMouseOut": {
+      "description": "Handle mouseover. Emit the hovered date with null.",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onMouseOver": {
+      "description": "Handle mouseover. Emit the hovered date with date.",
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

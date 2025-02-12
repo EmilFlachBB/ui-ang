@@ -1,0 +1,61 @@
+{
+  "module": "AlertModule",
+  "selector": "bb-alert-ui",
+  "description": "Component that displays an alert. ### Accessibility For Alert component it's not required to pass any options for accessibility. It internally handles accessibility for title and message:  - title is linked with aria-labelledby.  - message is linked with aria-describedby.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-alert--docs",
+  "inputs": {
+    "closeButtonAriaLabel": {
+      "type": "string",
+      "description": "Aria label for a &quot;close&quot; button",
+      "default": "'Close alert'"
+    },
+    "dismissible": {
+      "type": "boolean",
+      "description": "Whether the alert can be dismissed. Defaults to false.",
+      "default": "false"
+    },
+    "message": {
+      "type": "string | undefined",
+      "description": "The message of the alert. If nothing provided, wouldn't be displayed. It is internally linked with aria-describedby."
+    },
+    "modifier": {
+      "type": "AlertType",
+      "options": "'warning' | 'error' | 'success' | 'info' | 'warning-amber'",
+      "description": "The type modifier for the alert. Defaults to 'error'.",
+      "default": "'error'"
+    },
+    "primaryActionButtonText": {
+      "type": "string | undefined",
+      "description": "The title of the primary action button."
+    },
+    "supportiveLinkText": {
+      "type": "string | undefined",
+      "description": "The title of the supportive link button."
+    },
+    "title": {
+      "type": "string | undefined",
+      "description": "The title of the alert. Will throw an error if unset. It is internaly linked with aria-labelledby."
+    }
+  },
+  "outputs": {
+    "close": {
+      "type": "EventEmitter",
+      "description": "The callback fired upon closing the alert."
+    },
+    "primaryActionButtonClick": {
+      "type": "EventEmitter",
+      "description": "The callback fired upon clicking primary action button."
+    },
+    "supportiveLinkClick": {
+      "type": "EventEmitter",
+      "description": "The callback fired upon clicking supportive link button."
+    }
+  },
+  "methods": {
+    "closeAlert": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

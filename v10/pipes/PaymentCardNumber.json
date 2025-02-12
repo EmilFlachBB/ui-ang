@@ -1,0 +1,27 @@
+{
+  "ngname": "paymentCardNumber",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/formatters-payment-card-number-pipe--docs",
+  "transform": {
+    "params": [
+      {
+        "name": "value",
+        "type": "string | number",
+        "description": "the string to transform"
+      },
+      {
+        "name": "config",
+        "type": "PaymentCardNumberFormat",
+        "description": "the formatting configuration"
+      },
+      {
+        "name": "maskChar",
+        "type": "string",
+        "description": "the character to mask with, deprecated from 6.0.0",
+        "default": "'•'"
+      }
+    ],
+    "returns": {
+      "type": "string"
+    }
+  }
+}

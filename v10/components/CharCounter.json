@@ -1,0 +1,30 @@
+{
+  "module": "CharCounterModule",
+  "selector": "bb-char-counter-ui",
+  "inputs": {
+    "blockTyping": {
+      "type": "boolean",
+      "description": "Whether the element should be blocked when maximum character count is reached."
+    },
+    "element": {
+      "type": "HTMLInputElement | HTMLTextAreaElement | undefined",
+      "description": "The element reference which the characters are typed in."
+    },
+    "inputValue": {
+      "type": "string | undefined",
+      "description": "Passed value from parent input, it gives option to count char event if value was programmatically changed"
+    },
+    "maxLength": {
+      "type": "",
+      "description": "Indicator for maximum character count.",
+      "default": "150"
+    }
+  },
+  "methods": {
+    "calculateElementValue": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

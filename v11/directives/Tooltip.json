@@ -1,0 +1,37 @@
+{
+  "module": "TooltipModule",
+  "directive": "bbTooltip",
+  "description": "Directive that displays a tooltip. ### Global configuration token `TOOLTIP_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `TooltipComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not be able to overwrite it. The following properties can be overwritten using the token:  - `triggers` #### Usage notes The following is an example of how to use the token: ``` import { TOOLTIP_CONFIG_TOKEN } from '@backbase/ui-ang/tooltip-directive'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const tooltipConfig = { triggers: 'click', closeDelay: 400 } platformBrowserDynamic().bootstrapModule(AppModule, { providers: [{ provide: TOOLTIP_CONFIG_TOKEN, useValue: tooltipConfig }] }); ```",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-tooltip--docs",
+  "inputs": {
+    "bbTooltip": {
+      "type": "string | TemplateRef | null | undefined",
+      "description": "Content to be displayed as tooltip. If falsy, the tooltip won't open. Accepts a string or TemplateRef."
+    },
+    "triggers": {
+      "type": "string",
+      "description": "Specifies the events that should trigger the tooltip (space separated strings). Defaults to 'click'. This component extends NgbTooltip. All available properties of NgbTooltip can be used with this component as well. More information about it and more examples can be found in NgBootstrap documentation. This attribute can be overwritten via the global configuration token.",
+      "default": "'click'"
+    }
+  },
+  "methods": {
+    "close": {
+      "description": "Event handler to set aria-expanded on closing the tooltip",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "open": {
+      "description": "Event handler to set aria-expanded on opening the tooltip",
+      "params": [
+        {
+          "name": "context",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

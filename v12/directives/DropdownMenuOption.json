@@ -1,0 +1,28 @@
+{
+  "module": "DropdownMenuOptionModule",
+  "directive": "bbDropdownMenuOption",
+  "inputs": {
+    "active": {
+      "type": "boolean",
+      "description": "Boolean value to add/remove the active class on menuitem",
+      "default": "false"
+    },
+    "bbDropdownMenuOption": {
+      "type": "string",
+      "description": "value of the dropdown menuitem"
+    }
+  },
+  "outputs": {
+    "selectionChange": {
+      "type": "EventEmitter<DropdownMenuOptionDirective>",
+      "description": "Event that is emitted when user clicks on menuitem"
+    }
+  },
+  "methods": {
+    "onSelect": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

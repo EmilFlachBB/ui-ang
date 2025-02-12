@@ -1,0 +1,28 @@
+{
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-structure-bb-inline-stack--docs",
+  "classes": [
+    "bb-inline-stack",
+    "bb-inline-stack--density-0",
+    "bb-inline-stack--density-1",
+    "bb-inline-stack--density-2",
+    "bb-inline-stack--density-3",
+    "bb-inline-stack--density-4",
+    "bb-inline-stack--density-5",
+    "bb-inline-stack--density-none",
+    "bb-inline-stack__item",
+    "bb-inline-stack__item--spacing-0",
+    "bb-inline-stack__item--spacing-1",
+    "bb-inline-stack__item--spacing-2",
+    "bb-inline-stack__item--spacing-3",
+    "bb-inline-stack__item--spacing-4",
+    "bb-inline-stack__item--spacing-5",
+    "bb-inline-stack__item--spacing-none"
+  ],
+  "examples": [
+    "<span class=\"bb-inline-stack\">\n<span class=\"bb-inline-stack__item\">\nTab\n</span>\n<span class=\"bb-inline-stack__item\">\nTab\n</span>\n</span>",
+    "<span class=\"bb-inline-stack bb-inline-stack--density-md\">\n<span class=\"bb-inline-stack__item\">Tab 1</span>\n<span class=\"bb-inline-stack__item\">Tab 2</span>\n</span>",
+    "<span class=\"bb-inline-stack\">\n<span class=\"bb-inline-stack__item bb-inline-stack__item--spacing-md\">\nTab\n</span>\n<span class=\"bb-inline-stack__item bb-inline-stack__item--spacing-md\">\nTab\n</span>\n</span>",
+    "<span class=\"bb-inline-stack bb-inline-stack--density-none\">\n<span class=\"bb-inline-stack__item\">Tab 1</span>\n<span class=\"bb-inline-stack__item\">Tab 2</span>\n</span>",
+    "<span class=\"bb-inline-stack\">\n<span class=\"bb-inline-stack__item bb-inline-stack__item--spacing-none\">\nTab\n</span>\n<span class=\"bb-inline-stack__item bb-inline-stack__item--spacing-none\">\nTab\n</span>\n</span>"
+  ]
+}

@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: InputDatepickerDayTemplateRange</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v11 Index</a>
+    <h1>Component: InputDatepickerDayTemplateRange</h1>
+    <pre><code>{
+  "module": "InputDatepickerDayTemplateRangeModule",
+  "selector": "bb-input-datepicker-range-day-template-ui",
+  "inputs": {
+    "currentMonth": {
+      "type": "string",
+      "description": "CurrentMonth on the datepicker window."
+    },
+    "date": {
+      "type": "NgbDate",
+      "description": "Date to render."
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "When true the date is rendered as disabled.",
+      "default": "false"
+    },
+    "fromDate": {
+      "type": "NgDateStructNullable",
+      "options": "NgbDateStruct | null",
+      "description": "Selected &quot;from&quot; date.",
+      "default": "null"
+    },
+    "hoveredDate": {
+      "type": "NgDateStructNullable",
+      "options": "NgbDateStruct | null",
+      "description": "Hovered date by a user",
+      "default": "null"
+    },
+    "splitRange": {
+      "type": "boolean",
+      "description": "If &quot;true&quot; the datepicker is displayed with two input fields for &quot;from&quot; and &quot;to&quot; dates",
+      "default": "false"
+    },
+    "toDate": {
+      "type": "NgDateStructNullable",
+      "options": "NgbDateStruct | null",
+      "description": "Selected &quot;to&quot; date",
+      "default": "null"
+    },
+    "toDateDatepicker": {
+      "type": "boolean",
+      "description": "&quot;true&quot; when &quot;splitRange&quot; is &quot;true&quot; and the parent datepicker belongs to second datepicker input (the one for &quot;to&quot; date)",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "hovered": {
+      "type": "EventEmitter",
+      "description": "Event to trigger on date hover."
+    },
+    "rangeSelect": {
+      "type": "EventEmitter",
+      "description": "Emits an event when a range is selected"
+    }
+  },
+  "methods": {
+    "onKeyUp": {
+      "description": "Keypress handler",
+      "params": [
+        {
+          "name": "event",
+          "type": "KeyboardEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onMouseOut": {
+      "description": "Handle mouseover. Emit the hovered date with null.",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onMouseOver": {
+      "description": "Handle mouseover. Emit the hovered date with date.",
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
+</body>
+</html>

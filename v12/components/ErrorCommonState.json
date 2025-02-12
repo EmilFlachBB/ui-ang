@@ -1,0 +1,24 @@
+{
+  "module": "ErrorCommonStateModule",
+  "selector": "bb-common-error-state-ui",
+  "description": "Component that displays error state based on error value that was provided.",
+  "inputs": {
+    "error": {
+      "type": "HttpErrorResponse | Error | TemplateRef<any> | string",
+      "description": "Error that should be displayed. Could be HttpErrorResponse, Error, Template reference or string. Defaults to empty string.",
+      "default": "''"
+    }
+  },
+  "methods": {
+    "getErrorTemplate": {
+      "returns": {
+        "type": "any"
+      }
+    },
+    "getMessage": {
+      "returns": {
+        "type": "any"
+      }
+    }
+  }
+}

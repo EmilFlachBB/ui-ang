@@ -1,0 +1,33 @@
+{
+  "module": "LoadingIndicatorModule",
+  "selector": "bb-loading-indicator-ui",
+  "description": "Component that displays a loading spinner and message.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-loading-indicator--docs",
+  "inputs": {
+    "hasBackground": {
+      "type": "boolean",
+      "description": "Defines whether gray background should be displayed. Default to false (background hidden).",
+      "default": "false"
+    },
+    "inline": {
+      "type": "boolean",
+      "description": "Define if spinner should be shown inline without any default padding and margin. Default to false (show default padding and margin).",
+      "default": "false"
+    },
+    "loaderSize": {
+      "type": "LoadingIndicatorSize",
+      "options": "'lg' | 'md' | 'sm'",
+      "description": "The size of the loading indicator. Defaults to 'md'.",
+      "default": "'md'"
+    },
+    "showDelay": {
+      "type": "number",
+      "description": "Delay in milliseconds before the loading indicator display. Default to 0.",
+      "default": "0"
+    },
+    "text": {
+      "type": "string",
+      "description": "The text to display under the loading indicator."
+    }
+  }
+}

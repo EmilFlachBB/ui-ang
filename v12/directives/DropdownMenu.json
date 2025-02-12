@@ -1,0 +1,5 @@
+{
+  "module": "DropdownMenuModule",
+  "directive": "bbDropdownMenu",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-dropdown-menu--docs"
+}

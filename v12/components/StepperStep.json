@@ -1,0 +1,38 @@
+{
+  "module": "StepperStepModule",
+  "selector": "bb-stepper-step-ui",
+  "description": "Component that represents a single step that is a part of the stepper component.",
+  "inputs": {
+    "ariaLabel": {
+      "type": "string",
+      "description": "Represents step's area-label"
+    },
+    "data": {
+      "type": "any",
+      "description": "Represents step's data"
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "Marks step as active",
+      "default": "false"
+    },
+    "isChecked": {
+      "type": "boolean",
+      "description": "Marks step as checked",
+      "default": "false"
+    },
+    "isCurrent": {
+      "type": "boolean",
+      "description": "Marks step as current",
+      "default": "false"
+    },
+    "label": {
+      "type": "string",
+      "description": "Represents step's label"
+    },
+    "stateLabel": {
+      "type": "string",
+      "description": "Represents step's state label"
+    }
+  }
+}

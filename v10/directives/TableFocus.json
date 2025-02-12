@@ -1,0 +1,10 @@
+{
+  "module": "TableFocusModule",
+  "directive": "bbTableFocus",
+  "inputs": {
+    "focusFirstRowOnChanges": {
+      "type": "",
+      "default": "false"
+    }
+  }
+}

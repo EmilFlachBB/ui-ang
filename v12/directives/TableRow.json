@@ -1,0 +1,39 @@
+{
+  "module": "TableRowModule",
+  "directive": "bbRow",
+  "inputs": {
+    "bbRow": {
+      "type": "any",
+      "description": "The data of the row element"
+    }
+  },
+  "methods": {
+    "onBlur": {
+      "params": [
+        {
+          "name": "el",
+          "type": "ElementRef"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onFocus": {
+      "params": [
+        {
+          "name": "el",
+          "type": "ElementRef"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onRowClick": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

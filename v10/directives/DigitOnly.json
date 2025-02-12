@@ -1,0 +1,14 @@
+{
+  "module": "DigitOnlyModule",
+  "directive": "bbDigitOnly",
+  "inputs": {
+    "allowNegativeSign": {
+      "type": "",
+      "default": "false"
+    },
+    "bbDigitOnly": {
+      "type": "",
+      "default": "true"
+    }
+  }
+}

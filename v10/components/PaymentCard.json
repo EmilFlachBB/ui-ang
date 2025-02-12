@@ -1,0 +1,25 @@
+{
+  "module": "PaymentCardModule",
+  "selector": "bb-payment-card-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-payment-card--docs",
+  "inputs": {
+    "displayEmblem": {
+      "type": "boolean",
+      "description": "Display Backbase logo on the card.",
+      "default": "true"
+    },
+    "imageSrc": {
+      "type": "string | undefined",
+      "description": "configuration to pass a link or (base64, svg) image to be used as the background image of the card Defaults to undefined"
+    },
+    "paymentCard": {
+      "type": "PaymentCard",
+      "description": "Payment card data."
+    },
+    "paymentCardNumberFormat": {
+      "type": "PaymentCardNumberFormat",
+      "description": "Configuration of how the card number should be formatted. Defaults to the following format: {         length: 16,         maskRange: [0, 12],         segments: 4,       }",
+      "default": "DefaultPaymentCardNumberFormat"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "module": "ProductItemBasicAccountModule",
+  "selector": "bb-product-item-basic-account-ui",
+  "description": "A component that renders a styled-container or card for basic account.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-product-item-basic-account--docs",
+  "inputs": {
+    "amount": {
+      "type": "number | undefined",
+      "description": "The card amount value."
+    },
+    "balanceLabel": {
+      "type": "string | undefined",
+      "description": "The text to be placed above the amount."
+    },
+    "balanceLabelForSecondaryAmount": {
+      "type": "string | undefined",
+      "description": "The text to be placed above the amount."
+    },
+    "bankBranchCode": {
+      "type": "string | undefined",
+      "description": "Branch code of a bank."
+    },
+    "currency": {
+      "type": "string | undefined",
+      "description": "The card currency."
+    },
+    "secondaryAmount": {
+      "type": "number | undefined",
+      "description": "The card secondary amount value.(e.g. Available amount is primary and booked balance is secondary)."
+    },
+    "selected": {
+      "type": "boolean",
+      "description": "Whether the card is selected. This removes any check mark on the item when active=true. Defaults to false.",
+      "default": "false"
+    },
+    "showCurrencySymbol": {
+      "type": "boolean",
+      "description": "Whether the item should show the currency symbol. Defaults to true.",
+      "default": "true"
+    },
+    "status": {
+      "type": "AccountStatus | undefined",
+      "options": "'closed' | 'inactive' | 'active'",
+      "description": "The current account status. Accepts closed, inactive or active."
+    },
+    "type": {
+      "type": "string | undefined",
+      "description": "The type of icon to be displayed when selected=true."
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Whether the card should have a check icon. Defaults to true.",
+      "default": "true"
+    },
+    "favorite": {
+      "type": "boolean",
+      "description": "Whether the card should be marked as favourite. Defaults to false.",
+      "default": "false"
+    },
+    "favoriteIconColor": {
+      "type": "string",
+      "description": "The color of the favourite icon when favorite=true. Defaults to primary.",
+      "default": "'primary'"
+    },
+    "highlight": {
+      "type": "boolean",
+      "description": "Whether the amount and currency value should be highlighted."
+    },
+    "productDetailsInfo": {
+      "type": "Record<string | any>",
+      "description": "The product details information."
+    },
+    "productNumber": {
+      "type": "string",
+      "description": "The product number."
+    },
+    "productNumberFormat": {
+      "type": "PaymentCardNumberFormat",
+      "description": "Configuration of how the product number should be formatted. Defaults to the following format: { length: 16, maskRange: [0, 12], segments: 4 }",
+      "default": "DefaultPaymentCardNumberFormat"
+    },
+    "title": {
+      "type": "string",
+      "description": "The card title."
+    }
+  }
+}

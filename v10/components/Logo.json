@@ -1,0 +1,18 @@
+{
+  "module": "LogoModule",
+  "selector": "bb-logo-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-logo--docs",
+  "inputs": {
+    "isInverse": {
+      "type": "",
+      "description": "Flag to indicate whether to use the inverse colors or not.  Defaults to false.",
+      "default": "false"
+    },
+    "type": {
+      "type": "LogoType",
+      "options": "'full' | 'emblem'",
+      "description": "The type of the logo.  Defaults to 'full'.",
+      "default": "'full'"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "ngname": "cardVendorTitle",
+  "transform": {
+    "params": [
+      {
+        "name": "vendor",
+        "type": "string"
+      }
+    ],
+    "returns": {
+      "type": "any"
+    }
+  }
+}

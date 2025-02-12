@@ -1,0 +1,27 @@
+{
+  "ngname": "bbAccountNumber",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-account-number--docs",
+  "transform": {
+    "params": [
+      {
+        "name": "value",
+        "type": "string | number",
+        "description": "the string to transform"
+      },
+      {
+        "name": "configuration",
+        "type": "AccountNumberType | AccountsDisplayingFormat",
+        "options": "'cardNumber' | 'iban' | 'bban'",
+        "description": "type of the value (iban, bban or number) or a custom numbers format"
+      },
+      {
+        "name": "cardProviderName",
+        "type": "string",
+        "description": "card provider name"
+      }
+    ],
+    "returns": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "module": "FocusInvalidInputModule",
+  "directive": "bbFocusInvalidInput",
+  "description": "Directive to focus the first invalid form input.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-focus-invalid-input--docs",
+  "methods": {
+    "onFormSubmit": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

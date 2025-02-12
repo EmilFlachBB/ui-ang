@@ -1,0 +1,283 @@
+{
+  "module": "CurrencyInputModule",
+  "selector": "bb-currency-input-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-currency-input--docs",
+  "inputs": {
+    "allowNegativeValue": {
+      "type": "",
+      "description": "Flag is used to allow input negative value This attribute can be overwritten via the global configuration token"
+    },
+    "aria-describedby": {
+      "type": "string | undefined"
+    },
+    "aria-invalid": {
+      "type": "string | undefined"
+    },
+    "aria-labelledby": {
+      "type": "string | undefined"
+    },
+    "currencies": {
+      "type": "",
+      "description": "Currency list to be displayed in the dropdown. Note: Non-empty currency list is required for the currency symbol field to be shown. Otherwise, only the amount fields will be shown. Additionally, If only a single currency provided, the dropdown of the currency selection will be disabled and its value set to that single currency This attribute can be overwritten via the global configuration token"
+    },
+    "currencyInputId": {
+      "type": "string | undefined",
+      "description": "The id for the currency input. Defaults to unique string. Used to map the label to the input."
+    },
+    "currencyLabel": {
+      "type": "",
+      "description": "The label for the currency input.",
+      "default": "''"
+    },
+    "currencyListAriaLabel": {
+      "type": "",
+      "description": "Aria label for the currency dropdown.",
+      "default": "'Currency List Dropdown'"
+    },
+    "currencyListWithOnItemAriaLabel": {
+      "type": "",
+      "description": "Aria label for the currency list with one item.",
+      "default": "'Currency'"
+    },
+    "decimalId": {
+      "type": "string",
+      "description": "The id for the decimal input. Defaults to unique string. Used to map the label to the input."
+    },
+    "decimalInputId": {
+      "type": "string | undefined",
+      "description": "The id for the decimal input. Defaults to unique string. Used to map the label to the input."
+    },
+    "decimalLabel": {
+      "type": "",
+      "description": "The label for the decimal input.",
+      "default": "''"
+    },
+    "decimalLabelSrOnly": {
+      "type": "",
+      "description": "By default is visible if it is needed to hide change this property to &quot;true&quot; and it will have class &quot;visually-hidden&quot; By default is hidden and accessible only for screen reader",
+      "default": "false"
+    },
+    "decMaxLen": {
+      "type": "number | undefined",
+      "description": "Configure the maximum number of decimals. When greater than the default number of decimals for the specified currency, this value will take precedence. Configuring this value can affect the input placeholder."
+    },
+    "decMinLen": {
+      "type": "",
+      "description": "Number of minimum currency precision. Defaults to 2.",
+      "default": "defaultDecimalPrecision"
+    },
+    "disabled": {
+      "type": "",
+      "description": "Whether the input is disabled. Defaults to false."
+    },
+    "integer": {
+      "type": "",
+      "description": "Whether there should be only the integer part. You have to keep in mind, that if you have decimal part, even &quot;.00&quot; you will not be able to remove it",
+      "default": "false"
+    },
+    "integerId": {
+      "type": "string",
+      "description": "The id for the integer input. Defaults to unique string. Used to map the label to the input."
+    },
+    "integerInputId": {
+      "type": "string | undefined",
+      "description": "The id for the integer input. Defaults to unique string. Used to map the label to the input."
+    },
+    "integerLabel": {
+      "type": "",
+      "description": "The label for the integer input.",
+      "default": "''"
+    },
+    "integerLabelSrOnly": {
+      "type": "",
+      "description": "Whether integer label is only visible for screen readers. By default is visible if it is needed to hide change this property to &quot;true&quot; and it will have class &quot;visually-hidden&quot;",
+      "default": "false"
+    },
+    "isRightAligned": {
+      "type": "",
+      "description": "Whether decimal text is aligned to the right. By default is false",
+      "default": "false"
+    },
+    "placeholder": {
+      "type": "",
+      "description": "The placeholder for the input. Defaults to 0. This attribute can be overwritten via the global configuration token"
+    },
+    "readonly": {
+      "type": "",
+      "description": "Whether the input is read only. Defaults to false.",
+      "default": "false"
+    },
+    "required": {
+      "type": "",
+      "description": "Whether the input is required. Defaults to false.",
+      "default": "false"
+    },
+    "resultType": {
+      "type": "ResultType",
+      "options": "'string' | 'number'",
+      "description": "For set output type string/number, by default 'number', when  need work with long number ( bigger than MAX_SAFE_INTEGER = 9,007,199,254,740,993 ) need to use 'string'",
+      "default": "'number'"
+    }
+  },
+  "outputs": {
+    "blur": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on blur actions."
+    }
+  },
+  "methods": {
+    "checkNumeric": {
+      "params": [
+        {
+          "name": "numeric",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "string"
+      }
+    },
+    "checkValues": {
+      "returns": {
+        "type": "boolean"
+      }
+    },
+    "correctInputValue": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "decOnBlur": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "formatDecimal": {
+      "params": [
+        {
+          "name": "decControl",
+          "type": "UntypedFormControl"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "formatInteger": {
+      "returns": {
+        "type": "boolean",
+        "description": "Returns true in case of successful formatting, otherwise - false."
+      }
+    },
+    "markAsTouched": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onBackspace": {
+      "params": [
+        {
+          "name": "el",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInput": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onPress": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnChange": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnTouched": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "setDisabled": {
+      "params": [
+        {
+          "name": "disableState",
+          "type": "CurrencyFieldsState"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "triggerChange": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "updateCurrency": {
+      "params": [
+        {
+          "name": "currency",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "writeValue": {
+      "params": [
+        {
+          "name": "model",
+          "type": "any | null"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

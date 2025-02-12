@@ -1,0 +1,31 @@
+{
+  "module": "AvatarModule",
+  "selector": "bb-avatar-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-avatar--docs",
+  "inputs": {
+    "image": {
+      "type": "",
+      "description": "The image  of the avatar. Defaults to empty string.",
+      "default": "''"
+    },
+    "imgAlt": {
+      "type": "",
+      "description": "The imgAlt for provide alt in img of the avatar. Defaults to empty string.",
+      "default": "''"
+    },
+    "initials": {
+      "type": "",
+      "description": "Initials to be displayed. If not provided, initials will be derived from the name input. Supports on up to two characters."
+    },
+    "name": {
+      "type": "",
+      "description": "The name  of the avatar. Defaults to empty string.",
+      "default": "''"
+    },
+    "size": {
+      "type": "",
+      "description": "Size of the avatar. Possible values sm | md | lg | xl. Defaults to empty string.",
+      "default": "''"
+    }
+  }
+}

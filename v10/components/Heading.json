@@ -1,0 +1,83 @@
+{
+  "module": "HeadingModule",
+  "selector": "bb-heading-ui",
+  "inputs": {
+    "buttonColor": {
+      "type": "",
+      "description": "Color of the button. Default primary",
+      "default": "'primary'"
+    },
+    "buttonIcon": {
+      "type": "string",
+      "description": "Button icon. Will be used if useFirstLinkAsDefault = false;"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "description": "Button label. Will be used if useFirstLinkAsDefault = false;"
+    },
+    "buttonSize": {
+      "type": "\"sm\" | \"md\"",
+      "description": "Size of the button. Allowed values are sm or md. Default md",
+      "default": "'md'"
+    },
+    "customClassName": {
+      "type": "",
+      "description": "Custom class name",
+      "default": "''"
+    },
+    "heading": {
+      "type": "",
+      "description": "Heading",
+      "default": "''"
+    },
+    "headingClasses": {
+      "type": "",
+      "description": "Heading Classes",
+      "default": "''"
+    },
+    "headingType": {
+      "type": "",
+      "description": "Heading type (h1-h6)",
+      "default": "''"
+    },
+    "navigationItems": {
+      "type": "HeadingNavigationItem<any>[]",
+      "description": "An array of objects representing the navigation menu items.",
+      "default": "[]"
+    },
+    "position": {
+      "type": "Placement | PlacementArray",
+      "description": "The position of the dropdown, position will be picked in order of feasibility",
+      "default": "['bottom-end', 'bottom-start', 'top-end', 'top-start']"
+    },
+    "showNavigation": {
+      "type": "",
+      "description": "Determines whether or not to show the navigation section.",
+      "default": "true"
+    },
+    "useFirstLinkAsDefault": {
+      "type": "",
+      "description": "Determines whether or not to use the first link as the default target.",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "navigationAction": {
+      "type": "EventEmitter",
+      "description": "Event on item click"
+    }
+  },
+  "methods": {
+    "onClick": {
+      "params": [
+        {
+          "name": "value",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

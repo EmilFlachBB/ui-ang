@@ -1,0 +1,11 @@
+{
+  "module": "DropdownMenuFullWidthModule",
+  "directive": "bbDropdownToggleFullWidth",
+  "inputs": {
+    "bbDropdownToggleFullWidth": {
+      "type": "",
+      "description": "If true it will stretch the dropdown menu to 100% width",
+      "default": "false"
+    }
+  }
+}

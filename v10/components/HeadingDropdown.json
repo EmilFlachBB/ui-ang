@@ -1,0 +1,62 @@
+{
+  "module": "HeadingDropdownModule",
+  "selector": "bb-heading-dropdown",
+  "inputs": {
+    "buttonColor": {
+      "type": "",
+      "description": "Color of the button. Default primary",
+      "default": "'primary'"
+    },
+    "buttonIcon": {
+      "type": "string",
+      "description": "Button icon. Will be used if useFirstLinkAsDefault = false;"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "description": "Button label. Will be used if useFirstLinkAsDefault = false;"
+    },
+    "buttonSize": {
+      "type": "\"sm\" | \"md\"",
+      "description": "Size of the button. Allowed values are sm or md. Default md",
+      "default": "'md'"
+    },
+    "menu": {
+      "type": "HeadingNavigationItem<any>[]",
+      "description": "Array of representation of the link menu object",
+      "default": "[]"
+    },
+    "position": {
+      "type": "Placement | PlacementArray",
+      "description": "The position of the dropdown, position will be picked in order of feasibility",
+      "default": "['bottom-end', 'bottom-start', 'top-end', 'top-start']"
+    },
+    "useFirstLinkAsDefault": {
+      "type": "",
+      "description": "Flag to denote if the first link from buttons array should be used as default target",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "navigationAction": {
+      "type": "EventEmitter",
+      "description": "Event on item click"
+    }
+  },
+  "methods": {
+    "onClick": {
+      "params": [
+        {
+          "name": "event",
+          "type": "Event"
+        },
+        {
+          "name": "value",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

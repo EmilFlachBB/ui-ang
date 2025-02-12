@@ -1,0 +1,16 @@
+{
+  "module": "FocusModule",
+  "directive": "bbFocus",
+  "inputs": {
+    "bbFocus": {
+      "type": "boolean | string"
+    }
+  },
+  "methods": {
+    "focus": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

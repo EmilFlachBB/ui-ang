@@ -1,0 +1,14 @@
+{
+  "classes": [
+    "bb-icon",
+    "bb-navigation-item__icon",
+    "bb-navigation-item__text",
+    "bb-sidebar",
+    "bb-sidebar--collapsed",
+    "bb-sidebar--expanded",
+    "bb-sidebar--horizontal-nav",
+    "bb-sidebar__sidebar-toggler",
+    "bb-sidebar__sidebar-toggler--horizontal-nav"
+  ],
+  "examples": []
+}

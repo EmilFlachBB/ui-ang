@@ -1,0 +1,44 @@
+{
+  "module": "AlertModule",
+  "selector": "bb-alert-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-alert--docs",
+  "inputs": {
+    "dismissible": {
+      "type": "",
+      "description": "Whether the alert can be dismissed. Defaults to false.",
+      "default": "false"
+    },
+    "message": {
+      "type": "string | undefined",
+      "description": "The message of the alert. If nothing provided, wouldn't be displayed. It is internally linked with aria-describedby."
+    },
+    "modifier": {
+      "type": "AlertType",
+      "options": "'warning' | 'error' | 'success' | 'info' | 'warning-amber'",
+      "description": "The type modifier for the alert. Defaults to 'error'.",
+      "default": "'error'"
+    },
+    "title": {
+      "type": "string | undefined",
+      "description": "The title of the alert. Will throw an error if unset. It is internaly linked with aria-labelledby."
+    }
+  },
+  "outputs": {
+    "close": {
+      "type": "EventEmitter",
+      "description": "The callback fired upon closing the alert."
+    }
+  },
+  "methods": {
+    "closeAlert": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "getAlertType": {
+      "returns": {
+        "type": "string"
+      }
+    }
+  }
+}

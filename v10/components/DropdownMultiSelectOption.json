@@ -1,0 +1,24 @@
+{
+  "module": "DropdownMultiSelectOptionModule",
+  "selector": "bb-dropdown-multi-select-option-ui",
+  "inputs": {
+    "id": {
+      "type": "string",
+      "description": "The id for the input. Defaults to unique string."
+    },
+    "label": {
+      "type": "",
+      "description": "The label of the option item",
+      "default": "''"
+    },
+    "state": {
+      "type": "boolean | undefined",
+      "default": "false"
+    },
+    "value": {
+      "type": "",
+      "description": "The value of the native option element",
+      "default": "''"
+    }
+  }
+}

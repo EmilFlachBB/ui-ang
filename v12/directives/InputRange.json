@@ -1,0 +1,5 @@
+{
+  "module": "InputRangeModule",
+  "directive": "bbInputRange",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-input-range--docs"
+}

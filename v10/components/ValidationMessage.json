@@ -1,0 +1,4 @@
+{
+  "module": "ValidationMessageModule",
+  "selector": "bb-validation-message-ui"
+}

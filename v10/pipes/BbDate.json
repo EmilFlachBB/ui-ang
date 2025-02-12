@@ -1,0 +1,32 @@
+{
+  "ngname": "bbDate",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/formatters-date-pipe--docs",
+  "transform": {
+    "params": [
+      {
+        "name": "value",
+        "type": "any",
+        "description": "the date that should be formatted"
+      },
+      {
+        "name": "format",
+        "description": "the format type for the date to be formatted",
+        "default": "this.dateFormatConfig?.format ?? this.defaultOptions?.dateFormat ?? 'mediumDate'"
+      },
+      {
+        "name": "timezone",
+        "type": "string | undefined",
+        "description": "used for formatting the time",
+        "default": "this.defaultOptions?.timezone"
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "description": "locale to use for formatting"
+      }
+    ],
+    "returns": {
+      "type": "string | null"
+    }
+  }
+}

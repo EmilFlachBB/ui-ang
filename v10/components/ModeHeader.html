@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: ModeHeader</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v10 Index</a>
+    <h1>Component: ModeHeader</h1>
+    <pre><code>{
+  "module": "ModeHeaderModule",
+  "selector": "bb-mode-header-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-mode-header--docs",
+  "inputs": {
+    "closeButtonAriaLabel": {
+      "type": "string",
+      "description": "The aria label to describe the close button to screen reader users."
+    },
+    "reverseTitleOrder": {
+      "type": "",
+      "description": "Whether or not the order of title elements is reversed.",
+      "default": "true"
+    },
+    "secondaryTitle": {
+      "type": "string",
+      "description": "The smaller, secondary title to display."
+    },
+    "showCloseButton": {
+      "type": "",
+      "description": "Whether or not to show the close button. Defaults to true.",
+      "default": "true"
+    },
+    "title": {
+      "type": "string",
+      "description": "The main title to display."
+    }
+  },
+  "outputs": {
+    "close": {
+      "type": "EventEmitter",
+      "description": "Event fired when the close button is clicked."
+    }
+  }
+}</code></pre>
+</body>
+</html>

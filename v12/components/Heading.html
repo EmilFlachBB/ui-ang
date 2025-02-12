@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: Heading</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v12 Index</a>
+    <h1>Component: Heading</h1>
+    <pre><code>{
+  "module": "HeadingModule",
+  "selector": "bb-heading-ui",
+  "description": "Component that displays a header with navigation ### Displaying navigation options based on entitlements Heading component could render the navigation items based on entitlements. To enable this feature PERMISSIONS_STRATEGY token from `@backbase/ui-ang/heading` should be privided. F.e. ``` import { PermissionsStrategy } from '@backbase/foundation-ang/web-sdk'; //... providers: [ { provide: PERMISSIONS_STRATEGY, useClass: PermissionsStrategy } ] //.... ```",
+  "deprecated": true,
+  "deprecationMessage": "Component is deprecated as of ui-ang v11. It will be removed in ui-ang v13. Please use PageHeaderComponent to replace your primary header and native HTML h2-h5 to replace smaller headers.",
+  "inputs": {
+    "buttonColor": {
+      "type": "string",
+      "description": "Color of the button. Default primary",
+      "default": "'primary'"
+    },
+    "buttonIcon": {
+      "type": "string",
+      "description": "Button icon. Will be used if useFirstLinkAsDefault = false;"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "description": "Button label. Will be used if useFirstLinkAsDefault = false;"
+    },
+    "buttonSize": {
+      "type": "\"sm\" | \"md\"",
+      "description": "Size of the button. Allowed values are sm or md. Default md",
+      "default": "'md'"
+    },
+    "customClassName": {
+      "type": "string",
+      "description": "Custom class name",
+      "default": "''"
+    },
+    "heading": {
+      "type": "string",
+      "description": "Heading",
+      "default": "''"
+    },
+    "headingClasses": {
+      "type": "string",
+      "description": "Heading Classes",
+      "default": "''"
+    },
+    "headingType": {
+      "type": "string",
+      "description": "Heading type (h1-h6)",
+      "default": "''"
+    },
+    "navigationItems": {
+      "type": "HeadingNavigationItem<any>[]",
+      "description": "An array of objects representing the navigation menu items.",
+      "default": "[]"
+    },
+    "position": {
+      "type": "Placement | PlacementArray",
+      "description": "The position of the dropdown, position will be picked in order of feasibility",
+      "default": "['bottom-end', 'bottom-start', 'top-end', 'top-start']"
+    },
+    "showNavigation": {
+      "type": "boolean",
+      "description": "Determines whether or not to show the navigation section.",
+      "default": "true"
+    },
+    "useFirstLinkAsDefault": {
+      "type": "boolean",
+      "description": "Determines whether or not to use the first link as the default target.",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "navigationAction": {
+      "type": "EventEmitter",
+      "description": "Event on item click"
+    }
+  },
+  "methods": {
+    "onClick": {
+      "params": [
+        {
+          "name": "value",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "module": "ProgressTrackerModule",
+  "selector": "bb-progress-tracker",
+  "description": "A tracker component that tracks multiple ongoing or asynchronous processes on a page. It handles multiple ongoing process events so that you can trigger, cancel and/or destroy events on demand. It is easily extendable as you can you can extend the templates by passing your customised template as input bindings. Refer to examples for the implementation.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-progress-tracker--docs",
+  "inputs": {
+    "eventList": {
+      "type": "IProgressTrackerConfig[]"
+    },
+    "progressTrackerHeaderTemplate": {
+      "type": "TemplateRef<any> | undefined",
+      "description": "The reference to a custom template for the Progress Tracker Item Header. Allows to completely override the way Progress Tracker Item heading is displayed."
+    },
+    "progressTrackerItemTemplate": {
+      "type": "TemplateRef<IProgressTrackerItemTemplateConfig> | undefined",
+      "description": "The reference to a custom template for the Progress Tracker Item. Allows to completely override the way Progress Tracker Item is displayed."
+    },
+    "progressTrackerTemplate": {
+      "type": "TemplateRef<IProgressTrackerTemplateConfig> | undefined",
+      "description": "The reference to a custom template for the Progress Tracker Container. Allows to completely override the way Progress Tracker is displayed."
+    }
+  },
+  "outputs": {
+    "cancel": {
+      "type": "EventEmitter"
+    }
+  }
+}

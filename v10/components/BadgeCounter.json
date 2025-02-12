@@ -1,0 +1,23 @@
+{
+  "module": "BadgeCounterModule",
+  "selector": "bb-badge-counter-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-badge-counter--docs",
+  "inputs": {
+    "color": {
+      "type": "BadgeColor",
+      "options": "'primary' | 'info' | 'success' | 'warning' | 'danger' | 'secondary'",
+      "description": "The (background) color of the badge. Defaults to 'primary'.",
+      "default": "'primary'"
+    },
+    "count": {
+      "type": "",
+      "description": "The count to show in the badge. Defaults to 0 and badge will be hidden if count equals 0.",
+      "default": "0"
+    },
+    "maxCount": {
+      "type": "",
+      "description": "The max count value to limit text inside badge. Defaults to 999.",
+      "default": "999"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "module": "CustomProductItemLoanDetailsFormatterModule",
+  "directive": "bbCustomProductItemLoanDetailsFormatter"
+}

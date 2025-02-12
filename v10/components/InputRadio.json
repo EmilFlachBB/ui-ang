@@ -1,0 +1,62 @@
+{
+  "module": "InputRadioModule",
+  "selector": "bb-input-radio-ui",
+  "inputs": {
+    "aria-activedescendant": {
+      "type": "string | undefined",
+      "description": "The ID of the currently active descendant element when the radio button is part of a group."
+    },
+    "aria-describedby": {
+      "type": "string | undefined",
+      "description": "The 'aria-describedby' attribute for the radio button"
+    },
+    "aria-expanded": {
+      "type": "string | undefined",
+      "description": "Whether the radio button is expanded (true) or collapsed (false)."
+    },
+    "aria-invalid": {
+      "type": "string | undefined",
+      "description": "Whether the radio button is invalid (true) or valid (false)."
+    },
+    "aria-label": {
+      "type": "string | undefined",
+      "description": "Accessible label when control does not need to render label tag."
+    },
+    "aria-labelledby": {
+      "type": "string | undefined",
+      "description": "The 'aria-labelledby' attribute for the radio button"
+    },
+    "aria-owns": {
+      "type": "string | undefined",
+      "description": "The IDs of the elements that are controlled by the radio button."
+    },
+    "disabled": {
+      "type": "",
+      "description": "Whether the radio button is disabled (true) or enabled (false).",
+      "default": "false"
+    },
+    "id": {
+      "type": "string | undefined",
+      "description": "A unique identifier for the radio element."
+    },
+    "label": {
+      "type": "string | undefined",
+      "description": "The label of the radio item"
+    },
+    "labelTemplate": {
+      "type": "TemplateRef<any> | undefined",
+      "description": "Custom label template."
+    },
+    "labelTemplateContext": {
+      "type": "any | undefined",
+      "description": "Label template context."
+    },
+    "role": {
+      "type": "string | undefined"
+    },
+    "value": {
+      "type": "string | undefined",
+      "description": "The value of the native radio element."
+    }
+  }
+}

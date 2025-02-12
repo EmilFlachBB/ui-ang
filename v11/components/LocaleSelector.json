@@ -1,0 +1,66 @@
+{
+  "module": "LocaleSelectorModule",
+  "selector": "bb-locale-selector-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-locale-selector--docs",
+  "inputs": {
+    "btnColor": {
+      "type": "string",
+      "description": "Color of the button. Defaults to primary.",
+      "default": "'primary'"
+    },
+    "dropDownButtonLabel": {
+      "type": "string | undefined",
+      "description": "Button aria label."
+    },
+    "dropdownPlacement": {
+      "type": "PlacementArray",
+      "description": "The position of the dropdown for the locale selector, position will be picked in order of feasibility.",
+      "default": "['bottom-end', 'bottom-start', 'top-end', 'top-start']"
+    },
+    "fullWidth": {
+      "type": "boolean",
+      "description": "If true it will stretch the button inside to 100% width.",
+      "default": "false"
+    },
+    "icon": {
+      "type": "string | undefined",
+      "description": "Icon that is displayed in the button."
+    },
+    "iconSize": {
+      "type": "string",
+      "description": "The size of the icon to be displayed. Defaults to md.",
+      "default": "'md'"
+    },
+    "showModalOnMobileView": {
+      "type": "boolean",
+      "description": "If true it will show the locale selection inside a modal on mobile view.",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "selectLocale": {
+      "type": "EventEmitter",
+      "description": "An output property which will emit a selected Locale code."
+    }
+  },
+  "methods": {
+    "changeLanguage": {
+      "description": "Changes the current language to the specified locale, toggles locale modal and triggers a output event with selected locale code.",
+      "params": [
+        {
+          "name": "localeCode",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "toggleLocaleModal": {
+      "description": "Toggles the visibility of the locale selector modal.",
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

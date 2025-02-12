@@ -1,0 +1,31 @@
+{
+  "module": "UniversalHeaderModule",
+  "selector": "bb-universal-header-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-universal-header--docs",
+  "inputs": {
+    "backgroundColor": {
+      "type": "UniversalHeaderBackgroundColor",
+      "options": "'white' | 'no-background'",
+      "description": "The universal header background color to display.",
+      "default": "'white'"
+    },
+    "closeButton": {
+      "type": "UniversalHeaderCloseButton",
+      "description": "The universal header close button configuration."
+    },
+    "logo": {
+      "type": "UniversalHeaderLogo",
+      "description": "The universal header logo configuration."
+    },
+    "title": {
+      "type": "UniversalHeaderTitle",
+      "description": "The universal header title configuration."
+    }
+  },
+  "outputs": {
+    "close": {
+      "type": "EventEmitter<any>",
+      "description": "The universal header close action."
+    }
+  }
+}

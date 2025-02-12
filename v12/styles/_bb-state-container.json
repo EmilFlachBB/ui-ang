@@ -1,0 +1,11 @@
+{
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-structure-bb-state-container--docs",
+  "classes": [
+    "bb-state-container",
+    "bb-state-container--min-height",
+    "bb-state-container__footer"
+  ],
+  "examples": [
+    "<div class=\"bb-state-container\">\nEmpty state\n<div class=\"bb-state-container__footer\">\nOptional action buttons\n</div>\n</div>"
+  ]
+}

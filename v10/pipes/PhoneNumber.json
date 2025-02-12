@@ -1,0 +1,26 @@
+{
+  "ngname": "phoneNumber",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/formatters-phone-number-pipe--docs",
+  "transform": {
+    "params": [
+      {
+        "name": "value",
+        "type": "string | number",
+        "description": "the phone number string to transform"
+      },
+      {
+        "name": "countryCode",
+        "type": "CountryCode",
+        "description": "the two letter CDLR code for the country to format to"
+      },
+      {
+        "name": "isInputElement",
+        "type": "boolean",
+        "description": "whether the value was entered in an input element"
+      }
+    ],
+    "returns": {
+      "type": "string"
+    }
+  }
+}

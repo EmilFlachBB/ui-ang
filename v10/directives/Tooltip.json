@@ -1,0 +1,34 @@
+{
+  "module": "TooltipModule",
+  "directive": "bbTooltip",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-tooltip--docs",
+  "inputs": {
+    "bbTooltip": {
+      "type": "",
+      "description": "Content to be displayed as tooltip. If falsy, the tooltip won't open. Accepts a string or TemplateRef."
+    },
+    "triggers": {
+      "type": "",
+      "description": "Specifies the events that should trigger the tooltip (space separated strings). Defaults to 'click'. This component extends NgbTooltip. All available properties of NgbTooltip can be used with this component as well. More information about it and more examples can be found in NgBootstrap documentation. This attribute can be overwritten via the global configuration token.",
+      "default": "'click'"
+    }
+  },
+  "methods": {
+    "close": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "open": {
+      "params": [
+        {
+          "name": "context",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

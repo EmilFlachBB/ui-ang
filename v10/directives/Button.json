@@ -1,0 +1,34 @@
+{
+  "module": "ButtonModule",
+  "directive": "bbButton",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-button--docs",
+  "inputs": {
+    "block": {
+      "type": "",
+      "description": "The flag to indicate whether the button should fill the container that it is in. Defaults to 'false'.",
+      "default": "false"
+    },
+    "buttonSize": {
+      "type": "\"sm\" | \"md\"",
+      "description": "Size of the button.",
+      "default": "'md'"
+    },
+    "circle": {
+      "type": "",
+      "description": "The flag to indicate whether the button should be in a circular shape. Defaults to 'false'. This will only work when there's only an icon inside the button without a text.",
+      "default": "false"
+    },
+    "color": {
+      "type": "ButtonColor | string",
+      "options": "'primary' | 'info' | 'success' | 'warning' | 'danger' | 'secondary' | 'light' | 'dark' | 'link' | 'link-text' | 'link-text-light' | 'unstyled' | 'link-dark' | 'neutral'",
+      "description": "The color for the button. Defaults to 'primary'. If a custom string used, then a css class is going to be added. The pattern is as follows: btn-customColor",
+      "default": "'primary'"
+    },
+    "type": {
+      "type": "ButtonType",
+      "options": "'button' | 'submit' | 'reset'",
+      "description": "Button's type atrribute with default value.",
+      "default": "'button'"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "module": "MaxDateValidatorModule",
+  "directive": "maxDate",
+  "inputs": {
+    "maxDate": {
+      "type": ""
+    }
+  },
+  "methods": {
+    "registerOnValidatorChange": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "validate": {
+      "params": [
+        {
+          "name": "control",
+          "type": "AbstractControl"
+        }
+      ],
+      "returns": {
+        "type": "ValidationErrors | null"
+      }
+    }
+  }
+}

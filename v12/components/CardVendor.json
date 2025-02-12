@@ -1,0 +1,12 @@
+{
+  "module": "CardVendorModule",
+  "selector": "bb-card-vendor-ui",
+  "description": "Component that displays the logo of a card vendor.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-card-vendor--docs",
+  "inputs": {
+    "vendor": {
+      "type": "string | undefined",
+      "description": "The vendor that this component displays the logo of.  Mandatory."
+    }
+  }
+}

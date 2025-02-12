@@ -1,0 +1,18 @@
+{
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-structure-bb-block--docs",
+  "classes": [
+    "bb-block--bottom-space",
+    "bb-block--fill",
+    "bb-block--full-width",
+    "bb-block--lg",
+    "bb-block--lg-down",
+    "bb-block--md",
+    "bb-block--no-margin",
+    "bb-block--sm",
+    "bb-block--xl",
+    "bb-block--xs"
+  ],
+  "examples": [
+    "<div class=\"bb-block--xs\">\nContent with xs margin bottom\n</div>\n<div class=\"bb-block--sm\">\nContent with sm margin bottom\n</div>\n<div class=\"bb-block--md\">\nContent with md margin bottom\n</div>\n<div class=\"bb-block--lg\">\nContent with lg margin bottom\n</div>\n<div class=\"bb-block--xl\">\nContent with xl margin bottom\n</div>\n<div class=\"bb-block--no-margin\">\nContent with no margin bottom\n</div>\n<div class=\"bb-block--full-width\">\nContent with full width\n</div>\n<div class=\"bb-block--bottom-space\">\nContent with defined padding bottom and max height\n</div>\n\n@example html\n<div class=\"bb-block--md-md-down\">\nContent with margin bottom\n</div>"
+  ]
+}

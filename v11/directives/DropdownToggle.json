@@ -1,0 +1,4 @@
+{
+  "module": "DropdownToggleModule",
+  "directive": "bbDropdownToggle"
+}

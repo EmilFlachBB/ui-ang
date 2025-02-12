@@ -1,0 +1,16 @@
+{
+  "ngname": "countryFlag",
+  "transform": {
+    "params": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "The country code to transform."
+      }
+    ],
+    "returns": {
+      "type": "string",
+      "description": "The class name for the flag icon."
+    }
+  }
+}

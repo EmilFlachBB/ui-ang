@@ -1,0 +1,17 @@
+{
+  "module": "ModalBodyModule",
+  "selector": "bb-modal-body-ui",
+  "methods": {
+    "setScrollable": {
+      "params": [
+        {
+          "name": "scrollable",
+          "type": "boolean | undefined"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

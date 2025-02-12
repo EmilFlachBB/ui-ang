@@ -1,0 +1,38 @@
+{
+  "module": "EllipsisModule",
+  "selector": "bb-ellipsis-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-ellipsis--docs",
+  "inputs": {
+    "lineClamp": {
+      "type": "number",
+      "description": "Specifies after what text line apply truncating"
+    },
+    "text": {
+      "type": "string | undefined",
+      "description": "The text which should be truncated."
+    },
+    "tooltipTriggers": {
+      "type": "",
+      "description": "Specifies the events that should trigger the tooltip (space separated strings). Defaults to 'click'.",
+      "default": "'click'"
+    }
+  },
+  "methods": {
+    "onMouseEnter": {
+      "params": [
+        {
+          "name": "event",
+          "type": "MouseEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onMouseLeave": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

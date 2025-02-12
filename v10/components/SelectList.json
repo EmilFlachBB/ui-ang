@@ -1,0 +1,247 @@
+{
+  "module": "SelectListModule",
+  "selector": "bb-select-list-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-select-list--docs",
+  "inputs": {
+    "filterEnabled": {
+      "type": "",
+      "description": "Flag to determine if typeahead should be used to filter the items list. If enabled the items list can not be updated asynchonously as the filtering and the underlying data will get out of sync.",
+      "default": "true"
+    },
+    "items": {
+      "type": "T[]",
+      "description": "A list of items to select from based on the input text.",
+      "default": "[]"
+    },
+    "loading": {
+      "type": "",
+      "description": "Flag to determine if the data in the list is loading",
+      "default": "false"
+    },
+    "maxSelectedItems": {
+      "type": "",
+      "description": "Maximum number of selected items, 'none' means unlimited",
+      "default": "'none'"
+    },
+    "minTermLength": {
+      "type": "",
+      "description": "Minimum number of characters required before searching for items",
+      "default": "2"
+    },
+    "multiple": {
+      "type": "",
+      "description": "Flag to determine if the list allows multiple selection.",
+      "default": "false"
+    },
+    "placeholder": {
+      "type": "",
+      "description": "Placeholder text to display in the input",
+      "default": "''"
+    },
+    "aria-activedescendant": {
+      "type": "string | undefined",
+      "description": "It identifies the currently active element when focus is on a composite widget, combobox, textbox, group, or application."
+    },
+    "aria-autocomplete": {
+      "type": "string | undefined",
+      "description": "It indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox."
+    },
+    "aria-controls": {
+      "type": "string | undefined",
+      "description": "When an interactive or input control has an impact on another element in a document or application, the aria-control indicates which element or elements the user interface widget controls."
+    },
+    "aria-describedby": {
+      "type": "string | undefined",
+      "description": "Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them."
+    },
+    "aria-expanded": {
+      "type": "string | undefined",
+      "description": "The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or not its child elements are displayed or hidden."
+    },
+    "aria-invalid": {
+      "type": "string | undefined",
+      "description": "The aria-invalid state indicates the entered value is not in a format expected by the application."
+    },
+    "aria-label": {
+      "type": "string | undefined",
+      "description": "Accessible label when control does not need to render label tag."
+    },
+    "aria-labelledby": {
+      "type": "string | undefined",
+      "description": "The aria-labelledby property enables authors to reference other elements on the page to define an accessible name. This is useful when using elements that don't have native support for associating elements to provide an accessible name."
+    },
+    "aria-owns": {
+      "type": "string | undefined",
+      "description": "The aria-owns attribute identifies an element (or elements) in order to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship."
+    },
+    "autofocus": {
+      "type": "",
+      "description": "Whether the text input should be auto-focused when shown.",
+      "default": "false"
+    },
+    "disabled": {
+      "type": "",
+      "description": "Whether the component is mutable or clickable. Defaults to false.",
+      "default": "false"
+    },
+    "id": {
+      "type": "string",
+      "description": "The id for the input. Defaults to unique string. Used to map the label to the input."
+    },
+    "inputClassName": {
+      "type": "string | undefined",
+      "description": "Class names that must be included on the &lt;input&gt; form control"
+    },
+    "label": {
+      "type": "",
+      "description": "The label for the input. Defaults to an empty string.",
+      "default": "''"
+    },
+    "readonly": {
+      "type": "",
+      "description": "Whether the input is read only. Defaults to false.",
+      "default": "false"
+    },
+    "required": {
+      "type": "",
+      "description": "Whether the input is required. Defaults to false.",
+      "default": "false"
+    },
+    "role": {
+      "type": "string | undefined",
+      "description": "Customize the ARIA role for the HTML input/select/textarea element inside this component. This can be used to improve accessibility for components, for example by configuring [role]=&quot;'combobox'&quot; for a component that provides an autocomplete list. Values that are valid for the native HTML form elements are allowed."
+    },
+    "size": {
+      "type": "number | string",
+      "description": "Configure the minimum width to fit the specified number of characters that should fit for HTML &lt;input&gt;"
+    }
+  },
+  "outputs": {
+    "clear": {
+      "type": "EventEmitter",
+      "description": "Emitter when clear is performed."
+    },
+    "search": {
+      "type": "EventEmitter<string>",
+      "description": "Emitter when search is performed. Outputs search term"
+    },
+    "valueChange": {
+      "type": "",
+      "description": "Output to capture value change event."
+    },
+    "blur": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on blur actions."
+    },
+    "focus": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on focus actions."
+    }
+  },
+  "methods": {
+    "onOpen": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onSearch": {
+      "params": [
+        {
+          "name": "event",
+          "type": "string | SearchPayload"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "writeValue": {
+      "params": [
+        {
+          "name": "inputValue",
+          "type": "Object | string | null"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "getSizeByKeyword": {
+      "params": [
+        {
+          "name": "arg",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "number | undefined"
+      }
+    },
+    "onBlur": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onFocus": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onValueChange": {
+      "params": [
+        {
+          "name": "newValue",
+          "type": "Object | string"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnChange": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnTouched": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "setDisabledState": {
+      "params": [
+        {
+          "name": "isDisabled",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

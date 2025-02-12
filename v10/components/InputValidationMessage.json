@@ -1,0 +1,16 @@
+{
+  "module": "InputValidationMessageModule",
+  "selector": "bb-input-validation-message-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-input-validation-message--docs",
+  "inputs": {
+    "messageId": {
+      "type": "string | undefined",
+      "description": "Optional reference to bind parent input with this component This property is used to bind the parent input element with this component. It is optional and can be used to associate a validation message with a specific input element using the input element's ID or name."
+    },
+    "showErrors": {
+      "type": "",
+      "description": "Whether the errors template should be shown This property is used to show or hide the error template for the input element. When set to true, the error template will be displayed.",
+      "default": "false"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "module": "ModeHeaderModule",
+  "selector": "bb-mode-header-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-mode-header--docs",
+  "inputs": {
+    "closeButtonAriaLabel": {
+      "type": "string",
+      "description": "The aria label to describe the close button to screen reader users."
+    },
+    "reverseTitleOrder": {
+      "type": "",
+      "description": "Whether or not the order of title elements is reversed.",
+      "default": "true"
+    },
+    "secondaryTitle": {
+      "type": "string",
+      "description": "The smaller, secondary title to display."
+    },
+    "showCloseButton": {
+      "type": "",
+      "description": "Whether or not to show the close button. Defaults to true.",
+      "default": "true"
+    },
+    "title": {
+      "type": "string",
+      "description": "The main title to display."
+    }
+  },
+  "outputs": {
+    "close": {
+      "type": "EventEmitter",
+      "description": "Event fired when the close button is clicked."
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "module": "ValidationMessageModule",
+  "selector": "bb-validation-message-ui",
+  "description": "Dynamic component that displays a control validation message dependence on validation."
+}

@@ -1,0 +1,11 @@
+{
+  "module": "KeyboardClickModule",
+  "directive": "bbKeyboardClick",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-keyboard-click--docs",
+  "outputs": {
+    "bbKeyboardClick": {
+      "type": "EventEmitter",
+      "description": "Stream that should be fired on click/keydown.enter/keydown.space"
+    }
+  }
+}

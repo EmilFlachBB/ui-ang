@@ -1,0 +1,82 @@
+{
+  "module": "ProductSelectorModule",
+  "selector": "bb-product-selector-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-product-selector--docs",
+  "inputs": {
+    "aria-activedescendant": {
+      "type": "string | undefined",
+      "description": "It identifies the currently active element in the selector."
+    },
+    "aria-describedby": {
+      "type": "string | undefined",
+      "description": "Set aria-describedby with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them."
+    },
+    "ariaLabelForDropdown": {
+      "type": "",
+      "description": "Set ariaLabelForDropdown with a text that explains what dropdown component is about",
+      "default": "'A dropdown component with a product list'"
+    },
+    "ariaLabelForToggleButton": {
+      "type": "",
+      "description": "Set ariaLabelForToggleButton with a text that explains what a toggle button is about",
+      "default": "'A toggle button for a product list'"
+    },
+    "autoClose": {
+      "type": "",
+      "description": "Whether the dropdown should be closed when clicking one of dropdown items or pressing ESC. Defaults to true.",
+      "default": "true"
+    },
+    "container": {
+      "type": "\"\" | \"body\"",
+      "description": "Specifies which element the dropdown should be appended to.",
+      "default": "''"
+    },
+    "id": {
+      "type": "string | undefined",
+      "description": "A unique identifier for the product-selector toggle element."
+    },
+    "position": {
+      "type": "Placement | PlacementArray",
+      "description": "The position of the dropdown, position will be picked in order of feasibility.",
+      "default": "['bottom-end', 'bottom-start', 'top-end', 'top-start']"
+    }
+  },
+  "methods": {
+    "close": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "focusItem": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onBlur": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClose": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onOpenChange": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "open": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

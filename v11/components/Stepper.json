@@ -1,0 +1,38 @@
+{
+  "module": "StepperModule",
+  "selector": "bb-stepper-ui",
+  "description": "Component that represents a navigation stepper.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-stepper--docs",
+  "outputs": {
+    "select": {
+      "type": "EventEmitter<any>",
+      "description": "Emits an event when a step's link is clicked."
+    }
+  },
+  "methods": {
+    "hasCurrentChildStep": {
+      "description": "Returns the current selected sub-step Deprecated. The property will be removed in `ui-ang@11.0.0` and is no longer used by the component.",
+      "deprecated": true,
+      "deprecationMessage": "Deprecated since `ui-ang@10.0.0`.",
+      "params": [
+        {
+          "type": "StepperStepComponent"
+        }
+      ],
+      "returns": {
+        "type": "StepperStepComponent | undefined"
+      }
+    },
+    "onClickHandler": {
+      "params": [
+        {
+          "name": "data",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

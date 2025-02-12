@@ -1,0 +1,15 @@
+{
+  "ngname": "notificationIcon",
+  "transform": {
+    "params": [
+      {
+        "name": "modifier",
+        "type": "NotificationType",
+        "options": "'success' | 'info' | 'warning' | 'error' | 'alert'"
+      }
+    ],
+    "returns": {
+      "type": "any"
+    }
+  }
+}

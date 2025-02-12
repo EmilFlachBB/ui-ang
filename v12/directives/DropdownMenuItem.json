@@ -1,0 +1,4 @@
+{
+  "module": "DropdownMenuItemModule",
+  "directive": "bbDropdownMenuItem"
+}

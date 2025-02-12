@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: Collapsible</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v11 Index</a>
+    <h1>Component: Collapsible</h1>
+    <pre><code>{
+  "module": "CollapsibleModule",
+  "selector": "bb-collapsible-ui",
+  "description": "Provides an expandable details-summary/body-header view.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-collapsible--docs",
+  "inputs": {
+    "hasChevron": {
+      "type": "boolean",
+      "description": "Whether chevron should be displayed. Defaults to true.",
+      "default": "true",
+      "deprecated": true,
+      "deprecationMessage": "Deprecated in ui-ang@11. To be removed in ui-ang@13."
+    },
+    "isOpen": {
+      "type": "boolean",
+      "description": "Toggles the content."
+    },
+    "recreateBodyContent": {
+      "type": "boolean",
+      "description": "If true, it will use the ngIf approach to create the content which is less performant but removes the extra div. In case of styling issues, set this to true.",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "isOpenChange": {
+      "type": "EventEmitter",
+      "description": "Emits the toggle content event."
+    }
+  }
+}</code></pre>
+</body>
+</html>

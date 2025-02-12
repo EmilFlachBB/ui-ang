@@ -1,0 +1,14 @@
+{
+  "ngname": "avatarInitials",
+  "transform": {
+    "params": [
+      {
+        "name": "text",
+        "type": "string"
+      }
+    ],
+    "returns": {
+      "type": "any"
+    }
+  }
+}

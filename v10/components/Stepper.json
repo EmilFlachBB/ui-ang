@@ -1,0 +1,34 @@
+{
+  "module": "StepperModule",
+  "selector": "bb-stepper-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-stepper--docs",
+  "outputs": {
+    "select": {
+      "type": "EventEmitter<any>",
+      "description": "Emits an event when a step's link is clicked."
+    }
+  },
+  "methods": {
+    "hasCurrentChildStep": {
+      "params": [
+        {
+          "type": "StepperStepComponent"
+        }
+      ],
+      "returns": {
+        "type": "StepperStepComponent | undefined"
+      }
+    },
+    "onClickHandler": {
+      "params": [
+        {
+          "name": "data",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

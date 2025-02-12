@@ -1,0 +1,10 @@
+{
+  "module": "TableRowModule",
+  "directive": "bbRow",
+  "inputs": {
+    "bbRow": {
+      "type": "any",
+      "description": "The data of the row element"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "module": "MoneyProtectionStatusModule",
+  "selector": "bb-money-protection-status",
+  "description": "Create a component that will add money protection status at each account level. ```typescript const MoneyProtectionStatusConfig: MoneyProtectionStatusConfig = { messagePerStatus: {   [MoneyProtectionStatusEnum.Yes]: { message: 'is insured by the XYZ.' },  [MoneyProtectionStatusEnum.No]: { message: 'not insured by the XYZ.' },  [MoneyProtectionStatusEnum.NA]: { message: 'not available.' }, }, disclaimer: 'Products marked are not XYZ insured,not a deposit and may lose value', }; ``` Provide this component through providers at application level. ```typescript providers: [   {     provide: BB_MONEY_PROTECTION_STATUS_CONFIG_TOKEN,     useValue: MoneyProtectionStatusConfig,   }, ] ``` At component level it can be used as ```typescript ```",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-money-protection-status--docs",
+  "inputs": {
+    "classes": {
+      "type": "string"
+    },
+    "insuredStatus": {
+      "type": "MoneyProtectionStatusEnum"
+    }
+  }
+}

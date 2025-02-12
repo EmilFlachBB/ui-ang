@@ -1,0 +1,25 @@
+{
+  "module": "HeaderModule",
+  "selector": "bb-header-ui",
+  "inputs": {
+    "heading": {
+      "type": "string | TemplateRef<any> | undefined",
+      "description": "The text or label or a TemplateRef to be displayed as the header."
+    },
+    "headingClasses": {
+      "type": "string | undefined",
+      "description": "The heading classes to be added to the component."
+    },
+    "headingType": {
+      "type": "string | undefined",
+      "description": "The heading type to be rendered in the component."
+    }
+  },
+  "methods": {
+    "getHeadingTemplate": {
+      "returns": {
+        "type": "TemplateRef | undefined"
+      }
+    }
+  }
+}

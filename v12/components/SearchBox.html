@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: SearchBox</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v12 Index</a>
+    <h1>Component: SearchBox</h1>
+    <pre><code>{
+  "module": "SearchBoxModule",
+  "selector": "bb-search-box-ui",
+  "description": "Component that provides you a search input field. ### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - Set aria-describedby  with an element id that contains a detailed decription about the Search box.  - aria-label or  aria-labelledby can be used to display the label for search box. If  showSearch = true , searchLabel is discernible text for search button. If  showClear = true , clearLabel is discernible text for clear button.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-search-box--docs",
+  "inputs": {
+    "autocomplete": {
+      "type": "string",
+      "description": "The autocomplete attribute value. Defaults to off.",
+      "default": "'off'"
+    },
+    "clearLabel": {
+      "type": "string",
+      "description": "The aria label used when the clear button is in focus.",
+      "default": "'Clear'"
+    },
+    "containerAriaLabel": {
+      "type": "string",
+      "description": "The label of the container for the search input. When there are multiple search inputs on a page, a label should be assigned. Defaults to ''.",
+      "default": "''"
+    },
+    "containerRole": {
+      "type": "string",
+      "description": "The role of the container for the search input. For non-landmarked search, please assign this a value. Defaults to 'search'.",
+      "default": "'search'"
+    },
+    "maxLength": {
+      "type": "string",
+      "description": "The maximum length of the search text. Defaults to 140.",
+      "default": "'140'"
+    },
+    "placeholder": {
+      "type": "string",
+      "description": "The placeholder text to display in the input.",
+      "default": "''"
+    },
+    "searchLabel": {
+      "type": "string",
+      "description": "The aria label used when the search button is in focus.",
+      "default": "'Search'"
+    },
+    "showClear": {
+      "type": "boolean",
+      "description": "Whether to show the clear button icon after the text. Defaults to false.",
+      "default": "false"
+    },
+    "showSearch": {
+      "type": "boolean",
+      "description": "Whether to show the search button icon before the text. Defaults to false.",
+      "default": "false"
+    },
+    "squareBorder": {
+      "type": "boolean",
+      "description": "The square border for search box. Defaults to false.",
+      "default": "false"
+    },
+    "typeaheadOptions": {
+      "type": "TypeaheadOptions<T> | undefined",
+      "description": "The list of options to use when typeahead is available. See https://ng-bootstrap.github.io/#/components/typeahead/api#NgbTypeahead for the list of options."
+    },
+    "aria-activedescendant": {
+      "type": "string",
+      "description": "It identifies the currently active element when focus is on a composite widget, combobox, textbox, group, or application."
+    },
+    "aria-autocomplete": {
+      "type": "string",
+      "description": "It indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox."
+    },
+    "aria-controls": {
+      "type": "string",
+      "description": "When an interactive or input control has an impact on another element in a document or application, the aria-control indicates which element or elements the user interface widget controls."
+    },
+    "aria-describedby": {
+      "type": "string",
+      "description": "Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them."
+    },
+    "aria-expanded": {
+      "type": "string",
+      "description": "The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or not its child elements are displayed or hidden."
+    },
+    "aria-invalid": {
+      "type": "string",
+      "description": "The aria-invalid state indicates the entered value is not in a format expected by the application."
+    },
+    "aria-label": {
+      "type": "string",
+      "description": "Accessible label when control does not need to render label tag."
+    },
+    "aria-labelledby": {
+      "type": "string",
+      "description": "The aria-labelledby property enables authors to reference other elements on the page to define an accessible name. This is useful when using elements that don't have native support for associating elements to provide an accessible name."
+    },
+    "aria-owns": {
+      "type": "string",
+      "description": "The aria-owns attribute identifies an element (or elements) in order to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship."
+    },
+    "autofocus": {
+      "type": "boolean",
+      "description": "Whether the text input should be auto-focused when shown.",
+      "default": "false"
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Whether the component is mutable or clickable. Defaults to false.",
+      "default": "false"
+    },
+    "id": {
+      "type": "string",
+      "description": "The id for the input. Defaults to unique string. Used to map the label to the input."
+    },
+    "inputClassName": {
+      "type": "string",
+      "description": "Class names that must be included on the &lt;input&gt; form control"
+    },
+    "label": {
+      "type": "string",
+      "description": "The label for the input. Defaults to an empty string.",
+      "default": "''"
+    },
+    "readonly": {
+      "type": "boolean",
+      "description": "Whether the input is read only. Defaults to false.",
+      "default": "false"
+    },
+    "required": {
+      "type": "boolean",
+      "description": "Whether the input is required. Defaults to false.",
+      "default": "false"
+    },
+    "role": {
+      "type": "string | undefined",
+      "description": "Customize the ARIA role for the HTML input/select/textarea element inside this component. This can be used to improve accessibility for components, for example by configuring [role]=&quot;'combobox'&quot; for a component that provides an autocomplete list. Values that are valid for the native HTML form elements are allowed."
+    },
+    "size": {
+      "type": "number | string",
+      "description": "Configure the minimum width to fit the specified number of characters that should fit for HTML &lt;input&gt;"
+    }
+  },
+  "outputs": {
+    "clear": {
+      "type": "EventEmitter<string>",
+      "description": "Emits an event when the clear button is clicked."
+    },
+    "submit": {
+      "type": "EventEmitter<string | boolean | Object | null>",
+      "description": "Emits an event when a search is submitted."
+    },
+    "valueChange": {
+      "type": "EventEmitter<any>",
+      "description": "Emits an event when the value in the search box is changed."
+    },
+    "blur": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on blur actions."
+    },
+    "focus": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on focus actions."
+    }
+  },
+  "methods": {
+    "focusEditableElement": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "focusOnInputField": {
+      "description": "Sets the focus on the input field. If the input field reference is defined, it calls the `focus()` method on the native element.",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "getKeywordBySize": {
+      "params": [
+        {
+          "name": "size",
+          "type": "number | string"
+        }
+      ],
+      "returns": {
+        "type": "string"
+      }
+    },
+    "getSizeByKeyword": {
+      "params": [
+        {
+          "name": "keyword",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "number | undefined"
+      }
+    },
+    "isClearVisible": {
+      "returns": {
+        "type": "boolean"
+      }
+    },
+    "onBlur": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClear": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onFocus": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onSelect": {
+      "params": [
+        {
+          "name": "event",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onSubmit": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onValueChange": {
+      "params": [
+        {
+          "name": "newValue",
+          "type": "Object | string"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnChange": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnTouched": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "setDisabledState": {
+      "params": [
+        {
+          "name": "isDisabled",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "writeValue": {
+      "params": [
+        {
+          "name": "inputValue",
+          "type": "Object | string | null"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
+</body>
+</html>

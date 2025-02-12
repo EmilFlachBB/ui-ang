@@ -1,0 +1,28 @@
+{
+  "module": "ValueDiffModule",
+  "directive": "bbValueDiff",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-value-diff--docs",
+  "inputs": {
+    "bbValueDiff": {
+      "type": "string",
+      "description": "New data with which we will compare content."
+    },
+    "position": {
+      "type": "",
+      "description": "A position where differences will be added. Default value: 'before'"
+    },
+    "showArrow": {
+      "type": "",
+      "description": "Show arrow between old and new value Default value: false",
+      "default": "false"
+    },
+    "sr-only-new": {
+      "type": "string",
+      "description": "Text for screen reader to describe new value Default value: 'Current value:'"
+    },
+    "sr-only-old": {
+      "type": "string",
+      "description": "Text for screen reader to describe old value Default value: 'Previous value:'"
+    }
+  }
+}

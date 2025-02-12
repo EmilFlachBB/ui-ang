@@ -1,0 +1,76 @@
+{
+  "module": "bbInfiniteScrollModule",
+  "directive": "bbInfiniteScrollDirective",
+  "inputs": {
+    "alwaysCallback": {
+      "type": "",
+      "default": "false"
+    },
+    "fromRoot": {
+      "type": "",
+      "default": "false"
+    },
+    "horizontal": {
+      "type": "",
+      "default": "false"
+    },
+    "immediateCheck": {
+      "type": "",
+      "default": "false"
+    },
+    "infiniteScrollContainer": {
+      "type": "any",
+      "default": "null"
+    },
+    "infiniteScrollDisabled": {
+      "type": "",
+      "default": "false"
+    },
+    "infiniteScrollDistance": {
+      "type": "",
+      "default": "2"
+    },
+    "infiniteScrollThrottle": {
+      "type": "",
+      "default": "150"
+    },
+    "infiniteScrollUpDistance": {
+      "type": "",
+      "default": "1.5"
+    },
+    "scrollWindow": {
+      "type": "",
+      "default": "true"
+    }
+  },
+  "outputs": {
+    "scrolled": {
+      "type": "EventEmitter"
+    },
+    "scrolledUp": {
+      "type": "EventEmitter"
+    }
+  },
+  "methods": {
+    "destroyScroller": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "handleOnScroll": {
+      "params": [
+        {
+          "type": "IInfiniteScrollAction"
+        }
+      ],
+      "returns": {
+        "type": "any"
+      }
+    },
+    "setup": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

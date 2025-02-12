@@ -1,0 +1,29 @@
+{
+  "module": "ModalHeaderModule",
+  "selector": "bb-modal-header-ui",
+  "inputs": {
+    "closeButtonAriaLabel": {
+      "type": "",
+      "description": "Arial label for a &quot;close&quot; button",
+      "default": "'Close modal window'"
+    },
+    "title": {
+      "type": "",
+      "description": "Title text for the modal header. Defaults to empty string.",
+      "default": "''"
+    }
+  },
+  "outputs": {
+    "close": {
+      "type": "EventEmitter",
+      "description": "The event emitted when the modal header close button is clicked."
+    }
+  },
+  "methods": {
+    "onClose": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

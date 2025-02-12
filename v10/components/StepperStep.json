@@ -1,0 +1,37 @@
+{
+  "module": "StepperStepModule",
+  "selector": "bb-stepper-step-ui",
+  "inputs": {
+    "ariaLabel": {
+      "type": "string | undefined",
+      "description": "Represents step's area-label"
+    },
+    "data": {
+      "type": "any | undefined",
+      "description": "Represents step's data"
+    },
+    "isActive": {
+      "type": "",
+      "description": "Marks step as active",
+      "default": "false"
+    },
+    "isChecked": {
+      "type": "",
+      "description": "Marks step as checked",
+      "default": "false"
+    },
+    "isCurrent": {
+      "type": "",
+      "description": "Marks step as current",
+      "default": "false"
+    },
+    "label": {
+      "type": "string | undefined",
+      "description": "Represents step's label"
+    },
+    "stateLabel": {
+      "type": "string | undefined",
+      "description": "Represents step's state label"
+    }
+  }
+}

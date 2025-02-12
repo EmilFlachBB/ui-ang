@@ -1,0 +1,71 @@
+{
+  "module": "AccountNumberModule",
+  "selector": "bb-account-number, bb-account-number-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-account-number--docs",
+  "inputs": {
+    "account": {
+      "type": "ArrangementItem",
+      "description": "Account that contains account number, a format will be picked automatically Used when number unset",
+      "default": "{}"
+    },
+    "masked": {
+      "type": "",
+      "description": "Defines whether the attribute is masked",
+      "default": "false"
+    },
+    "number": {
+      "type": "string | number | undefined",
+      "description": "Account number, Use with type to specify which format to use"
+    },
+    "tooltipTrigger": {
+      "type": "",
+      "description": "/**    Defines toolitp trigger behavior for masking/unmasking buttons",
+      "default": "'hover focus'"
+    },
+    "type": {
+      "type": "AccountNumberType | undefined",
+      "options": "'cardNumber' | 'iban' | 'bban'",
+      "description": "Account number type ('bban', 'iban' or 'cardNumber')"
+    },
+    "unmaskable": {
+      "type": "",
+      "description": "Defines whether the attribute is unmaskable",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "mask": {
+      "type": "EventEmitter<AccountNumberType>",
+      "description": "Emits a AccountNumberType to be masked"
+    },
+    "unmask": {
+      "type": "EventEmitter<AccountNumberType>",
+      "description": "Emits a AccountNumberType to be unmasked"
+    }
+  },
+  "methods": {
+    "getAccountNumber": {
+      "returns": {
+        "type": "string | number",
+        "description": "Either account number or iban or bban"
+      }
+    },
+    "getAccountNumberType": {
+      "returns": {
+        "type": "AccountNumberType",
+        "options": "'cardNumber' | 'iban' | 'bban'",
+        "description": "'cardNumber' | 'iban' | 'bban'"
+      }
+    },
+    "onMask": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onUnmask": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

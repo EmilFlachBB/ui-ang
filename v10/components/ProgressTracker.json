@@ -1,0 +1,27 @@
+{
+  "module": "ProgressTrackerModule",
+  "selector": "bb-progress-tracker",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-progress-tracker--docs",
+  "inputs": {
+    "eventList": {
+      "type": "[]"
+    },
+    "progressTrackerHeaderTemplate": {
+      "type": "TemplateRef<any> | undefined",
+      "description": "The reference to a custom template for the Progress Tracker Item Header. Allows to completely override the way Progress Tracker Item heading is displayed."
+    },
+    "progressTrackerItemTemplate": {
+      "type": "TemplateRef<IProgressTrackerItemTemplateConfig> | undefined",
+      "description": "The reference to a custom template for the Progress Tracker Item. Allows to completely override the way Progress Tracker Item is displayed."
+    },
+    "progressTrackerTemplate": {
+      "type": "TemplateRef<IProgressTrackerTemplateConfig> | undefined",
+      "description": "The reference to a custom template for the Progress Tracker Container. Allows to completely override the way Progress Tracker is displayed."
+    }
+  },
+  "outputs": {
+    "cancel": {
+      "type": "EventEmitter"
+    }
+  }
+}

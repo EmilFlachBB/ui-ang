@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directive: ValueDiff</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v12 Index</a>
+    <h1>Directive: ValueDiff</h1>
+    <pre><code>{
+  "module": "ValueDiffModule",
+  "directive": "bbValueDiff",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-value-diff--docs",
+  "inputs": {
+    "bbValueDiff": {
+      "type": "string",
+      "description": "New data with which we will compare content."
+    },
+    "position": {
+      "type": "ValueDiffPosition",
+      "description": "A position where differences will be added. Default value: 'before'"
+    },
+    "showArrow": {
+      "type": "boolean",
+      "description": "Show arrow between old and new value Default value: false"
+    },
+    "sr-only-new": {
+      "type": "string",
+      "description": "Text for screen reader to describe new value Default value: 'Current value:'"
+    },
+    "sr-only-old": {
+      "type": "string",
+      "description": "Text for screen reader to describe old value Default value: 'Previous value:'"
+    }
+  }
+}</code></pre>
+</body>
+</html>

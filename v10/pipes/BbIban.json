@@ -1,0 +1,16 @@
+{
+  "ngname": "bbIban",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/formatters-iban-pipe--docs",
+  "transform": {
+    "params": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "the iban that should be formatted"
+      }
+    ],
+    "returns": {
+      "type": "any"
+    }
+  }
+}

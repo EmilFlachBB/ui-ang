@@ -1,0 +1,17 @@
+{
+  "module": "IbanValidatorModule",
+  "directive": "bbIbanValidatorDir",
+  "methods": {
+    "validate": {
+      "params": [
+        {
+          "name": "control",
+          "type": "AbstractControl"
+        }
+      ],
+      "returns": {
+        "type": "literal type | null"
+      }
+    }
+  }
+}

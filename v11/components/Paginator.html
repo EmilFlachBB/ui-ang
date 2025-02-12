@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: Paginator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v11 Index</a>
+    <h1>Component: Paginator</h1>
+    <pre><code>{
+  "module": "PaginatorModule",
+  "selector": "bb-pagination-ui",
+  "description": "A component that displays page numbers and allows to customize them in several ways.",
+  "inputs": {
+    "boundaryLinks": {
+      "type": "boolean",
+      "description": "If true, the &quot;First&quot; and &quot;Last&quot; page links are shown. Defaults to false.",
+      "default": "false"
+    },
+    "directionLinks": {
+      "type": "boolean",
+      "description": "If true, the &quot;Next&quot; and &quot;Previous&quot; page links are shown. Defaults to false.",
+      "default": "false"
+    },
+    "itemsPerPage": {
+      "type": "number",
+      "description": "The number of items per page.",
+      "default": "10"
+    },
+    "maxNavPages": {
+      "type": "number",
+      "description": "The maximum number of pages to display.",
+      "default": "5"
+    },
+    "page": {
+      "type": "number",
+      "description": "The current page. bb-paginator-ui is 0-indexed, but ngb-pagination is 1-indexed. Corrects input by adding 1 internally.",
+      "default": "1"
+    },
+    "totalItems": {
+      "type": "number",
+      "description": "The number of items in your paginated collection. Note, that this is not the number of pages. Page numbers are calculated dynamically based on totalItems and itemsPerPage.",
+      "default": "0"
+    }
+  },
+  "outputs": {
+    "pageChange": {
+      "type": "EventEmitter<number>",
+      "description": "An event fired when the page is changed. Will fire only if collection size is set and all values are valid. Event payload is the number of the newly selected page. bb-paginator-ui is 0-indexed, but ngb-pagination is 1-indexed. Corrects output by subtracting 1 internally."
+    }
+  },
+  "methods": {
+    "onPageChange": {
+      "params": [
+        {
+          "name": "page",
+          "type": "number"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
+</body>
+</html>

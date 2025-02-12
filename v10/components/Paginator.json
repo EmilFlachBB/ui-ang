@@ -1,0 +1,55 @@
+{
+  "module": "PaginatorModule",
+  "selector": "bb-pagination-ui",
+  "inputs": {
+    "boundaryLinks": {
+      "type": "",
+      "description": "If true, the &quot;First&quot; and &quot;Last&quot; page links are shown. Defaults to false.",
+      "default": "false"
+    },
+    "directionLinks": {
+      "type": "",
+      "description": "If true, the &quot;Next&quot; and &quot;Previous&quot; page links are shown. Defaults to false.",
+      "default": "false"
+    },
+    "itemsPerPage": {
+      "type": "",
+      "description": "The number of items per page.",
+      "default": "10"
+    },
+    "maxNavPages": {
+      "type": "",
+      "description": "The maximum number of pages to display.",
+      "default": "5"
+    },
+    "page": {
+      "type": "",
+      "description": "The current page. bb-paginator-ui is 0-indexed, but ngb-pagination is 1-indexed. Corrects input by adding 1 internally.",
+      "default": "1"
+    },
+    "totalItems": {
+      "type": "",
+      "description": "The number of items in your paginated collection. Note, that this is not the number of pages. Page numbers are calculated dynamically based on totalItems and itemsPerPage.",
+      "default": "0"
+    }
+  },
+  "outputs": {
+    "pageChange": {
+      "type": "EventEmitter<number>",
+      "description": "An event fired when the page is changed. Will fire only if collection size is set and all values are valid. Event payload is the number of the newly selected page. bb-paginator-ui is 0-indexed, but ngb-pagination is 1-indexed. Corrects output by subtracting 1 internally."
+    }
+  },
+  "methods": {
+    "onPageChange": {
+      "params": [
+        {
+          "name": "page",
+          "type": "number"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-structure-bb-toolbar--docs",
+  "classes": [
+    "bb-toolbar",
+    "bb-toolbar__item",
+    "bb-toolbar__section",
+    "bb-toolbar__section--align-end"
+  ],
+  "examples": [
+    "<div class=\"bb-toolbar\">\n<div class=\"bb-toolbar__section\">Some title</div>\n<div class=\"bb-toolbar__section bb-toolbar__section--align-end\">\n<button bbButton color=\"success\" circle=\"true\" class=\"bb-toolbar__item\">\n<bb-icon-ui name=\"check\"></bb-icon-ui>\n</button>\n<button bbButton color=\"danger\" circle=\"true\" class=\"bb-toolbar__item\">\n<bb-icon-ui name=\"times\"></bb-icon-ui>\n</button>\n</div>\n</div>",
+    "<div class=\"bb-toolbar\">\n<div class=\"bb-toolbar__section\">Some title</div>\n<div class=\"bb-toolbar__section bb-toolbar__section--align-end\">\n<button bbButton color=\"success\" circle=\"true\" class=\"bb-toolbar__item\">\n<bb-icon-ui name=\"check\"></bb-icon-ui>\n</button>\n<button bbButton color=\"danger\" circle=\"true\" class=\"bb-toolbar__item\">\n<bb-icon-ui name=\"times\"></bb-icon-ui>\n</button>\n</div>\n</div>",
+    "<div class=\"bb-toolbar\">\n<button bbButton color=\"success\" circle=\"true\" class=\"bb-toolbar__item\">\n<bb-icon-ui name=\"check\"></bb-icon-ui>\n</button>\n<button bbButton color=\"danger\" circle=\"true\" class=\"bb-toolbar__item\">\n<bb-icon-ui name=\"times\"></bb-icon-ui>\n</button>\n</div>"
+  ]
+}

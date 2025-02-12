@@ -1,0 +1,10 @@
+{
+  "module": "InputRangeMaxModule",
+  "directive": "bbInputRangeMax",
+  "inputs": {
+    "bbInputRangeMax": {
+      "type": "number",
+      "description": "Maximum possible value (optional);"
+    }
+  }
+}

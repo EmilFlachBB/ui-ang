@@ -1,0 +1,49 @@
+{
+  "module": "InfiniteScrollModule",
+  "selector": "bb-infinite-scroll-ui",
+  "description": "Component that displays an infinite scroll.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-infinite-scroll--docs",
+  "inputs": {
+    "aria-label": {
+      "type": "string",
+      "description": "Accessible label when control does not need to render label tag.",
+      "default": "'Infinite scrolling content'"
+    },
+    "debounce": {
+      "type": "number",
+      "description": "Specify debounce duration in ms",
+      "default": "100"
+    },
+    "disableScrollEnd": {
+      "type": "boolean",
+      "description": "If true then scrollEnd event should NOT be emitted",
+      "default": "false"
+    },
+    "focusable": {
+      "type": "boolean",
+      "description": "Sets the focusability of the component. If value is true, the component becomes focusable. If value is false, the component becomes non-focusable. Component is focusable by default",
+      "default": "true"
+    },
+    "isLoading": {
+      "type": "boolean",
+      "description": "Takes a boolean value to indicate the loading state of data",
+      "default": "false"
+    },
+    "offset": {
+      "type": "number",
+      "description": "The number of pixels from the bottom of the element at which to trigger the scrollEnd event.",
+      "default": "0"
+    },
+    "scrollContainer": {
+      "type": "string",
+      "description": "Takes a CSS class selector to identify the scrolling element",
+      "default": "'.infinite-scroll-wrapper'"
+    }
+  },
+  "outputs": {
+    "scrollEnd": {
+      "type": "EventEmitter",
+      "description": "Event that is triggered when the user has scrolled to the bottom of the element."
+    }
+  }
+}

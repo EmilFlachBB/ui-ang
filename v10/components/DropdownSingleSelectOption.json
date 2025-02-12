@@ -1,0 +1,14 @@
+{
+  "module": "DropdownSingleSelectOptionModule",
+  "selector": "bb-dropdown-single-select-option-ui",
+  "inputs": {
+    "label": {
+      "type": "string | undefined",
+      "description": "The label of the option item"
+    },
+    "value": {
+      "type": "string | undefined",
+      "description": "The value of the native option element"
+    }
+  }
+}

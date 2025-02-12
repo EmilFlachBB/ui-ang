@@ -1,0 +1,16 @@
+{
+  "module": "FieldsetModule",
+  "selector": "bb-fieldset-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-fieldset--docs",
+  "inputs": {
+    "disabled": {
+      "type": "",
+      "description": "Whether to disable all form items within the fieldset.",
+      "default": "false"
+    },
+    "heading": {
+      "type": "string | undefined",
+      "description": "The caption for the fieldset element."
+    }
+  }
+}

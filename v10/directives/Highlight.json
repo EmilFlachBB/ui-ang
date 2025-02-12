@@ -1,0 +1,25 @@
+{
+  "module": "HighlightModule",
+  "directive": "bbHighlight",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-highlight--docs",
+  "inputs": {
+    "amount": {
+      "type": "",
+      "description": "Setter (Input) for value of highlighted number"
+    },
+    "bbHighlight": {
+      "type": "",
+      "description": "Setter (Input) that turn on/off highlight"
+    },
+    "negativeClass": {
+      "type": "",
+      "description": "The class for positive value.",
+      "default": "DEFAULT_NEGATIVE_CLASS"
+    },
+    "positiveClass": {
+      "type": "",
+      "description": "The class for negative value.",
+      "default": "DEFAULT_POSITIVE_CLASS"
+    }
+  }
+}

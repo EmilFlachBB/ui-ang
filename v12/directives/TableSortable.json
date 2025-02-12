@@ -1,0 +1,84 @@
+{
+  "module": "TableSortableModule",
+  "directive": "bbSortable",
+  "inputs": {
+    "bbSortable": {
+      "type": "string",
+      "description": "The name of the column to be sorted"
+    },
+    "direction": {
+      "type": "SortDirection",
+      "options": "'asc' | 'desc' | null",
+      "description": "The current sort direction. Accepts one of the values of 'asc', 'desc' or null",
+      "default": "null"
+    },
+    "sortDisabled": {
+      "type": "boolean",
+      "description": "Toggles the sorting functionality on the column."
+    }
+  },
+  "outputs": {
+    "sort": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on sort actions."
+    }
+  },
+  "methods": {
+    "emitSortEvent": {
+      "description": "Notify table with new sorting params",
+      "returns": {
+        "type": "void"
+      }
+    },
+    "getMenuOptionSelectionChanges": {
+      "description": "Combined stream of all of the bbTableMenuitem selectionChange events.",
+      "params": [
+        {
+          "name": "menuOptions",
+          "type": "QueryList<DropdownMenuOptionToken>"
+        }
+      ],
+      "returns": {
+        "type": "any"
+      }
+    },
+    "markAllMenuOptionAsInactive": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "markMenuOptionAsActive": {
+      "description": "mark the new menuitem as active only if sorting order is asc/desc",
+      "params": [
+        {
+          "name": "menuOption",
+          "type": "DropdownMenuOptionToken"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onMenuOptionSelect": {
+      "params": [
+        {
+          "name": "menuOption",
+          "type": "DropdownMenuOptionToken"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "rotate": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "updateAriaSortAttribute": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

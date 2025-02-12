@@ -1,0 +1,27 @@
+{
+  "module": "CollapsibleModule",
+  "selector": "bb-collapsible-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-collapsible--docs",
+  "inputs": {
+    "hasChevron": {
+      "type": "",
+      "description": "Whether chevron should be displayed. Defaults to true.",
+      "default": "true"
+    },
+    "isOpen": {
+      "type": "boolean",
+      "description": "Toggles the content."
+    },
+    "recreateBodyContent": {
+      "type": "",
+      "description": "If true, it will use the ngIf approach to create the content which is less performant but removes the extra div. In case of styling issues, set this to true.",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "isOpenChange": {
+      "type": "EventEmitter",
+      "description": "Emits the toggle content event."
+    }
+  }
+}

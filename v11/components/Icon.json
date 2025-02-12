@@ -1,0 +1,48 @@
+{
+  "module": "IconModule",
+  "selector": "bb-icon-ui",
+  "description": "Component that displays an icon. To see the full set of icons available to use see: Icons Set.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-icon--docs",
+  "inputs": {
+    "animate": {
+      "type": "boolean",
+      "description": "Whether the icon should be animated. Defaults to false.",
+      "default": "false"
+    },
+    "aria-label": {
+      "type": "string | undefined",
+      "description": "Input that can be used to specify the aria-label attribute."
+    },
+    "backgroundType": {
+      "type": "\"circle\" | \"square\" | undefined",
+      "description": "Wether the icon has a background. If not set it will display just the icon without background. Possible values are circle and square."
+    },
+    "color": {
+      "type": "string | undefined",
+      "description": "The color of the icon represented as a color name contained in backbase-theme."
+    },
+    "cropped": {
+      "type": "boolean | string",
+      "description": "Whether the icon should be cropped horizontally."
+    },
+    "flipOnRtl": {
+      "type": "boolean",
+      "description": "Whether the icon should be flipped when the page direction is RTL (right-to-left)."
+    },
+    "inverse": {
+      "type": "boolean",
+      "description": "Whether to use white background and inverse icon colors",
+      "default": "false"
+    },
+    "name": {
+      "type": "string | undefined",
+      "description": "The name of the icon"
+    },
+    "size": {
+      "type": "IconSize",
+      "options": "'sm' | 'md' | 'lg' | 'xl' | 'xxl'",
+      "description": "The size of the icon represented as a size name contained in backbase-theme.  This is ignored when the circle option is used. Defaults to md.",
+      "default": "'md'"
+    }
+  }
+}

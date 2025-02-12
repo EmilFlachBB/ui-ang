@@ -1,0 +1,40 @@
+{
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-structure-bb-card--docs",
+  "classes": [
+    "bb-card",
+    "bb-card--border-level-lg",
+    "bb-card--border-level-md",
+    "bb-card--border-level-sm",
+    "bb-card--border-level-xs",
+    "bb-card--highlight",
+    "bb-card--ignore",
+    "bb-card--lg",
+    "bb-card--md",
+    "bb-card--shadow-level-lg",
+    "bb-card--shadow-level-md",
+    "bb-card--shadow-level-sm",
+    "bb-card--shadow-level-xl",
+    "bb-card--shadowless",
+    "bb-card--sm",
+    "bb-card--warning",
+    "bb-card__body",
+    "bb-card__footer",
+    "bb-card__header",
+    "bb-card__header--only-child",
+    "bb-card__title",
+    "bb-list__group"
+  ],
+  "examples": [
+    "$bb-card-shadow-level-sm: $box-shadow-sm !default;\n$bb-card-shadow-level-md: $box-shadow-md !default;\n$bb-card-shadow-level-lg: $box-shadow-lg !default;\n$bb-card-shadow-level-xl: $box-shadow-xl !default;",
+    "$bb-card-border-radius: $border-radius-md !default;\n$bb-card-border-width: 0px !default;\n$bb-card-border-color: $color-neutral-white !default;\n$bb-card-inner-border-radius: calc(#{$bb-card-border-radius} -\n#{$bb-card-border-width}) !default;",
+    "$bb-card-background-color: $color-neutral-white !default;\n$bb-card-highlight-background-color: $color-neutral-lightest !default;\n$bb-card-warning-background-color: $color-warning-lightest !default;",
+    "$bb-card-header-padding-sm: $sizer-md !default;\n$bb-card-header-padding-md: $sizer-lg !default;\n$bb-card-header-only-child-padding: $sizer-lg !default;",
+    "$bb-card-padding-vertical: $sizer-lg !default;\n$bb-card-padding-horizontal: $sizer-lg !default;\n$bb-card-body-padding-sm: $sizer-md !default;\n$bb-card-body-padding-md: $sizer-lg !default;\n$bb-card-footer-padding-sm: $sizer-md !default;",
+    "$bb-card-caption-background-color: $color-neutral-white !default;\n$bb-card-caption-color: $optional !default;",
+    "$bb-card-focus-border-primary: $focus-border-primary !default;\n$bb-card-focus-outline-distance: $focus-outline-distance !default;",
+    "<div class=\"bb-card\">\n<div class=\"bb-card__header\">\n<h3 class=\"bb-card__title\">\nCard title\n</h3>\n</div>\n<div class=\"bb-card__body\">Card body</div>\n<div class=\"bb-card__footer\">Card footer</div>\n</div>",
+    "<div class=\"bb-card\">\n<div class=\"bb-card__header\">\n<h3 class=\"bb-card__title\">Card title</h3>\n</div>\n<div class=\"bb-card__body\">\nCard body\n</div>\n<div class=\"bb-card__footer\">Card footer</div>\n</div>",
+    "<div class=\"bb-card\">\n<div class=\"bb-card__header\">\n<h3 class=\"bb-card__title\">Card title</h3>\n</div>\n<div class=\"bb-card__body\">Card body</div>\n<div class=\"bb-card__footer\">Card footer</div>\n</div>",
+    "<div class=\"bb-card\">\n<div class=\"bb-card__header\">\n<h3 class=\"bb-card__title\">Card title</h3>\n</div>\n<div class=\"bb-card__body\">Card body</div>\n<div class=\"bb-card__footer\">\nCard footer\n</div>\n</div>"
+  ]
+}

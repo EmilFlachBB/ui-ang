@@ -1,0 +1,18 @@
+{
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-structure-bb-container--docs",
+  "classes": [
+    "container",
+    "container--drag-up",
+    "container--fixed-width",
+    "container--fixed-width-small",
+    "container-fluid",
+    "container-lg",
+    "container-md",
+    "container-sm",
+    "container-xl"
+  ],
+  "examples": [
+    "$container-fixed-width-max-width: 840px !default;\n$container-fixed-width-small-max-width: 600px !default;",
+    "<div class=\"container--fixed-width\">\n<!-- Content here -->\n</div>\n@example html Variant use-cases\n.container--fixed-width {\nmax-width: $container-fixed-width-max-width;\n}\n.container--fixed-width-small {\nmax-width: $container-fixed-width-small-max-width;\n}"
+  ]
+}

@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: InputFile</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v12 Index</a>
+    <h1>Component: InputFile</h1>
+    <pre><code>{
+  "module": "InputFileModule",
+  "selector": "bb-input-file-ui",
+  "description": "Component that displays a file input button. ### Accessibility Current component provide option to pass needed accessibility attributes. You need to take care of properties that are required in your case :  - role  - aria-activedescendant  - aria-describedby  - aria-expanded  - aria-label  - aria-labelledby  - aria-owns",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-input-file--docs",
+  "inputs": {
+    "accept": {
+      "type": "string",
+      "description": "Accepted file formats. Defaults to any ('*');",
+      "default": "'*'"
+    },
+    "autofocus": {
+      "type": "boolean",
+      "description": "This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it, for example by typing in a different control. Only one form-associated element in a document can have this attribute specified. Defaults to false.",
+      "default": "false"
+    },
+    "buttonSize": {
+      "type": "\"sm\" | \"md\"",
+      "description": "Size of the button. Defaults to 'md'.",
+      "default": "'md'"
+    },
+    "buttonText": {
+      "type": "string",
+      "description": "Button text. If set, change button text from default 'Attach file' to a custom one."
+    },
+    "color": {
+      "type": "ButtonColor | string",
+      "options": "'primary' | 'info' | 'success' | 'warning' | 'danger' | 'secondary' | 'light' | 'dark' | 'link' | 'tertiary' | 'link-text' | 'link-text-light' | 'unstyled' | 'link-dark' | 'neutral'",
+      "description": "Button color. Defaults to 'link';",
+      "default": "'link'"
+    },
+    "iconName": {
+      "type": "string",
+      "description": "Button icon name. Defaults to 'attachment';",
+      "default": "'attachment'"
+    },
+    "maxSizeInMb": {
+      "type": "number | string",
+      "description": "If set, validate according to the maximum file size in Megabytes."
+    },
+    "multiple": {
+      "type": "boolean",
+      "description": "Multiple/single file upload flag. Defaults to false;",
+      "default": "false"
+    },
+    "aria-activedescendant": {
+      "type": "string",
+      "description": "It identifies the currently active element when focus is on a composite widget, combobox, textbox, group, or application."
+    },
+    "aria-autocomplete": {
+      "type": "string",
+      "description": "It indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox."
+    },
+    "aria-controls": {
+      "type": "string",
+      "description": "When an interactive or input control has an impact on another element in a document or application, the aria-control indicates which element or elements the user interface widget controls."
+    },
+    "aria-describedby": {
+      "type": "string",
+      "description": "Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them."
+    },
+    "aria-expanded": {
+      "type": "string",
+      "description": "The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or not its child elements are displayed or hidden."
+    },
+    "aria-invalid": {
+      "type": "string",
+      "description": "The aria-invalid state indicates the entered value is not in a format expected by the application."
+    },
+    "aria-label": {
+      "type": "string",
+      "description": "Accessible label when control does not need to render label tag."
+    },
+    "aria-labelledby": {
+      "type": "string",
+      "description": "The aria-labelledby property enables authors to reference other elements on the page to define an accessible name. This is useful when using elements that don't have native support for associating elements to provide an accessible name."
+    },
+    "aria-owns": {
+      "type": "string",
+      "description": "The aria-owns attribute identifies an element (or elements) in order to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship."
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Whether the component is mutable or clickable. Defaults to false.",
+      "default": "false"
+    },
+    "id": {
+      "type": "string",
+      "description": "The id for the input. Defaults to unique string. Used to map the label to the input."
+    },
+    "inputClassName": {
+      "type": "string",
+      "description": "Class names that must be included on the &lt;input&gt; form control"
+    },
+    "label": {
+      "type": "string",
+      "description": "The label for the input. Defaults to an empty string.",
+      "default": "''"
+    },
+    "readonly": {
+      "type": "boolean",
+      "description": "Whether the input is read only. Defaults to false.",
+      "default": "false"
+    },
+    "required": {
+      "type": "boolean",
+      "description": "Whether the input is required. Defaults to false.",
+      "default": "false"
+    },
+    "role": {
+      "type": "string | undefined",
+      "description": "Customize the ARIA role for the HTML input/select/textarea element inside this component. This can be used to improve accessibility for components, for example by configuring [role]=&quot;'combobox'&quot; for a component that provides an autocomplete list. Values that are valid for the native HTML form elements are allowed."
+    },
+    "size": {
+      "type": "number | string",
+      "description": "Configure the minimum width to fit the specified number of characters that should fit for HTML &lt;input&gt;"
+    }
+  },
+  "outputs": {
+    "blur": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on blur actions."
+    },
+    "focus": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on focus actions."
+    }
+  },
+  "methods": {
+    "onValueChange": {
+      "params": [
+        {
+          "name": "input",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "validate": {
+      "returns": {
+        "type": "ValidationErrors | null"
+      }
+    },
+    "getSizeByKeyword": {
+      "description": "Returns the `input` `size` value for a keyword, such as \"xxl\". Subclasses can choose to implement a custom mapping, which will be used to configure `size`.",
+      "params": [
+        {
+          "name": "arg",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "number | undefined"
+      }
+    },
+    "onBlur": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onFocus": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnChange": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnTouched": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "setDisabledState": {
+      "params": [
+        {
+          "name": "isDisabled",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "writeValue": {
+      "params": [
+        {
+          "name": "inputValue",
+          "type": "Object | string | null"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
+</body>
+</html>

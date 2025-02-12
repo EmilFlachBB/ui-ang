@@ -1,0 +1,55 @@
+{
+  "module": "CollapsibleCardModule",
+  "selector": "bb-collapsible-card-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-collapsible-card--docs",
+  "inputs": {
+    "aria-label": {
+      "type": "string | null",
+      "description": "Accessible label for collapsible card",
+      "default": "'toggle'"
+    },
+    "ariaLabelForIcon": {
+      "type": "",
+      "description": "Accessible label for chevron icon.",
+      "default": "'Chevron icon'"
+    },
+    "hasChevron": {
+      "type": "",
+      "description": "Whether chevron should be displayed. Defaults to true.",
+      "default": "true"
+    },
+    "highlight": {
+      "type": "",
+      "description": "Whether card should be highlighted. Defaults to false.",
+      "default": "false"
+    },
+    "isOpen": {
+      "type": "boolean",
+      "description": "Toggles the content."
+    },
+    "shadow": {
+      "type": "",
+      "description": "Whether card should has shadow effect. Defaults to true.",
+      "default": "true"
+    },
+    "size": {
+      "type": "CollapsibleCardSize",
+      "options": "'sm' | 'md' | 'lg'",
+      "description": "Card size. Defaults to md.",
+      "default": "'md'"
+    }
+  },
+  "outputs": {
+    "isOpenChange": {
+      "type": "EventEmitter",
+      "description": "Emits when the isOpen input is changed."
+    }
+  },
+  "methods": {
+    "toggle": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

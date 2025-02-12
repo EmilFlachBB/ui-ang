@@ -1,0 +1,38 @@
+{
+  "module": "EmptyStateModule",
+  "selector": "bb-empty-state-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-empty-state--docs",
+  "inputs": {
+    "iconClasses": {
+      "type": "string | undefined",
+      "description": "The icon classes for the empty state. Defaults to an empty string."
+    },
+    "iconColor": {
+      "type": "string | undefined",
+      "description": "The color for the icon used in the component. Defaults to an empty string."
+    },
+    "iconModifier": {
+      "type": "",
+      "description": "The modifier for the icon used in the component. Defaults to 'list'.",
+      "default": "'list'"
+    },
+    "iconSize": {
+      "type": "",
+      "description": "The size for the icon used in the component. Defaults to 'xl'",
+      "default": "'xl'"
+    },
+    "showIcon": {
+      "type": "",
+      "description": "Whether the icon should be shown. Defaults to true.",
+      "default": "true"
+    },
+    "subtitle": {
+      "type": "string | undefined",
+      "description": "The sub-title of the empty state. Defaults to an empty string."
+    },
+    "title": {
+      "type": "string | undefined",
+      "description": "The title of the empty state. Required. Will throw an error if unset."
+    }
+  }
+}

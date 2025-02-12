@@ -1,0 +1,16 @@
+{
+  "module": "ItemLogModule",
+  "selector": "bb-item-log-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-item-log--docs",
+  "inputs": {
+    "isPending": {
+      "type": "",
+      "description": "Flag that denotes if item log status is pending. Defaults to false",
+      "default": "false"
+    },
+    "records": {
+      "type": "Array<ItemLogRecord | T>",
+      "description": "List of item log records."
+    }
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "module": "AccountSelectorModule",
+  "selector": "bb-account-selector-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-account-selector--docs",
+  "inputs": {
+    "accountSelectorInstructions": {
+      "type": "",
+      "description": "Instructions for the account selector component. Use this to provide guidance on how to select multiple accounts from a dropdown list. To select or deselect all items use the left and right arrow keys.",
+      "default": "`\n  Account selector component.\n  It allows to select multiple accounts by selecting from a dropdown list.\n  To select or deselect all items use left and right buttons.`"
+    },
+    "aria-describedby": {
+      "type": "string | undefined",
+      "description": "Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them."
+    },
+    "aria-invalid": {
+      "type": "string | undefined",
+      "description": "The aria-invalid state indicates the entered value is not in a format expected by the application.",
+      "default": "'false'"
+    },
+    "clearable": {
+      "type": "",
+      "description": "Allow to clear selected value.",
+      "default": "false"
+    },
+    "closeOnSelect": {
+      "type": "",
+      "description": "Whether to close the menu when a value is selected",
+      "default": "true"
+    },
+    "compareItemsWith": {
+      "type": "function",
+      "description": "Compare the option values with the selected values. The first argument is a value from an option. The second is a value from the selection(model). A boolean should be returned.",
+      "default": "(a, b) => a === b"
+    },
+    "disabled": {
+      "type": "",
+      "description": "Disabled attr for ng-select",
+      "default": "false"
+    },
+    "disableScrollEnd": {
+      "type": "",
+      "description": "If true then scrollEnd event should NOT be emitted",
+      "default": "false"
+    },
+    "dropdownPosition": {
+      "type": "",
+      "description": "Dropdown Position (bottom | top | auto)",
+      "default": "'bottom'"
+    },
+    "filterItems": {
+      "type": "",
+      "description": "Filter items.",
+      "default": "false"
+    },
+    "groupByFn": {
+      "type": "GroupByFunction | undefined",
+      "options": "function",
+      "description": "Allow to group items by key or function expression"
+    },
+    "groupValueFn": {
+      "type": "",
+      "description": "Function expression to provide group value",
+      "default": "(_: string, children: any[]) => ({\n    name: _,\n    total: children.length,\n  })"
+    },
+    "highlight": {
+      "type": "",
+      "description": "Turn on or turn off bbHighlight directive in child product items",
+      "default": "true"
+    },
+    "internalFiltering": {
+      "type": "",
+      "description": "Enables NgSelect internal filtering functionality",
+      "default": "true"
+    },
+    "items": {
+      "type": "AccountSelectorItem | AccountSelectorItem[]",
+      "description": "AccountSelectorItems array"
+    },
+    "loading": {
+      "type": "",
+      "description": "Loading state from the outside (async items loading)",
+      "default": "false"
+    },
+    "markFirst": {
+      "type": "",
+      "description": "Marks first item as focused when opening/filtering.",
+      "default": "false"
+    },
+    "minTermLength": {
+      "type": "number",
+      "description": "Minimum term length to start a search. Should be used with typeahead"
+    },
+    "multiple": {
+      "type": "",
+      "description": "Allows to select multiple items",
+      "default": "false"
+    },
+    "notFoundText": {
+      "type": "string",
+      "description": "Not found text for ng-select"
+    },
+    "placeholder": {
+      "type": "",
+      "description": "Placeholder text",
+      "default": "''"
+    },
+    "productNumberFormat": {
+      "type": "PaymentCardNumberFormat",
+      "description": "Configuration of how the product number should be formatted (you can hide or show specific numbers).",
+      "default": "DefaultPaymentCardNumberFormat"
+    },
+    "required": {
+      "type": "",
+      "description": "Enable required validation for ng-select",
+      "default": "false"
+    },
+    "searchable": {
+      "type": "",
+      "description": "Allow to search for value. Default from ng-select is true.",
+      "default": "true"
+    },
+    "searchFunc": {
+      "type": "Function | undefined",
+      "description": "Allow to apply custom search function"
+    },
+    "selectedItems": {
+      "type": "AccountSelectorItem | AccountSelectorItem[]",
+      "description": "Selected items",
+      "default": "[]"
+    },
+    "showAvailableBalance": {
+      "type": "BalanceDetailsView",
+      "description": "Property, that determines how balance details should be rendered. Options for this property is described by BalanceDetailsView model: BalanceDetailsView.Booked - only booked balance data is rendered, OOTB behavior; BalanceDetailsView.Available - only available balance data is rendered; BalanceDetailsView.Ordinary - available balance data is rendered as primary with label Available, booked balance as secondary with label Balance; BalanceDetailsView.Reverse - booked balance data is rendered as primary with label Balance, available balance as secondary with label Available. Default value undefined is the same behavior as BalanceDetailsView.Booked",
+      "default": "undefined"
+    },
+    "showBankBranchCode": {
+      "type": "",
+      "description": "Will show the bank branch code. Defaults to false",
+      "default": "false"
+    },
+    "showCurrencySymbol": {
+      "type": "",
+      "description": "Will show currency Symbol in amount. Default value true",
+      "default": "true"
+    },
+    "showError": {
+      "type": "boolean",
+      "description": "Show the error border around account selector when enabled and certain conditions are fulfilled. Used when error needs to be shown on submit or when it requires a programmatic trigger. Does not trigger if set to true on initial render. Requires condition that required is set to true the model is invalid when given `[selectedItems]=&quot;new UntypedFormControl(undefined, Validator)&quot; * *"
+    },
+    "size": {
+      "type": "",
+      "description": "Set account selector view size"
+    },
+    "typeahead": {
+      "type": "Subject<string>",
+      "description": "Custom autocomplete or advanced filter."
+    },
+    "typeToSearchText": {
+      "type": "string",
+      "description": "Set custom text when using Typeahead"
+    },
+    "virtualScroll": {
+      "type": "",
+      "description": "Enables virtual scrolling mechanism",
+      "default": "false"
+    }
+  },
+  "outputs": {
+    "blur": {
+      "type": "EventEmitter<void>",
+      "description": "Emit event when account selector is blurred"
+    },
+    "change": {
+      "type": "EventEmitter<object | []>",
+      "description": "Emitter when item is added to selected items or removed from selected items. When Multiple is true: Output is Items[] When Multuple is false: Output is Item"
+    },
+    "clearSearch": {
+      "type": "EventEmitter<void>",
+      "description": "Emitter when clear search"
+    },
+    "filterChange": {
+      "type": "EventEmitter<string>",
+      "description": "Emitter when filter value is changed"
+    },
+    "focus": {
+      "type": "EventEmitter<void>",
+      "description": "Emit event when account selector is focused"
+    },
+    "remove": {
+      "type": "EventEmitter<any>",
+      "description": "Emitter when item is removed"
+    },
+    "scroll": {
+      "type": "EventEmitter<literal type>",
+      "description": "Emitter when scroll is triggered (will emmit scroll events if virtualScroll is enabled)"
+    },
+    "scrollToEnd": {
+      "type": "EventEmitter<void>",
+      "description": "Emitter when scrollToEnd is triggered"
+    },
+    "search": {
+      "type": "EventEmitter<string>",
+      "description": "Emitter when search is performed. Outputs search term"
+    }
+  },
+  "methods": {
+    "focusEditableElement": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onBlur": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onChange": {
+      "params": [
+        {
+          "name": "event",
+          "type": "Event | any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClear": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClose": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onFilterChange": {
+      "params": [
+        {
+          "name": "query",
+          "type": "string | undefined"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onFocus": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onOpen": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onRemove": {
+      "params": [
+        {
+          "name": "event",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onScroll": {
+      "params": [
+        {
+          "name": "position",
+          "type": "literal type"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onScrollToEnd": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onSearch": {
+      "params": [
+        {
+          "name": "event",
+          "type": "string | SearchPayload"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "resetAccountSelectorModel": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "selectAll": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "unselectAll": {
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

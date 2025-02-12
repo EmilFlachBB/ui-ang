@@ -1,0 +1,13 @@
+{
+  "module": "TabModule",
+  "selector": "bb-tab-ui",
+  "description": "TabComponent represents Tab item that should be used inside tab group component",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-tab--docs",
+  "inputs": {
+    "disabled": {
+      "type": "",
+      "description": "Flag to disable a tab. Defaults to 'false'.",
+      "default": "false"
+    }
+  }
+}

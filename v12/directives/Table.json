@@ -1,0 +1,113 @@
+{
+  "module": "TableModule",
+  "directive": "bbTable",
+  "description": "Directive that displays a table. #### Sorting Sorting of table can be enabled by adding `[bbSortable]=\"'columnName'\"` to column header. Additional you will need to implement handling of `sort` output. Here is small example of how it may look like in template: ```typescript            columnName       ``` #### Focusable and clickable rows In order to achieve keyboard navigation over a table and add support for clickable rows you will need to add `bbTableFocus` to root table element and `[bbRow]=\"rowData\"` to row elements. Additionally `selectRow` and `rowClick` can be used to handle appropriate events. ```typescript                   ``` #### a11y The table directive doesn't provide any specific properties for accessibility. The `aria-sort` tag can be set on the sortable header cells with ascending and descending values.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-table--docs",
+  "inputs": {
+    "bbTable": {
+      "type": "Array<Object>",
+      "description": "The data source for the table."
+    }
+  },
+  "outputs": {
+    "rowClick": {
+      "type": "EventEmitter",
+      "description": "Emits an event when a row is clicked. An sample implementation could be: Example :onRowClick(value: unknown) { ..... } This will require `[bbRow]=&quot;rowData&quot;` to table row and `[bbTableFocus]` to root table element."
+    },
+    "selectRow": {
+      "type": "EventEmitter",
+      "description": "Emits an event when a row is selected."
+    },
+    "sort": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on sort actions. An sample implementation could be: Example :onSort({ column, direction }: SortEvent) { ..... }This will require you to add [bbSortable]=&quot;'columnName'&quot; to column header."
+    }
+  },
+  "methods": {
+    "isSelected": {
+      "params": [
+        {
+          "name": "row",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "boolean"
+      }
+    },
+    "isSelectedAll": {
+      "returns": {
+        "type": "boolean"
+      }
+    },
+    "isSelectedPart": {
+      "returns": {
+        "type": "boolean"
+      }
+    },
+    "onRowClick": {
+      "params": [
+        {
+          "name": "rowItem",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onSort": {
+      "params": [
+        {
+          "name": "sortEvent",
+          "type": "SortEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerHeader": {
+      "params": [
+        {
+          "name": "header",
+          "type": "TableSortableDirective"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "toggleAllItems": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "toggleItem": {
+      "params": [
+        {
+          "name": "row",
+          "type": "any"
+        },
+        {
+          "name": "isChecked",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "unRegisterHeader": {
+      "params": [
+        {
+          "name": "header",
+          "type": "TableSortableDirective"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}

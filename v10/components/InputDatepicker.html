@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: InputDatepicker</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v10 Index</a>
+    <h1>Component: InputDatepicker</h1>
+    <pre><code>{
+  "module": "InputDatepickerModule",
+  "selector": "bb-input-datepicker-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-input-datepicker--docs",
+  "inputs": {
+    "ariaLabel": {
+      "type": "",
+      "description": "A label for the datepicker that will be used to provide an accessible description of the component.",
+      "default": "'Datepicker'"
+    },
+    "ariaLabelForButton": {
+      "type": "",
+      "description": "Accessible label for Datepicker button.",
+      "default": "'Toggle Date popup'"
+    },
+    "ariaLabelToDate": {
+      "type": "string | undefined",
+      "description": "Accessible label for the second input when the datepicker has a ranged split input."
+    },
+    "autocomplete": {
+      "type": "",
+      "description": "The autocomplete value of enclosed input control. This attribute can be overwritten via the global configuration token"
+    },
+    "btnColor": {
+      "type": "",
+      "description": "Color of the button. Defaults to link",
+      "default": "'link'"
+    },
+    "clickOpen": {
+      "type": "",
+      "description": "Indicates if the datepicker is opened when clicking input. Defaults to false",
+      "default": "false"
+    },
+    "container": {
+      "type": "",
+      "description": "The container element that the datepicker should be attached to.",
+      "default": "null"
+    },
+    "datepickerDescribedby": {
+      "type": "",
+      "description": "Accessible description for datepicker date selection popup.",
+      "default": "this.defaultDatepickerDescribedby"
+    },
+    "displayMonths": {
+      "type": "number",
+      "description": "Indicates how many month will be shown in the picker This attribute can be overwritten via the global configuration token"
+    },
+    "firstDayOfWeek": {
+      "type": "",
+      "description": "The first day of the week By default, the calendar uses ISO 8601 and the weekdays are is 1=Mon ... 7=Sun This attribute can be overwritten via the global configuration token."
+    },
+    "focusOpen": {
+      "type": "",
+      "description": "Indicates if the datepicker is opened when focusing input. Defaults to false",
+      "default": "false"
+    },
+    "footerTemplate": {
+      "type": "ElementRef | undefined",
+      "description": "The reference to the custom template for the datepicker footer."
+    },
+    "icon": {
+      "type": "",
+      "description": "Icon that is displayed in the button. Defaults to calendar",
+      "default": "'calendar-today'"
+    },
+    "iconColor": {
+      "type": "string | undefined",
+      "description": "The color of the icon to be displayed."
+    },
+    "iconSize": {
+      "type": "",
+      "description": "The size of the icon to be displayed. Defaults to md",
+      "default": "'md'"
+    },
+    "labelTo": {
+      "type": "",
+      "description": "The label for the second input when the datepicker has a ranged split input. Defaults to an empty string.",
+      "default": "''"
+    },
+    "markDisabled": {
+      "type": "Function | undefined",
+      "description": "Callback to mark a given date as disabled."
+    },
+    "mask": {
+      "type": "",
+      "description": "Mask configuration (optional). The default value is false Mask can be:   1- enabled: when set from template to boolean true to create mask, or false (default is false if left unset).   2- validated: when set from template to some string date pattern such as 00/00/0000 or SSS 00, 0000. This attribute can be overwritten via the global configuration token"
+    },
+    "maxDate": {
+      "type": "",
+      "description": "Max date for the navigation. If not provided, 'year' select box will display 10 years after current month."
+    },
+    "minDate": {
+      "type": "",
+      "description": "Min date for the navigation. If not provided, 'year' select box will display 10 years before current month"
+    },
+    "navigation": {
+      "type": "\"select\" | \"arrows\" | \"none\"",
+      "description": "Navigation pattern through dates. Default to arrows",
+      "default": "'arrows'"
+    },
+    "overrideDateFormat": {
+      "type": "",
+      "description": "Override date format (optional). Supported formats are yyyy/MM/dd, MM/dd/yyyy, MMMM dd, yyyy. Note, other formats might work inconsistent in different browsers. This attribute can be overwritten via the global configuration token"
+    },
+    "placeholder": {
+      "type": "",
+      "description": "The placeholder for the datepicker input. Default is Locale Date Format; This attribute can be overwritten via the global configuration token"
+    },
+    "placement": {
+      "type": "",
+      "description": "Placement of a popup window"
+    },
+    "rangeSelection": {
+      "type": "boolean",
+      "description": "Indicates whether the datepicker should allow selecting a date range with a single input. The default value is false. This attribute can be overwritten via the global configuration token."
+    },
+    "rangeSelectionSplit": {
+      "type": "",
+      "description": "Indicates if the datepicker should a date range with split input. One for the from date and one for the to date. Defaults to false",
+      "default": "false"
+    },
+    "aria-activedescendant": {
+      "type": "string | undefined",
+      "description": "It identifies the currently active element when focus is on a composite widget, combobox, textbox, group, or application."
+    },
+    "aria-autocomplete": {
+      "type": "string | undefined",
+      "description": "It indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox."
+    },
+    "aria-controls": {
+      "type": "string | undefined",
+      "description": "When an interactive or input control has an impact on another element in a document or application, the aria-control indicates which element or elements the user interface widget controls."
+    },
+    "aria-describedby": {
+      "type": "string | undefined",
+      "description": "Set aria-describedby  with an element id that contains a detailed decription of the widget. It is used to establish a relationship between widgets or groups and the text that describes them."
+    },
+    "aria-expanded": {
+      "type": "string | undefined",
+      "description": "The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or not its child elements are displayed or hidden."
+    },
+    "aria-invalid": {
+      "type": "string | undefined",
+      "description": "The aria-invalid state indicates the entered value is not in a format expected by the application."
+    },
+    "aria-label": {
+      "type": "string | undefined",
+      "description": "Accessible label when control does not need to render label tag."
+    },
+    "aria-labelledby": {
+      "type": "string | undefined",
+      "description": "The aria-labelledby property enables authors to reference other elements on the page to define an accessible name. This is useful when using elements that don't have native support for associating elements to provide an accessible name."
+    },
+    "aria-owns": {
+      "type": "string | undefined",
+      "description": "The aria-owns attribute identifies an element (or elements) in order to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship."
+    },
+    "autofocus": {
+      "type": "",
+      "description": "Whether the text input should be auto-focused when shown.",
+      "default": "false"
+    },
+    "disabled": {
+      "type": "",
+      "description": "Whether the component is mutable or clickable. Defaults to false.",
+      "default": "false"
+    },
+    "id": {
+      "type": "string",
+      "description": "The id for the input. Defaults to unique string. Used to map the label to the input."
+    },
+    "inputClassName": {
+      "type": "string | undefined",
+      "description": "Class names that must be included on the &lt;input&gt; form control"
+    },
+    "label": {
+      "type": "",
+      "description": "The label for the input. Defaults to an empty string.",
+      "default": "''"
+    },
+    "readonly": {
+      "type": "",
+      "description": "Whether the input is read only. Defaults to false.",
+      "default": "false"
+    },
+    "required": {
+      "type": "",
+      "description": "Whether the input is required. Defaults to false.",
+      "default": "false"
+    },
+    "role": {
+      "type": "string | undefined",
+      "description": "Customize the ARIA role for the HTML input/select/textarea element inside this component. This can be used to improve accessibility for components, for example by configuring [role]=&quot;'combobox'&quot; for a component that provides an autocomplete list. Values that are valid for the native HTML form elements are allowed."
+    },
+    "size": {
+      "type": "number | string",
+      "description": "Configure the minimum width to fit the specified number of characters that should fit for HTML &lt;input&gt;"
+    }
+  },
+  "outputs": {
+    "focusedDate": {
+      "type": "EventEmitter",
+      "description": "Event that is emitted when a date is focused. The event payload is a DateSelectionModel."
+    },
+    "blur": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on blur actions."
+    },
+    "focus": {
+      "type": "EventEmitter",
+      "description": "An event emitter for on focus actions."
+    }
+  },
+  "methods": {
+    "autoMask": {
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "bindDocumentEvents": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "createOrValidateMask": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "handleDocumentEvent": {
+      "params": [
+        {
+          "name": "event",
+          "type": "KeyboardEvent | MouseEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onBlur": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClosed": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onClosedTo": {
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onControlBlur": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onDayHover": {
+      "params": [
+        {
+          "name": "event",
+          "type": "literal type"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputChange": {
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputChangeRange": {
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputChangeSplitRange": {
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputChangeSplitRangeTo": {
+      "params": [
+        {
+          "name": "element",
+          "type": "HTMLInputElement"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputFocus": {
+      "params": [
+        {
+          "name": "open",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onInputFocusTo": {
+      "params": [
+        {
+          "name": "open",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onPickerTogglerClick": {
+      "params": [
+        {
+          "name": "event",
+          "type": "Event"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onPickerTogglerClickTo": {
+      "params": [
+        {
+          "name": "event",
+          "type": "Event"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onRangeDateSelect": {
+      "params": [
+        {
+          "name": "date",
+          "type": "NgbDate"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onRangeDateSelectSplit": {
+      "params": [
+        {
+          "name": "date",
+          "type": "NgbDate"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onRangeDateSelectSplitTo": {
+      "params": [
+        {
+          "name": "date",
+          "type": "NgbDate"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "setDisabledState": {
+      "params": [
+        {
+          "name": "isDisabled",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "toggleCalendarAriaLabel": {
+      "params": [
+        {
+          "name": "isDateTo",
+          "type": "boolean"
+        }
+      ],
+      "returns": {
+        "type": "string"
+      }
+    },
+    "writeValue": {
+      "params": [
+        {
+          "name": "inputValue",
+          "type": "Object | string | null"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "getSizeByKeyword": {
+      "params": [
+        {
+          "name": "arg",
+          "type": "any"
+        }
+      ],
+      "returns": {
+        "type": "number | undefined"
+      }
+    },
+    "onFocus": {
+      "params": [
+        {
+          "name": "$event",
+          "type": "FocusEvent"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "onValueChange": {
+      "params": [
+        {
+          "name": "newValue",
+          "type": "Object | string"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnChange": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    },
+    "registerOnTouched": {
+      "params": [
+        {
+          "name": "fn",
+          "type": "function"
+        }
+      ],
+      "returns": {
+        "type": "void"
+      }
+    }
+  }
+}</code></pre>
+</body>
+</html>

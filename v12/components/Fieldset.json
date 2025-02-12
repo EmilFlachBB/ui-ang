@@ -1,0 +1,17 @@
+{
+  "module": "FieldsetModule",
+  "selector": "bb-fieldset-ui",
+  "description": "Component that displays a fieldset group.",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-fieldset--docs",
+  "inputs": {
+    "disabled": {
+      "type": "boolean",
+      "description": "Whether to disable all form items within the fieldset.",
+      "default": "false"
+    },
+    "heading": {
+      "type": "string",
+      "description": "The caption for the fieldset element."
+    }
+  }
+}

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: Illustration</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v11 Index</a>
+    <h1>Component: Illustration</h1>
+    <pre><code>{
+  "module": "IllustrationModule",
+  "selector": "bb-illustration-ui",
+  "description": "Component that displays an illustration from the Design System visual asset library. ### Usage If you already have a Backbase app, please follow https://backbase.io/developers/documentation/web-devkit/app-development/configure-static-assets/#_configure_an_application_to_add_static_assets to configure static assets inclusion. For this component in particular, you may need to add: ```ts \"assets\": [   {     \"glob\": \"**\\/*\",     \"input\": \"node_modules/@backbase/ui-ang/assets\",     \"output\": \"/assets/design-system\"   } ] ``` ### Global configuration token `ILLUSTRATION_CONFIG_TOKEN` enables you to globally set the same configuration for all instances of `IllustrationComponent` in your project. *Note:* The token overwrites the default value only. If you have provided a value as a property on a specific component, the token is not be able to overwrite it. The following properties can be overwritten using the token:  - `assetPath`  - `fileType` #### Usage notes The following is an example of how to use the token: ```ts import { ILLUSTRATION_CONFIG_TOKEN } from '@backbase/ui-ang/illustration'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from './app/app.module'; const illustrationConfig = {   fileType: 'png' } platformBrowserDynamic().bootstrapModule(AppModule, {   providers: [{ provide: ILLUSTRATION_CONFIG_TOKEN, useValue: illustrationConfig }] }); ```",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-illustration--docs",
+  "inputs": {
+    "assetPath": {
+      "type": "string",
+      "description": "Location of your assets folder. Used for overriding or theming the illustrations. This attribute can be overwritten via the global configuration token. Defaults to the ui-ang visual asset library folder."
+    },
+    "classes": {
+      "type": "string",
+      "description": "The class of the image. Used for additional styling."
+    },
+    "fileType": {
+      "type": "string",
+      "description": "The file type. This attribute can be overwritten via the global configuration token. Defaults to svg."
+    },
+    "loading": {
+      "type": "",
+      "description": "The desired loading behavior (lazy, eager, or auto). Defaults to lazy which is recommended for most images."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the illustration. This corresponds to the file name. Supports camelCase, snake_case or kebab-case. Input is required.",
+      "optional": false
+    },
+    "priority": {
+      "type": "",
+      "description": "Indicates whether this image should have a high priority.",
+      "default": "false"
+    },
+    "size": {
+      "type": "IllustrationSizeObject",
+      "description": "Either a string indicating the size. For example: &quot;sm&quot;, &quot;md&quot; an object with dimensions: { width, height }  Input is required.",
+      "optional": false
+    }
+  }
+}</code></pre>
+</body>
+</html>

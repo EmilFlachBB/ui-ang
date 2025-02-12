@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component: InfiniteScroll</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example pre {
+            margin: 10px 0;
+        }
+        a { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <a href="../index.html">← Back to v10 Index</a>
+    <h1>Component: InfiniteScroll</h1>
+    <pre><code>{
+  "module": "InfiniteScrollModule",
+  "selector": "bb-infinite-scroll-ui",
+  "storybookUrl": "https://designsystem.backbase.com/storybook/?path=/docs/design-system-infinite-scroll--docs",
+  "inputs": {
+    "aria-label": {
+      "type": "",
+      "description": "Accessible label when control does not need to render label tag.",
+      "default": "'Infinite scrolling content'"
+    },
+    "debounce": {
+      "type": "",
+      "description": "Specify debounce duration in ms",
+      "default": "100"
+    },
+    "disableScrollEnd": {
+      "type": "",
+      "description": "If true then scrollEnd event should NOT be emitted",
+      "default": "false"
+    },
+    "focusable": {
+      "type": "",
+      "description": "Sets the focusability of the component. If value is true, the component becomes focusable. If value is false, the component becomes non-focusable. Component is focusable by default",
+      "default": "true"
+    },
+    "isLoading": {
+      "type": "",
+      "description": "Takes a boolean value to indicate the loading state of data",
+      "default": "false"
+    },
+    "offset": {
+      "type": "",
+      "description": "The number of pixels from the bottom of the element at which to trigger the scrollEnd event.",
+      "default": "0"
+    },
+    "scrollContainer": {
+      "type": "",
+      "description": "Takes a CSS class selector to identify the scrolling element",
+      "default": "'.infinite-scroll-wrapper'"
+    }
+  },
+  "outputs": {
+    "scrollEnd": {
+      "type": "EventEmitter",
+      "description": "Event that is triggered when the user has scrolled to the bottom of the element."
+    }
+  }
+}</code></pre>
+</body>
+</html>
